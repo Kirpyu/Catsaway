@@ -1,13 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7wvqs5lyinib"]
+[gd_scene load_steps=2 format=3 uid="uid://dnajxuepugrj7"]
 
 [ext_resource type="Script" path="res://GameScene/test_scene.gd" id="1_lqmeu"]
 
 [node name="TestScene" type="Node2D"]
-<<<<<<< HEAD
 script = ExtResource("1_lqmeu")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-=======
-
-[node name="Timer" type="Timer" parent="."]
->>>>>>> ca527e3a4d54938cea0d7a745521a321f12261f7
