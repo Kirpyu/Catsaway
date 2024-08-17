@@ -52,10 +52,13 @@ func _process(delta: float) -> void:
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	stopped = true
-	stop_timer.start()
-	velocity = Vector2(0,0)
-	hitbox_collision.set_deferred("disabled", true)
+	if area.owner.has_method("hit") and area.owner.is_in_group("Tile"):
+		stopped = true
+		stop_timer.start()
+		velocity = Vector2(0,0)
+		area.owner.hit(attack)
+			
+		hitbox_collision.set_deferred("disabled", true)
 	
 
 

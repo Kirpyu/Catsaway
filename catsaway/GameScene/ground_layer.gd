@@ -21,11 +21,12 @@ func _input(_event: InputEvent) -> void:
 			TileManager.highlighted = false
 			
 	if Input.is_action_just_pressed("f"):
-		var current_tile = local_to_map($"../../Player".global_position)
-		for land: Tile in get_tree().get_nodes_in_group("Tile"):
-			if str(current_tile) == land.tile_name:
-				print(land.tile_name)
-
+		#var current_tile = local_to_map($"../../Player".global_position)
+		#for land: Tile in get_tree().get_nodes_in_group("Tile"):
+			#if str(current_tile) == land.tile_name:
+				#print(land.tile_name)
+		set_cells_terrain_connect([tile], 0, -1)
+		
 func _ready() -> void:
 	var starting_tile = local_to_map($"../../Player".global_position)
 	var new_tile = load("res://Tile/tile.tscn").instantiate()
@@ -40,4 +41,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	tile = local_to_map(get_global_mouse_position())
+	
+func erase_tile(tile_position: Vector2i):
+	set_cells_terrain_connect([tile_position], 0, -1)
 	
