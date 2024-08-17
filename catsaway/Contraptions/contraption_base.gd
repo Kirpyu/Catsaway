@@ -10,6 +10,10 @@ var closest_enemy: BaseEnemy
 func _ready() -> void:
 	pass
 	
+func _process(delta: float) -> void:
+	if closest_enemy != null:
+		look_at(closest_enemy.global_position)
+
 func get_closest_target():
 	var shortest_distance = 0
 	for enemy : BaseEnemy in get_tree().get_nodes_in_group("Enemy"):
@@ -21,7 +25,6 @@ func get_closest_target():
 			closest_enemy = enemy
 
 func shoot():
-	print("Shooting!")
 	get_closest_target()
 
 

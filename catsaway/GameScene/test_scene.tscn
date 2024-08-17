@@ -590,6 +590,9 @@ position = Vector2(97, 242)
 collision_mask = 1
 speed = 30
 
+[node name="BaseEnemy2" parent="." instance=ExtResource("7_upukp")]
+position = Vector2(406, 252)
+
 [node name="Player" parent="." instance=ExtResource("6_3b7j0")]
 
 [node name="Tiles" type="Node2D" parent="."]
