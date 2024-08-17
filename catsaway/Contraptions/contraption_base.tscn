@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dig3kafsq7df1"]
+
+[ext_resource type="Script" path="res://Contraptions/contraption_base.gd" id="1_kj04u"]
+
+[node name="ContraptionBase" type="Node2D"]
+script = ExtResource("1_kj04u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

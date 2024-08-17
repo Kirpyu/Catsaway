@@ -30,4 +30,3 @@ static func string_to_vector2(string := "") -> Vector2i:
 		return Vector2i(int(array[0]), int(array[1]))
 
 	return Vector2i.ZERO
-	

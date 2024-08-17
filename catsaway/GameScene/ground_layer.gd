@@ -44,4 +44,5 @@ func _process(_delta: float) -> void:
 	
 func erase_tile(tile_position: Vector2i):
 	set_cells_terrain_connect([tile_position], 0, -1)
+	TileManager.Land.erase(str(tile_position))
 	
