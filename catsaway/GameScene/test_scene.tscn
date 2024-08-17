@@ -582,7 +582,7 @@ tiles = NodePath("../../Tiles")
 tile_set = SubResource("TileSet_2pe3e")
 script = ExtResource("5_346s7")
 
-[node name="Contraptions" type="Node2D" parent="."]
+[node name="Contraptions" type="Node2D" parent="." groups=["ContraptionNode"]]
 script = ExtResource("6_cq402")
 
 [node name="BaseEnemy" parent="." instance=ExtResource("7_upukp")]

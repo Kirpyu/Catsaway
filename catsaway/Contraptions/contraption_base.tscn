@@ -14,7 +14,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ContraptionBase" type="Node2D" node_paths=PackedStringArray("spawn_point", "shoot_cd")]
+[node name="ContraptionBase" type="Node2D" node_paths=PackedStringArray("spawn_point", "shoot_cd") groups=["Contraption"]]
 script = ExtResource("1_kj04u")
 spawn_point = NodePath("SpawnPoint")
 shoot_cd = NodePath("ShootCooldown")
@@ -27,3 +27,5 @@ sprite_frames = SubResource("SpriteFrames_yyatc")
 [node name="ShootCooldown" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]

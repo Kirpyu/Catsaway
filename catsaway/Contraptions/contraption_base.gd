@@ -1,6 +1,7 @@
 class_name Contraption
 extends Node2D
 
+@export var contraption_tile : String
 @export var spawn_point : Marker2D
 @export var shoot_cd : Timer
 
@@ -22,4 +23,7 @@ func get_closest_target():
 func shoot():
 	print("Shooting!")
 	get_closest_target()
-	print(closest_enemy)
+
+
+func _on_shoot_cooldown_timeout() -> void:
+	shoot()

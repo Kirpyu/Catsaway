@@ -25,7 +25,8 @@ func update_hp() -> void:
 	if hp <= 0:
 		var ground_layer = get_tree().get_first_node_in_group("GroundLayer")
 		ground_layer.erase_tile(TileManager.string_to_vector2(tile_name))
-		
+		var contraption_script = get_tree().get_first_node_in_group("ContraptionNode")
+		contraption_script.erase_contraption(tile_name)
 		queue_free()
 	else:
 		hp_bar.value = hp

@@ -22,4 +22,11 @@ func _process(delta: float) -> void:
 	
 func add_contraption(contraption: Contraption, coordinates: Vector2i) -> void:
 	add_child(contraption)
+	contraption.contraption_tile = str(coordinates)
 	contraption.position = get_tree().get_first_node_in_group("GroundLayer").map_to_local(coordinates)
+
+func erase_contraption(coordinates: String) -> void:
+	for contraption : Contraption in get_tree().get_nodes_in_group("Contraption"):
+		if contraption.contraption_tile == coordinates:
+			contraption.queue_free()
+			return

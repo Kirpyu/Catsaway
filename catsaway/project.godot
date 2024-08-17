@@ -32,6 +32,8 @@ enabled=PackedStringArray()
 Tile=""
 GroundLayer=""
 Enemy=""
+Contraption=""
+ContraptionNode=""
 
 [input]
 
