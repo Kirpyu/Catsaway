@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://e8gbfx4vjpbd"]
+
+[ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_g51ra"]
+[ext_resource type="Texture2D" uid="uid://cqtkrnwekipvg" path="res://Assets/tile_0127.png" id="2_dhi3q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v16mt"]
+radius = 3.0
+height = 8.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pg3ed"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dhi3q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+top_level = true
+position = Vector2(280, 184)
+collision_layer = 0
+script = ExtResource("1_g51ra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_v16mt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pg3ed")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)

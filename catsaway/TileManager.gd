@@ -1,7 +1,7 @@
 extends Node
 
 var Land := {}
-
+@export var highlighted := false
 var available_expansion_tiles : Array[Vector2i]= []
 
 func get_available_expansion_tiles() -> Array[Vector2i]:
