@@ -1,8 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://dig3kafsq7df1"]
+[gd_scene load_steps=4 format=3 uid="uid://dig3kafsq7df1"]
 
 [ext_resource type="Script" path="res://Contraptions/contraption_base.gd" id="1_kj04u"]
+[ext_resource type="Texture2D" uid="uid://cqtkrnwekipvg" path="res://Assets/tile_0127.png" id="2_mnu0i"]
 
-[node name="ContraptionBase" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyatc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mnu0i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ContraptionBase" type="Node2D" node_paths=PackedStringArray("spawn_point", "shoot_cd")]
 script = ExtResource("1_kj04u")
+spawn_point = NodePath("SpawnPoint")
+shoot_cd = NodePath("ShootCooldown")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yyatc")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+
+[node name="ShootCooldown" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true

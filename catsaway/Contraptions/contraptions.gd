@@ -9,14 +9,17 @@ func _input(event: InputEvent) -> void:
 				if str(hovered_tile) == tile.tile_name:
 					var contraption = TileManager.Land[tile.tile_name]["Contraption"]
 					if contraption == "None":
-						print("Can place contraption here")
 #						instantiate a contraption at tile.global_position
-						TileManager.Land[tile.tile_name]["Contraption"] = "Something"
+						add_contraption(ContraptionManager.create_contraption("BaseContraption"), hovered_tile)
+						TileManager.Land[tile.tile_name]["Contraption"] = "BaseContraption"
 					else:
-						print("There is a contraption here")
+						pass
 #						pass, do not need this but you can throw a label ig, demolish option maybe
 					return
 
 func _process(delta: float) -> void:
 	hovered_tile = get_tree().get_first_node_in_group("GroundLayer").local_to_map(get_global_mouse_position())
 	
+func add_contraption(contraption: Contraption, coordinates: Vector2i) -> void:
+	add_child(contraption)
+	contraption.position = get_tree().get_first_node_in_group("GroundLayer").map_to_local(coordinates)
