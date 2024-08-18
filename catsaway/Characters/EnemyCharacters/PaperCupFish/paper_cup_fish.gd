@@ -6,9 +6,10 @@ func _ready() -> void:
 
 func update_hp():
 	if hp <= 0:
-		drop_upgrade()
-		create_drop()
-		queue_free()
+		speed = 0
+		animated_sprite.visible = false
+		death_sprite.visible = true
+		death_sprite.play("death")
 
 	hp_bar.value = hp
 	

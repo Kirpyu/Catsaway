@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://btq3ugis3wwqa"]
+[gd_scene load_steps=28 format=3 uid="uid://btq3ugis3wwqa"]
 
 [ext_resource type="PackedScene" uid="uid://dq1372dbm1qi8" path="res://Characters/BaseCharacter/base_enemy.tscn" id="1_a6qke"]
 [ext_resource type="Script" path="res://Characters/EnemyCharacters/PaperCupFish/paper_cup_fish.gd" id="2_fu676"]
 [ext_resource type="Texture2D" uid="uid://de3f1yoe7mfm8" path="res://Assets/CharacterAssets/Enemy/PaperCupFish/PaperCup_Headbutt-Sheet.png" id="3_laaoh"]
 [ext_resource type="Texture2D" uid="uid://cemj5h0bwyymf" path="res://Assets/CharacterAssets/Enemy/PaperCupFish/PaperCup_Move-Sheet(1).png" id="4_wnpfs"]
+[ext_resource type="Texture2D" uid="uid://xg2dq601s0vu" path="res://Assets/CharacterAssets/Enemy/PaperCupFish/PaperCup_Death-Sheet.png" id="5_axrri"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_11qwi"]
 atlas = ExtResource("3_laaoh")
@@ -109,6 +110,63 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gc0b"]
+atlas = ExtResource("5_axrri")
+region = Rect2(0, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq7ky"]
+atlas = ExtResource("5_axrri")
+region = Rect2(24, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdl5y"]
+atlas = ExtResource("5_axrri")
+region = Rect2(48, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt4fv"]
+atlas = ExtResource("5_axrri")
+region = Rect2(72, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1syfq"]
+atlas = ExtResource("5_axrri")
+region = Rect2(96, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8wkd"]
+atlas = ExtResource("5_axrri")
+region = Rect2(120, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a5to"]
+atlas = ExtResource("5_axrri")
+region = Rect2(144, 0, 24, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_afnmb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gc0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq7ky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdl5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt4fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1syfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8wkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a5to")
+}],
+"loop": false,
+"name": &"death",
+"speed": 12.0
+}]
+
 [node name="PaperCupFish" instance=ExtResource("1_a6qke")]
 scale = Vector2(0.75, 0.75)
 script = ExtResource("2_fu676")
@@ -131,3 +189,7 @@ offset_left = -22.0
 offset_top = 7.0
 offset_right = -2.0
 offset_bottom = 11.0
+
+[node name="DeathSprite2D" parent="." index="6"]
+sprite_frames = SubResource("SpriteFrames_afnmb")
+animation = &"death"

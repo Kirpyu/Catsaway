@@ -20,12 +20,12 @@ radius = 6.0
 height = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5nvk"]
-size = Vector2(23.3266, 18.9832)
+size = Vector2(23.3266, 18.4664)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvpjh"]
 size = Vector2(12, 20)
 
-[node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("hp_bar", "animated_sprite", "stop_timer", "hitbox_collision") groups=["Enemy"]]
+[node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("hp_bar", "animated_sprite", "stop_timer", "death_sprite", "hitbox_collision") groups=["Enemy"]]
 position = Vector2(40, 168)
 collision_layer = 0
 collision_mask = 0
@@ -35,6 +35,7 @@ attack = 15
 hp_bar = NodePath("HPBar")
 animated_sprite = NodePath("AnimatedSprite2D")
 stop_timer = NodePath("StopTimer")
+death_sprite = NodePath("DeathSprite2D")
 hitbox_collision = NodePath("Hitbox/CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -81,5 +82,10 @@ show_percentage = false
 wait_time = 0.5
 one_shot = true
 
+[node name="DeathSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+rotation = 1.5708
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="StopTimer" to="." method="_on_stop_timer_timeout"]
+[connection signal="animation_finished" from="DeathSprite2D" to="." method="_on_death_sprite_2d_animation_finished"]

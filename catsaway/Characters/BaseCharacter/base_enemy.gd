@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var hp_bar : ProgressBar
 @export var animated_sprite : AnimatedSprite2D
 @export var stop_timer : Timer
+@export var death_sprite : AnimatedSprite2D
 
 #flicker hitbox to make it attack every . something seconds
 @export var hitbox_collision : CollisionShape2D
@@ -28,7 +29,6 @@ func hit(damage: int):
 	
 func update_hp():
 	if hp <= 0:
-		drop_upgrade()
 		queue_free()
 	hp_bar.value = hp
 
@@ -59,9 +59,6 @@ func _on_hitbox_area_entered(_area: Area2D) -> void:
 
 func _on_stop_timer_timeout() -> void:
 	pass
-	
-func drop_upgrade() -> void:
-	pass
 #	drop a button which queues free after 10 secs. on button click, gain a building in inventory
 
 func create_drop():
@@ -69,3 +66,7 @@ func create_drop():
 	drop.drop_name = "YarnThrower"
 	get_tree().root.add_child(drop)
 	drop.position = self.global_position
+
+func _on_death_sprite_2d_animation_finished() -> void:
+	create_drop()
+	queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://biwq6dmqarhqi"]
+[gd_scene load_steps=35 format=3 uid="uid://biwq6dmqarhqi"]
 
 [ext_resource type="PackedScene" uid="uid://dq1372dbm1qi8" path="res://Characters/BaseCharacter/base_enemy.tscn" id="1_exki4"]
 [ext_resource type="Script" path="res://Characters/EnemyCharacters/normal_fish.gd" id="2_lig43"]
@@ -164,6 +164,63 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ywvn"]
+atlas = ExtResource("4_jatgs")
+region = Rect2(0, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oto8"]
+atlas = ExtResource("4_jatgs")
+region = Rect2(24, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6kyi"]
+atlas = ExtResource("4_jatgs")
+region = Rect2(48, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8ftu"]
+atlas = ExtResource("4_jatgs")
+region = Rect2(72, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wtvy"]
+atlas = ExtResource("4_jatgs")
+region = Rect2(96, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6f5a"]
+atlas = ExtResource("4_jatgs")
+region = Rect2(120, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41ewt"]
+atlas = ExtResource("4_jatgs")
+region = Rect2(144, 0, 24, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wb0vs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ywvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8oto8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6kyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8ftu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wtvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6f5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41ewt")
+}],
+"loop": false,
+"name": &"death",
+"speed": 12.0
+}]
+
 [node name="NormalFish" instance=ExtResource("1_exki4")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("2_lig43")
@@ -191,3 +248,7 @@ offset_left = -20.0
 offset_right = -9.0
 rotation = 4.71239
 scale = Vector2(1, 0.698391)
+
+[node name="DeathSprite2D" parent="." index="6"]
+sprite_frames = SubResource("SpriteFrames_wb0vs")
+animation = &"death"

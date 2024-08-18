@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dnajxuepugrj7"]
+[gd_scene load_steps=16 format=4 uid="uid://dnajxuepugrj7"]
 
 [ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Water.png" id="1_ycfnc"]
 [ext_resource type="Texture2D" uid="uid://cw7yc1xnbokwk" path="res://Assets/Grass.png" id="3_ym75m"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://e8gbfx4vjpbd" path="res://Characters/Player/player.tscn" id="6_3b7j0"]
 [ext_resource type="Script" path="res://Contraptions/contraptions.gd" id="6_cq402"]
 [ext_resource type="AudioStream" uid="uid://nrvrkbqugi" path="res://Assets/SFX/OST.mp3" id="9_ejpwg"]
-[ext_resource type="PackedScene" uid="uid://biwq6dmqarhqi" path="res://Characters/EnemyCharacters/normal_fish.tscn" id="10_35tjn"]
-[ext_resource type="PackedScene" uid="uid://dx2v3e2qdjcm2" path="res://Characters/EnemyCharacters/FlyingFish/flying_fish.tscn" id="11_owmr3"]
 [ext_resource type="PackedScene" uid="uid://capdqlkjkft3u" path="res://Contraptions/DropButtons/contraption_drop.tscn" id="11_p0ty6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmbbl"]
@@ -588,9 +586,6 @@ script = ExtResource("5_346s7")
 [node name="Contraptions" type="Node2D" parent="." groups=["ContraptionNode"]]
 script = ExtResource("6_cq402")
 
-[node name="g" parent="." instance=ExtResource("10_35tjn")]
-position = Vector2(227, 211)
-
 [node name="Player" parent="." instance=ExtResource("6_3b7j0")]
 
 [node name="Tiles" type="Node2D" parent="."]
@@ -606,9 +601,3 @@ offset_left = 319.0
 offset_top = 201.0
 offset_right = 343.0
 offset_bottom = 225.0
-
-[node name="NormalFish" parent="." instance=ExtResource("10_35tjn")]
-position = Vector2(347, 218)
-
-[node name="FlyingFish" parent="." instance=ExtResource("11_owmr3")]
-position = Vector2(171, 277)

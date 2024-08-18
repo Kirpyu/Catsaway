@@ -1,0 +1,185 @@
+[gd_scene load_steps=28 format=3 uid="uid://cd2u66mcv2kgv"]
+
+[ext_resource type="PackedScene" uid="uid://dq1372dbm1qi8" path="res://Characters/BaseCharacter/base_enemy.tscn" id="1_k4xrm"]
+[ext_resource type="Script" path="res://Characters/EnemyCharacters/CoquetteFish/coquette_fish.gd" id="2_7r2o1"]
+[ext_resource type="Texture2D" uid="uid://cd23i0qiao4jg" path="res://Assets/CharacterAssets/Enemy/CoquetteFish/Coquette_Headbutt-Sheet.png" id="2_f8dqx"]
+[ext_resource type="Texture2D" uid="uid://dlhi8j4dy3aa" path="res://Assets/CharacterAssets/Enemy/CoquetteFish/Coquette_Move-Sheet.png" id="3_3wcw5"]
+[ext_resource type="Texture2D" uid="uid://djbu8tws8tjj" path="res://Assets/CharacterAssets/Enemy/CoquetteFish/Coquette_Death-Sheet.png" id="4_ak03x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmsor"]
+atlas = ExtResource("2_f8dqx")
+region = Rect2(0, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yta54"]
+atlas = ExtResource("2_f8dqx")
+region = Rect2(24, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfvbg"]
+atlas = ExtResource("2_f8dqx")
+region = Rect2(48, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbxsa"]
+atlas = ExtResource("2_f8dqx")
+region = Rect2(72, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccnjt"]
+atlas = ExtResource("2_f8dqx")
+region = Rect2(96, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ntie"]
+atlas = ExtResource("3_3wcw5")
+region = Rect2(0, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srwmn"]
+atlas = ExtResource("3_3wcw5")
+region = Rect2(24, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs0j0"]
+atlas = ExtResource("3_3wcw5")
+region = Rect2(48, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_niqhk"]
+atlas = ExtResource("3_3wcw5")
+region = Rect2(72, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr8fa"]
+atlas = ExtResource("3_3wcw5")
+region = Rect2(96, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tc1j"]
+atlas = ExtResource("3_3wcw5")
+region = Rect2(120, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyc0b"]
+atlas = ExtResource("3_3wcw5")
+region = Rect2(144, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n2vm"]
+atlas = ExtResource("3_3wcw5")
+region = Rect2(168, 0, 24, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6aag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmsor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yta54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfvbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbxsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccnjt")
+}],
+"loop": true,
+"name": &"attacking",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ntie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srwmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs0j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_niqhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr8fa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tc1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyc0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n2vm")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxpo1"]
+atlas = ExtResource("4_ak03x")
+region = Rect2(0, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju5k7"]
+atlas = ExtResource("4_ak03x")
+region = Rect2(24, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nbug"]
+atlas = ExtResource("4_ak03x")
+region = Rect2(48, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my08t"]
+atlas = ExtResource("4_ak03x")
+region = Rect2(72, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5kxf"]
+atlas = ExtResource("4_ak03x")
+region = Rect2(96, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijkdx"]
+atlas = ExtResource("4_ak03x")
+region = Rect2(120, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w4t2"]
+atlas = ExtResource("4_ak03x")
+region = Rect2(144, 0, 24, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mf44j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxpo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju5k7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nbug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my08t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5kxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijkdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w4t2")
+}],
+"loop": false,
+"name": &"death",
+"speed": 12.0
+}]
+
+[node name="CoquetteFish" instance=ExtResource("1_k4xrm")]
+script = ExtResource("2_7r2o1")
+speed = 15
+max_hp = 100
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_q6aag")
+animation = &"moving"
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(13.1759, 0)
+scale = Vector2(1, 1)
+
+[node name="DeathSprite2D" parent="." index="6"]
+sprite_frames = SubResource("SpriteFrames_mf44j")
+animation = &"death"

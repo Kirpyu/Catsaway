@@ -1,13 +1,11 @@
 extends BaseEnemy
 
-@export var death_sprite : AnimatedSprite2D
 func _ready() -> void:
 	super._ready()
 	animated_sprite.play("moving")
 
 func update_hp():
 	if hp <= 0:
-		drop_upgrade()
 		create_drop()
 		speed = 0
 		animated_sprite.visible = false
@@ -21,8 +19,6 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		stopped = true
 		stop_timer.start()
 		area.owner.hit(attack)
-		drop_upgrade()
-		create_drop()
 		speed = 0
 		animated_sprite.visible = false
 		death_sprite.visible = true
@@ -33,8 +29,3 @@ func _on_stop_timer_timeout() -> void:
 	stopped = false
 	hitbox_collision.set_deferred("disabled", false)
 	animated_sprite.play("moving")
-
-
-func _on_animated_sprite_2d_2_animation_finished() -> void:
-	print("ran this")
-	queue_free()
