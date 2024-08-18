@@ -5,6 +5,9 @@ extends Node2D
 @export var spawn_point : Marker2D
 @export var shoot_cd : Timer
 
+#this should not be in base script, should be defined in every extended script
+var projectile = preload("res://Projectiles/projectile_base.tscn")
+
 var closest_enemy: BaseEnemy
 
 func _ready() -> void:
@@ -13,6 +16,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if closest_enemy != null:
 		look_at(closest_enemy.global_position)
+		if shoot_cd.is_stopped():
+			shoot_cd.start()
+	else: 
+		shoot_cd.stop()
+		get_closest_target()
 
 func get_closest_target():
 	var shortest_distance = 0
@@ -26,7 +34,11 @@ func get_closest_target():
 
 func shoot():
 	get_closest_target()
+	var b = projectile.instantiate()
+	get_tree().root.add_child(b)
+	b.transform = spawn_point.global_transform
 
 
 func _on_shoot_cooldown_timeout() -> void:
 	shoot()
+	
