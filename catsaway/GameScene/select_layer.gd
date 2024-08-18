@@ -6,9 +6,6 @@ var hihglight_types : Array[String] = ["Expansion", "Contraption"]
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("RMB"):
 		highlight_tiles(TileManager.get_available_expansion_tiles(), "Expansion")
-
-	if Input.is_action_just_pressed("LMB"):
-		erase_highlight()
 		
 		
 func highlight_tiles(tiles: Array[Vector2i], type: String):
@@ -26,4 +23,5 @@ func highlight_tiles(tiles: Array[Vector2i], type: String):
 func erase_highlight():
 	clear()
 	highlight_type = ""
+	TileManager.highlighted = false
 #	highlighted false handled elsewhere, keep this in mind

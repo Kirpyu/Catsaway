@@ -25,10 +25,7 @@ func _input(_event: InputEvent) -> void:
 						
 #						deleting everything that j happened
 						select_layer.erase_highlight()
-						TileManager.highlighted = false
 						held_drop.queue_free()
-						held_contraption = ""
-						held_drop = null
 					else:
 						pass
 					return
@@ -51,12 +48,13 @@ func delete_drop(drop: Button):
 	drop.queue_free()
 
 func handle_drop(drop: Button):
+	var select_layer =  get_tree().get_first_node_in_group("SelectLayer")
 	if held_contraption == "" and held_drop == null:
 		held_contraption = drop.drop_name
 		held_drop = drop
-		var select_layer =  get_tree().get_first_node_in_group("SelectLayer")
 		select_layer.highlight_tiles(TileManager.get_available_contraption_tiles(), "Contraption")
 	else:
+		select_layer.erase_highlight()
 		held_contraption = ""
 		held_drop = null
 	
