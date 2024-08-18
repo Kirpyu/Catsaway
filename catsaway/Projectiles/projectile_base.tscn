@@ -12,7 +12,7 @@ speed = 150
 collat = 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_65c2p"]
-radius = 5.09902
+radius = 4.08549
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3q5fx"]
 atlas = ExtResource("1_730tt")

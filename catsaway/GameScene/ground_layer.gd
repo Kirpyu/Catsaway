@@ -5,7 +5,6 @@ var tile : Vector2i
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LMB"):
-		
 		if TileManager.available_expansion_tiles.has(tile) and TileManager.highlighted == true:
 			var select_layer = get_tree().get_first_node_in_group("SelectLayer")
 			if select_layer.highlight_type == "Expansion":

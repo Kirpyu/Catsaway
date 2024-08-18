@@ -4,6 +4,7 @@ extends Node2D
 
 @export var spawn_point : Marker2D
 @export var shoot_cd : Timer
+@export var animated_sprite : AnimatedSprite2D
 var contraption_tile : String
 
 #this should not be in base script, should be defined in every extended script

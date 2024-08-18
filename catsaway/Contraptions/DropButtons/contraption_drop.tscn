@@ -4,12 +4,15 @@
 [ext_resource type="Script" path="res://Contraptions/DropButtons/contraption_drop.gd" id="2_aemsp"]
 
 [node name="ContraptionDrop" type="Button"]
+offset_right = 24.0
+offset_bottom = 24.0
+scale = Vector2(0.75, 0.75)
 icon = ExtResource("1_ps73e")
 flat = true
 script = ExtResource("2_aemsp")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 

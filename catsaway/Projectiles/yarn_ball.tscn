@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://bl111kfke840x"]
+
+[ext_resource type="PackedScene" uid="uid://d1fq03r5qo24p" path="res://Projectiles/projectile_base.tscn" id="1_ibro4"]
+[ext_resource type="Texture2D" uid="uid://dp5vj4mo3mkjw" path="res://Assets/ContraptionAssets/YarnThrower/YarnBall-Sheet.png" id="2_ov7ko"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmub0"]
+atlas = ExtResource("2_ov7ko")
+region = Rect2(0, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31u0g"]
+atlas = ExtResource("2_ov7ko")
+region = Rect2(16, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkwud"]
+atlas = ExtResource("2_ov7ko")
+region = Rect2(32, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjauu"]
+atlas = ExtResource("2_ov7ko")
+region = Rect2(48, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj341"]
+atlas = ExtResource("2_ov7ko")
+region = Rect2(64, 0, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b18fs"]
+atlas = ExtResource("2_ov7ko")
+region = Rect2(80, 0, 16, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pv8ea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmub0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31u0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkwud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjauu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj341")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b18fs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="YarnBall" instance=ExtResource("1_ibro4")]
+rotation = 4.71239
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(3.57746e-08, 3)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_pv8ea")
+frame_progress = 0.0

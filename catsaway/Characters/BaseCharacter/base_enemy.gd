@@ -63,4 +63,9 @@ func _on_stop_timer_timeout() -> void:
 func drop_upgrade() -> void:
 	pass
 #	drop a button which queues free after 10 secs. on button click, gain a building in inventory
-	
+
+func create_drop():
+	var drop = load("res://Contraptions/DropButtons/contraption_drop.tscn").instantiate()
+	drop.drop_name = "YarnThrower"
+	get_tree().root.add_child(drop)
+	drop.position = self.global_position

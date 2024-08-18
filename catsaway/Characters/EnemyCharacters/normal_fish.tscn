@@ -170,6 +170,7 @@ script = ExtResource("2_lig43")
 speed = 20
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(0.949458, 1.02706)
 sprite_frames = SubResource("SpriteFrames_08cct")
 animation = &"death"
 
@@ -193,5 +194,3 @@ offset_right = -9.0
 offset_bottom = 10.0
 rotation = 4.71239
 scale = Vector2(1, 0.698391)
-
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

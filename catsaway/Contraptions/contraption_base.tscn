@@ -14,10 +14,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ContraptionBase" type="Node2D" node_paths=PackedStringArray("spawn_point", "shoot_cd") groups=["Contraption"]]
+[node name="ContraptionBase" type="Node2D" node_paths=PackedStringArray("spawn_point", "shoot_cd", "animated_sprite") groups=["Contraption"]]
 script = ExtResource("1_kj04u")
 spawn_point = NodePath("SpawnPoint")
 shoot_cd = NodePath("ShootCooldown")
+animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yyatc")
