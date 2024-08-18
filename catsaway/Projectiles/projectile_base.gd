@@ -25,3 +25,11 @@ func _on_area_entered(area: Area2D) -> void:
 		area.owner.hit(projectile_resource.damage) 
 		if collat == 0:
 			queue_free()
+	
+	if area.owner.has_method("hit") and area.owner.is_in_group("Tile"):
+		
+		collat -= 1
+		area.owner.hit(projectile_resource.damage) 
+		if collat == 0:
+			queue_free()
+	

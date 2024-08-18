@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5cv28x1cpck"]
+
+[ext_resource type="PackedScene" uid="uid://d1fq03r5qo24p" path="res://Projectiles/projectile_base.tscn" id="1_qhq21"]
+
+[node name="AcidBall" instance=ExtResource("1_qhq21")]
+collision_mask = 2

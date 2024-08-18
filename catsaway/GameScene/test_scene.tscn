@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dnajxuepugrj7"]
+[gd_scene load_steps=17 format=4 uid="uid://dnajxuepugrj7"]
 
 [ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Water.png" id="1_ycfnc"]
 [ext_resource type="Texture2D" uid="uid://cw7yc1xnbokwk" path="res://Assets/Grass.png" id="3_ym75m"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://e8gbfx4vjpbd" path="res://Characters/Player/player.tscn" id="6_3b7j0"]
 [ext_resource type="Script" path="res://Contraptions/contraptions.gd" id="6_cq402"]
 [ext_resource type="AudioStream" uid="uid://nrvrkbqugi" path="res://Assets/SFX/OST.mp3" id="9_ejpwg"]
+[ext_resource type="PackedScene" uid="uid://jdfr5ophq6ok" path="res://Characters/EnemyCharacters/ProjectileFish/projectile_fish.tscn" id="10_cbxqv"]
 [ext_resource type="PackedScene" uid="uid://capdqlkjkft3u" path="res://Contraptions/DropButtons/contraption_drop.tscn" id="11_p0ty6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmbbl"]
@@ -601,3 +602,6 @@ offset_left = 319.0
 offset_top = 201.0
 offset_right = 343.0
 offset_bottom = 225.0
+
+[node name="ProjectileFish" parent="." instance=ExtResource("10_cbxqv")]
+position = Vector2(217, 192)

@@ -180,6 +180,9 @@ animation = &"moving"
 position = Vector2(13.1759, 0)
 scale = Vector2(1, 1)
 
+[node name="HPBar" parent="." index="4"]
+scale = Vector2(0.621444, 0.580616)
+
 [node name="DeathSprite2D" parent="." index="6"]
 sprite_frames = SubResource("SpriteFrames_mf44j")
 animation = &"death"
