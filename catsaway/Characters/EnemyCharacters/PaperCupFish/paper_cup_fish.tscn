@@ -1,0 +1,133 @@
+[gd_scene load_steps=19 format=3 uid="uid://btq3ugis3wwqa"]
+
+[ext_resource type="PackedScene" uid="uid://dq1372dbm1qi8" path="res://Characters/BaseCharacter/base_enemy.tscn" id="1_a6qke"]
+[ext_resource type="Script" path="res://Characters/EnemyCharacters/PaperCupFish/paper_cup_fish.gd" id="2_fu676"]
+[ext_resource type="Texture2D" uid="uid://de3f1yoe7mfm8" path="res://Assets/CharacterAssets/Enemy/PaperCupFish/PaperCup_Headbutt-Sheet.png" id="3_laaoh"]
+[ext_resource type="Texture2D" uid="uid://cemj5h0bwyymf" path="res://Assets/CharacterAssets/Enemy/PaperCupFish/PaperCup_Move-Sheet(1).png" id="4_wnpfs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11qwi"]
+atlas = ExtResource("3_laaoh")
+region = Rect2(0, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x6te"]
+atlas = ExtResource("3_laaoh")
+region = Rect2(24, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm65h"]
+atlas = ExtResource("3_laaoh")
+region = Rect2(48, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp4vq"]
+atlas = ExtResource("3_laaoh")
+region = Rect2(72, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p5cy"]
+atlas = ExtResource("3_laaoh")
+region = Rect2(96, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jreu"]
+atlas = ExtResource("4_wnpfs")
+region = Rect2(0, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wikp"]
+atlas = ExtResource("4_wnpfs")
+region = Rect2(24, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pcu8"]
+atlas = ExtResource("4_wnpfs")
+region = Rect2(48, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn6xa"]
+atlas = ExtResource("4_wnpfs")
+region = Rect2(72, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbwja"]
+atlas = ExtResource("4_wnpfs")
+region = Rect2(96, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxnx1"]
+atlas = ExtResource("4_wnpfs")
+region = Rect2(120, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j14t0"]
+atlas = ExtResource("4_wnpfs")
+region = Rect2(144, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qt7r"]
+atlas = ExtResource("4_wnpfs")
+region = Rect2(168, 0, 24, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ek7ri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11qwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x6te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm65h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp4vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p5cy")
+}],
+"loop": true,
+"name": &"attacking",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jreu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wikp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pcu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn6xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbwja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxnx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j14t0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qt7r")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
+}]
+
+[node name="PaperCupFish" instance=ExtResource("1_a6qke")]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("2_fu676")
+max_hp = 50
+attack = 20
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ek7ri")
+animation = &"attacking"
+
+[node name="Hitbox" parent="." index="2"]
+position = Vector2(0, -1)
+scale = Vector2(0.687548, 0.608504)
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(16.3556, 1.6434)
+
+[node name="HPBar" parent="." index="4"]
+offset_left = -22.0
+offset_top = 7.0
+offset_right = -2.0
+offset_bottom = 11.0

@@ -1,0 +1,163 @@
+[gd_scene load_steps=20 format=3 uid="uid://dx2v3e2qdjcm2"]
+
+[ext_resource type="PackedScene" uid="uid://dq1372dbm1qi8" path="res://Characters/BaseCharacter/base_enemy.tscn" id="1_s3yr0"]
+[ext_resource type="Script" path="res://Characters/EnemyCharacters/FlyingFish/flying_fish.gd" id="2_v6iia"]
+[ext_resource type="Texture2D" uid="uid://h70d17gmfxjj" path="res://Assets/CharacterAssets/Enemy/FlyingFish/Flying Fish Movement-Sheet.png" id="3_0xyjl"]
+[ext_resource type="Texture2D" uid="uid://cpbr3innvqg2s" path="res://Assets/CharacterAssets/Enemy/FlyingFish/Explosion-Sheet.png" id="3_xkg2w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlh2c"]
+atlas = ExtResource("3_xkg2w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft0t6"]
+atlas = ExtResource("3_xkg2w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8orgi"]
+atlas = ExtResource("3_xkg2w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htoyx"]
+atlas = ExtResource("3_xkg2w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ph6f"]
+atlas = ExtResource("3_xkg2w")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jmxk"]
+atlas = ExtResource("3_xkg2w")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1d6v"]
+atlas = ExtResource("3_xkg2w")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih1xn"]
+atlas = ExtResource("3_xkg2w")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma727"]
+atlas = ExtResource("3_xkg2w")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yjhy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlh2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft0t6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8orgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htoyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ph6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jmxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1d6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih1xn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma727")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6sau"]
+atlas = ExtResource("3_0xyjl")
+region = Rect2(0, 0, 24, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr1r7"]
+atlas = ExtResource("3_0xyjl")
+region = Rect2(24, 0, 24, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhgsl"]
+atlas = ExtResource("3_0xyjl")
+region = Rect2(48, 0, 24, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnxpa"]
+atlas = ExtResource("3_0xyjl")
+region = Rect2(72, 0, 24, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tej7e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6sau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr1r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhgsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnxpa")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 12.0
+}]
+
+[node name="FlyingFish" node_paths=PackedStringArray("death_sprite") instance=ExtResource("1_s3yr0")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_v6iia")
+death_sprite = NodePath("AnimatedSprite2D2")
+speed = 50
+max_hp = 10
+attack = 50
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(4, -3.63798e-12)
+rotation = 1.5708
+scale = Vector2(1.75, 1.894)
+sprite_frames = SubResource("SpriteFrames_yjhy0")
+animation = &"explode"
+frame = 8
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(0.75, 0.812)
+sprite_frames = SubResource("SpriteFrames_tej7e")
+animation = &"moving"
+
+[node name="CollisionBox" parent="." index="2"]
+position = Vector2(-12, 0)
+
+[node name="Hitbox" parent="." index="3"]
+position = Vector2(-20, -2)
+scale = Vector2(1.03237, 2.13363)
+
+[node name="Hurtbox" parent="." index="4"]
+position = Vector2(-10, 0)
+scale = Vector2(1.18958, 1.15925)
+
+[node name="HPBar" parent="." index="5"]
+offset_left = -28.0
+offset_right = -8.0
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="." index="7"]
+modulate = Color(0.751006, 0.334377, 0.197695, 1)
+self_modulate = Color(0.986752, 0.986752, 0.986752, 1)
+position = Vector2(-26, 0)
+amount = 16
+fixed_fps = 30
+draw_order = 1
+emission_shape = 2
+emission_sphere_radius = 9.27
+gravity = Vector2(0, 0)
+
+[connection signal="animation_finished" from="AnimatedSprite2D2" to="." method="_on_animated_sprite_2d_2_animation_finished"]

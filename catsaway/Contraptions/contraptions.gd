@@ -23,10 +23,8 @@ func _input(_event: InputEvent) -> void:
 						TileManager.Land[tile.tile_name]["Contraption"] = held_contraption
 						
 #						deleting everything that j happened
-						select_layer.erase_highlight()
-						held_drop.queue_free()
-					else:
-						pass
+					select_layer.erase_highlight()
+					held_drop.queue_free()
 					return
 
 func _process(_delta: float) -> void:

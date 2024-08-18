@@ -35,7 +35,7 @@ func _ready() -> void:
 	
 	
 	TileManager.Land[str(starting_tile)] = {
-			"Contraption" : "None",
+			"Contraption" : "YarnThrower",
 		}
 
 func _process(_delta: float) -> void:

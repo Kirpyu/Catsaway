@@ -17,7 +17,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ngnp2"]
 radius = 6.0
-height = 24.0
+height = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5nvk"]
 size = Vector2(23.3266, 18.9832)
@@ -68,10 +68,12 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_mvpjh")
 
 [node name="HPBar" type="ProgressBar" parent="."]
-offset_left = -10.0
-offset_top = -16.0
-offset_right = 10.0
-offset_bottom = -12.0
+offset_left = -15.0
+offset_top = 6.0
+offset_right = 5.0
+offset_bottom = 10.0
+rotation = -1.5708
+scale = Vector2(0.621444, 0.580616)
 value = 50.0
 show_percentage = false
 
