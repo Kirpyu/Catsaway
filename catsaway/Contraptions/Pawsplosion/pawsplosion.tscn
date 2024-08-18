@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqcn4dga0y56j"]
+
+[ext_resource type="PackedScene" uid="uid://dig3kafsq7df1" path="res://Contraptions/contraption_base.tscn" id="1_km2t5"]
+[ext_resource type="Texture2D" uid="uid://cl01txuf8vtay" path="res://Assets/ContraptionAssets/Pawsplosion/catTree.png" id="2_bhlag"]
+[ext_resource type="Script" path="res://Contraptions/Pawsplosion/pawsplosion.gd" id="2_ct2vv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qffd"]
+atlas = ExtResource("2_bhlag")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_detbe"]
+atlas = ExtResource("2_bhlag")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1lbi1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qffd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_detbe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="Pawsplosion" instance=ExtResource("1_km2t5")]
+script = ExtResource("2_ct2vv")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_1lbi1")
+animation = &"idle"
+
+[node name="ShootCooldown" parent="." index="2"]
+wait_time = 3.0

@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1kc4smxlgc5e"]
+[gd_scene load_steps=12 format=3 uid="uid://d1kc4smxlgc5e"]
 
 [ext_resource type="PackedScene" uid="uid://dig3kafsq7df1" path="res://Contraptions/contraption_base.tscn" id="1_gq6ro"]
 [ext_resource type="Script" path="res://Contraptions/YarnThrower/yarn_thrower.gd" id="2_qeo5n"]
-[ext_resource type="Texture2D" uid="uid://dapvpwjnsopnm" path="res://Assets/ContraptionAssets/YarnThrower/Yarn_Thrower-Sheet.png" id="3_j5m55"]
+[ext_resource type="Texture2D" uid="uid://c4n3nsdgv4ne0" path="res://Assets/ContraptionAssets/YarnThrower/Yarn_Thrower-Sheet.png" id="3_j5m55"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v7aov"]
 atlas = ExtResource("3_j5m55")
@@ -27,6 +27,10 @@ region = Rect2(48, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnh5u"]
 atlas = ExtResource("3_j5m55")
 region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bv0n"]
+atlas = ExtResource("3_j5m55")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6bjre"]
 animations = [{
@@ -53,10 +57,13 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qnh5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bv0n")
 }],
 "loop": true,
 "name": &"stop",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="YarnThrower" instance=ExtResource("1_gq6ro")]
@@ -65,7 +72,6 @@ script = ExtResource("2_qeo5n")
 [node name="AnimatedSprite2D" parent="." index="0"]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_6bjre")
-animation = &"shooting"
 
 [node name="ShootCooldown" parent="." index="2"]
 wait_time = 1.0

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://e8gbfx4vjpbd" path="res://Characters/Player/player.tscn" id="6_3b7j0"]
 [ext_resource type="Script" path="res://Contraptions/contraptions.gd" id="6_cq402"]
 [ext_resource type="AudioStream" uid="uid://nrvrkbqugi" path="res://Assets/SFX/OST.mp3" id="9_ejpwg"]
-[ext_resource type="PackedScene" uid="uid://jdfr5ophq6ok" path="res://Characters/EnemyCharacters/ProjectileFish/projectile_fish.tscn" id="10_cbxqv"]
+[ext_resource type="PackedScene" uid="uid://bhcj1yt8gjhye" path="res://Characters/EnemyCharacters/DummyFish/dummy_fish.tscn" id="10_wq7iq"]
 [ext_resource type="PackedScene" uid="uid://capdqlkjkft3u" path="res://Contraptions/DropButtons/contraption_drop.tscn" id="11_p0ty6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmbbl"]
@@ -603,5 +603,5 @@ offset_top = 201.0
 offset_right = 343.0
 offset_bottom = 225.0
 
-[node name="ProjectileFish" parent="." instance=ExtResource("10_cbxqv")]
-position = Vector2(217, 192)
+[node name="DummyFish" parent="." instance=ExtResource("10_wq7iq")]
+position = Vector2(244, 212)

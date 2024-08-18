@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://dtt0d82rlwxci"]
+
+[ext_resource type="PackedScene" uid="uid://dig3kafsq7df1" path="res://Contraptions/contraption_base.tscn" id="1_e7tw3"]
+[ext_resource type="Script" path="res://Contraptions/CheeseCannon/cheese_cannon.gd" id="2_ewb0m"]
+[ext_resource type="Texture2D" uid="uid://bmswttdig81vk" path="res://Assets/ContraptionAssets/CheeseCannon/cannon-Sheet.png" id="3_2nn1p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjt1e"]
+atlas = ExtResource("3_2nn1p")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j16i"]
+atlas = ExtResource("3_2nn1p")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vj2x"]
+atlas = ExtResource("3_2nn1p")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq7hh"]
+atlas = ExtResource("3_2nn1p")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl2d3"]
+atlas = ExtResource("3_2nn1p")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4lbm"]
+atlas = ExtResource("3_2nn1p")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcan7"]
+atlas = ExtResource("3_2nn1p")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pj0fm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjt1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j16i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vj2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq7hh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl2d3")
+}],
+"loop": true,
+"name": &"shooting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4lbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcan7")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 2.0
+}]
+
+[node name="CheeseCannon" instance=ExtResource("1_e7tw3")]
+script = ExtResource("2_ewb0m")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_pj0fm")
+animation = &"stop"
+frame_progress = 0.256951

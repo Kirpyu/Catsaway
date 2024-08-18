@@ -28,7 +28,7 @@ func _on_stop_timer_timeout() -> void:
 	hitbox_collision.set_deferred("disabled", false)
 	animated_sprite.play("moving")
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if target == null:
 		get_closest_target()
 	elif !stopped:

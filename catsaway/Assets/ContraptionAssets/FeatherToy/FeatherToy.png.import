@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4n3nsdgv4ne0"
-path="res://.godot/imported/Yarn_Thrower-Sheet.png-7b18959d2519576e54867631fbc457ea.ctex"
+uid="uid://bms2pow4n4s5c"
+path="res://.godot/imported/FeatherToy.png-972ac0238c0e39fa02e88e3b029af503.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ContraptionAssets/YarnThrower/Yarn_Thrower-Sheet.png"
-dest_files=["res://.godot/imported/Yarn_Thrower-Sheet.png-7b18959d2519576e54867631fbc457ea.ctex"]
+source_file="res://Assets/ContraptionAssets/FeatherToy/FeatherToy.png"
+dest_files=["res://.godot/imported/FeatherToy.png-972ac0238c0e39fa02e88e3b029af503.ctex"]
 
 [params]
 

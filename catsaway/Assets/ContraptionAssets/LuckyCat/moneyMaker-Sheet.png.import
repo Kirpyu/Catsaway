@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4n3nsdgv4ne0"
-path="res://.godot/imported/Yarn_Thrower-Sheet.png-7b18959d2519576e54867631fbc457ea.ctex"
+uid="uid://cmdem4u1nydj3"
+path="res://.godot/imported/moneyMaker-Sheet.png-bc4a3da17af23e5f4a938c078c1ac6c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ContraptionAssets/YarnThrower/Yarn_Thrower-Sheet.png"
-dest_files=["res://.godot/imported/Yarn_Thrower-Sheet.png-7b18959d2519576e54867631fbc457ea.ctex"]
+source_file="res://Assets/ContraptionAssets/LuckyCat/moneyMaker-Sheet.png"
+dest_files=["res://.godot/imported/moneyMaker-Sheet.png-bc4a3da17af23e5f4a938c078c1ac6c7.ctex"]
 
 [params]
 

@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhcj1yt8gjhye"]
+
+[ext_resource type="PackedScene" uid="uid://dq1372dbm1qi8" path="res://Characters/BaseCharacter/base_enemy.tscn" id="1_hp6mq"]
+[ext_resource type="Script" path="res://Characters/EnemyCharacters/DummyFish/dummy_fish.gd" id="2_t17gv"]
+[ext_resource type="Texture2D" uid="uid://cbds43htlfp2y" path="res://Assets/CharacterAssets/Enemy/NormalFish/Normal_Move-Sheet.png" id="2_wsnv6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6aq7"]
+atlas = ExtResource("2_wsnv6")
+region = Rect2(0, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prv4h"]
+atlas = ExtResource("2_wsnv6")
+region = Rect2(24, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7soo"]
+atlas = ExtResource("2_wsnv6")
+region = Rect2(48, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rk8e"]
+atlas = ExtResource("2_wsnv6")
+region = Rect2(72, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0dgx"]
+atlas = ExtResource("2_wsnv6")
+region = Rect2(96, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1qby"]
+atlas = ExtResource("2_wsnv6")
+region = Rect2(120, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7exw"]
+atlas = ExtResource("2_wsnv6")
+region = Rect2(144, 0, 24, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wk25"]
+atlas = ExtResource("2_wsnv6")
+region = Rect2(168, 0, 24, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nro75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6aq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prv4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7soo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rk8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0dgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1qby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7exw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wk25")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
+}]
+
+[node name="DummyFish" instance=ExtResource("1_hp6mq")]
+script = ExtResource("2_t17gv")
+speed = 0
+max_hp = 30000
+attack = 0
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_nro75")
+animation = &"moving"

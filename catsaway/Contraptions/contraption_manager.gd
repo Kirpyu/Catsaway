@@ -12,7 +12,15 @@ var contraption_dic : Dictionary = {
 	"YarnThrower" : {
 		"Script": "res://Contraptions/YarnThrower/yarn_thrower.tscn",
 		"Drop": "None"
-	}
+	},
+	
+	"CheeseCannon": {
+		"Script": "res://Contraptions/CheeseCannon/cheese_cannon.tscn"
+	},
+	
+	"Pawsplosion": {
+		"Script": "res://Contraptions/Pawsplosion/pawsplosion.tscn"
+	},
 }
 
 func create_contraption(contraption_name: String) -> Contraption:
