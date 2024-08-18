@@ -16,9 +16,8 @@ func _process(_delta: float) -> void:
 func shoot():
 	get_closest_target()
 	var direction = closest_enemy.global_position - self.global_position
-	
-	#if direction.length < 51:
-	var b = projectile.instantiate()
-	get_tree().root.add_child(b)
-	b.transform = closest_enemy.global_transform
-	b.rotation_degrees -= 180
+	if direction.length() < 51:
+		var b = projectile.instantiate()
+		get_tree().root.add_child(b)
+		b.transform = closest_enemy.global_transform
+		b.rotation_degrees -= 180
