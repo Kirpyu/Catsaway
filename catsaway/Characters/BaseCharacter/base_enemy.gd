@@ -28,6 +28,7 @@ func hit(damage: int):
 	
 func update_hp():
 	if hp <= 0:
+		drop_upgrade()
 		queue_free()
 	hp_bar.value = hp
 
@@ -41,7 +42,7 @@ func get_closest_target():
 		elif target_direction.length() < shortest_distance:
 			target = tile
 			
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if target == null:
 		get_closest_target()
 	elif !stopped:
@@ -51,17 +52,15 @@ func _process(delta: float) -> void:
 		look_at(target.global_position)
 
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.owner.has_method("hit") and area.owner.is_in_group("Tile"):
-		stopped = true
-		stop_timer.start()
-		velocity = Vector2(0,0)
-		area.owner.hit(attack)
-			
-		hitbox_collision.set_deferred("disabled", true)
+func _on_hitbox_area_entered(_area: Area2D) -> void:
+	pass
 	
 
 
 func _on_stop_timer_timeout() -> void:
-	stopped = false
-	hitbox_collision.set_deferred("disabled", false)
+	pass
+	
+func drop_upgrade() -> void:
+	pass
+#	drop a button which queues free after 10 secs. on button click, gain a building in inventory
+	

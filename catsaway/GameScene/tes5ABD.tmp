@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dnajxuepugrj7"]
+[gd_scene load_steps=18 format=4 uid="uid://dnajxuepugrj7"]
 
 [ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Water.png" id="1_ycfnc"]
 [ext_resource type="Texture2D" uid="uid://cw7yc1xnbokwk" path="res://Assets/Grass.png" id="3_ym75m"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dq1372dbm1qi8" path="res://Characters/BaseCharacter/base_enemy.tscn" id="7_upukp"]
 [ext_resource type="AudioStream" uid="uid://nrvrkbqugi" path="res://Assets/SFX/OST.mp3" id="9_ejpwg"]
 [ext_resource type="PackedScene" uid="uid://biwq6dmqarhqi" path="res://Characters/EnemyCharacters/normal_fish.tscn" id="10_35tjn"]
+[ext_resource type="PackedScene" uid="uid://capdqlkjkft3u" path="res://Contraptions/DropButtons/contraption_drop.tscn" id="11_p0ty6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmbbl"]
 texture = ExtResource("1_ycfnc")
@@ -588,6 +589,7 @@ script = ExtResource("5_346s7")
 script = ExtResource("6_cq402")
 
 [node name="BaseEnemy" parent="." instance=ExtResource("7_upukp")]
+visible = false
 position = Vector2(97, 242)
 collision_mask = 1
 speed = 30
@@ -608,3 +610,9 @@ stream = ExtResource("9_ejpwg")
 volume_db = -17.802
 autoplay = true
 parameters/looping = true
+
+[node name="ContraptionDrop" parent="." instance=ExtResource("11_p0ty6")]
+offset_left = 298.0
+offset_top = 186.0
+offset_right = 322.0
+offset_bottom = 210.0

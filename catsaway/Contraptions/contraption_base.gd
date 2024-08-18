@@ -1,19 +1,17 @@
 class_name Contraption
 extends Node2D
 
-@export var contraption_tile : String
+
 @export var spawn_point : Marker2D
 @export var shoot_cd : Timer
+var contraption_tile : String
 
 #this should not be in base script, should be defined in every extended script
 var projectile = preload("res://Projectiles/projectile_base.tscn")
 
 var closest_enemy: BaseEnemy
-
-func _ready() -> void:
-	pass
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if closest_enemy != null:
 		look_at(closest_enemy.global_position)
 		if shoot_cd.is_stopped():

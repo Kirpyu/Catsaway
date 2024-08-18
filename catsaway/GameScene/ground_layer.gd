@@ -35,6 +35,7 @@ func _ready() -> void:
 	new_tile.tile_name = str(starting_tile)
 	new_tile.position = map_to_local(starting_tile)
 	
+	
 	TileManager.Land[str(starting_tile)] = {
 			"Contraption" : "None",
 		}

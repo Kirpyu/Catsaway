@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://capdqlkjkft3u"]
+
+[ext_resource type="Texture2D" uid="uid://cqtkrnwekipvg" path="res://Assets/tile_0127.png" id="1_ps73e"]
+[ext_resource type="Script" path="res://Contraptions/DropButtons/contraption_drop.gd" id="2_aemsp"]
+
+[node name="ContraptionDrop" type="Button"]
+icon = ExtResource("1_ps73e")
+flat = true
+script = ExtResource("2_aemsp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

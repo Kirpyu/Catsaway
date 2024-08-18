@@ -16,14 +16,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ngnp2"]
-radius = 8.0
+radius = 6.0
 height = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5nvk"]
-size = Vector2(18, 22)
+size = Vector2(23.3266, 18.9832)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvpjh"]
-size = Vector2(16, 20)
+size = Vector2(12, 20)
 
 [node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("hp_bar", "animated_sprite", "stop_timer", "hitbox_collision") groups=["Enemy"]]
 position = Vector2(40, 168)
@@ -38,12 +38,16 @@ stop_timer = NodePath("StopTimer")
 hitbox_collision = NodePath("Hitbox/CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.949458, 1.02706)
 sprite_frames = SubResource("SpriteFrames_g0bun")
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ngnp2")
 
 [node name="Hitbox" type="Area2D" parent="."]
+scale = Vector2(0.683063, 0.64983)
 collision_layer = 0
 collision_mask = 2
 monitorable = false
@@ -54,6 +58,7 @@ position = Vector2(17, 1)
 shape = SubResource("RectangleShape2D_b5nvk")
 
 [node name="Hurtbox" type="Area2D" parent="."]
+rotation = 1.5708
 collision_layer = 4
 collision_mask = 0
 monitoring = false

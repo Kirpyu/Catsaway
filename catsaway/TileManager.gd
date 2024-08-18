@@ -3,7 +3,27 @@ extends Node
 var Land := {}
 @export var highlighted := false
 var available_expansion_tiles : Array[Vector2i]= []
+var available_contraption_tiles : Array[Vector2i] = []
 
+
+func _ready() -> void:
+	get_available_expansion_tiles()
+
+func get_tiles() -> Array[Vector2i]:
+	var temp_array : Array[Vector2i] = []
+	for tile in Land:
+		temp_array.append(string_to_vector2(tile))
+	
+	return temp_array
+
+func get_available_contraption_tiles() -> Array[Vector2i]:
+	available_contraption_tiles.clear()
+	for tile in Land:
+		if Land.get(tile)["Contraption"] == "None":
+			available_contraption_tiles.append(string_to_vector2(tile))
+			
+	return available_contraption_tiles
+	
 func get_available_expansion_tiles() -> Array[Vector2i]:
 	available_expansion_tiles.clear()
 	
