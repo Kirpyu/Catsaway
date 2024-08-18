@@ -21,6 +21,14 @@ var contraption_dic : Dictionary = {
 	"Pawsplosion": {
 		"Script": "res://Contraptions/Pawsplosion/pawsplosion.tscn"
 	},
+	
+	"LaserToy": {
+		"Script": "res://Contraptions/LaserToy/laser_toy.tscn"
+	},
+	
+	"FeatherToy": {
+		"Script": "res://Contraptions/FeatherToy/feather_toy.tscn"
+	},
 }
 
 func create_contraption(contraption_name: String) -> Contraption:

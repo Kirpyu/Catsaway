@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://btmprov0bubk0"]
+
+[ext_resource type="PackedScene" uid="uid://dig3kafsq7df1" path="res://Contraptions/contraption_base.tscn" id="1_mw44f"]
+[ext_resource type="Script" path="res://Contraptions/FeatherToy/feather_toy.gd" id="2_4k243"]
+[ext_resource type="Script" path="res://Projectiles/projectile_resource.gd" id="3_bnxwm"]
+[ext_resource type="Texture2D" uid="uid://cpan0gmsjnqm6" path="res://Assets/ContraptionAssets/FeatherToy/StandFeatherToy.png" id="3_ywshb"]
+[ext_resource type="Texture2D" uid="uid://bms2pow4n4s5c" path="res://Assets/ContraptionAssets/FeatherToy/FeatherToy.png" id="4_y52dt"]
+
+[sub_resource type="Resource" id="Resource_oy20n"]
+script = ExtResource("3_bnxwm")
+damage = 30
+level = 0
+speed = 0
+collat = 0
+size = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfbg6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ywshb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_blggd"]
+radius = 2.0
+height = 38.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sqgpi"]
+radius = 9.05539
+
+[node name="FeatherToy" node_paths=PackedStringArray("middle") instance=ExtResource("1_mw44f")]
+position = Vector2(0, -1)
+script = ExtResource("2_4k243")
+middle = NodePath("Middle")
+feather_toy_resource = SubResource("Resource_oy20n")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_cfbg6")
+animation = &"default"
+
+[node name="SpawnPoint" parent="." index="1"]
+position = Vector2(0, -5)
+
+[node name="Middle" type="Marker2D" parent="." index="3"]
+position = Vector2(0, -12)
+
+[node name="Sprite2D" type="Sprite2D" parent="Middle" index="0"]
+position = Vector2(24, 0)
+scale = Vector2(3, 1)
+texture = ExtResource("4_y52dt")
+
+[node name="StickHitbox" type="Area2D" parent="Middle" index="1"]
+position = Vector2(0, 7)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle/StickHitbox" index="0"]
+position = Vector2(19, -7)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_blggd")
+
+[node name="HeadHitbox" type="Area2D" parent="Middle" index="2"]
+position = Vector2(0, 7)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle/HeadHitbox" index="0"]
+position = Vector2(42, -7)
+shape = SubResource("CircleShape2D_sqgpi")
+
+[connection signal="area_entered" from="Middle/StickHitbox" to="." method="_on_stick_hitbox_area_entered"]
+[connection signal="area_entered" from="Middle/HeadHitbox" to="." method="_on_head_hitbox_area_entered"]

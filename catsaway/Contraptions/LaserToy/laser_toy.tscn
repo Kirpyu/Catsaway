@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://dq7h4rin30j8h"]
+
+[ext_resource type="PackedScene" uid="uid://dig3kafsq7df1" path="res://Contraptions/contraption_base.tscn" id="1_52lhp"]
+[ext_resource type="Script" path="res://Contraptions/LaserToy/laser_toy.gd" id="2_isrhj"]
+[ext_resource type="Texture2D" uid="uid://dyyrym1sff50h" path="res://Assets/ContraptionAssets/LaserToy/LaserPointer-Sheet.png" id="2_qjiou"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mymyo"]
+atlas = ExtResource("2_qjiou")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5613k"]
+atlas = ExtResource("2_qjiou")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4blw"]
+atlas = ExtResource("2_qjiou")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skmiw"]
+atlas = ExtResource("2_qjiou")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjo4d"]
+atlas = ExtResource("2_qjiou")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kofx2"]
+atlas = ExtResource("2_qjiou")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bs6q7"]
+atlas = ExtResource("2_qjiou")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygae1"]
+atlas = ExtResource("2_qjiou")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fpji"]
+atlas = ExtResource("2_qjiou")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nl0xj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mymyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5613k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4blw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skmiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjo4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kofx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bs6q7")
+}],
+"loop": true,
+"name": &"shooting",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygae1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fpji")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 1.0
+}]
+
+[node name="LaserToy" instance=ExtResource("1_52lhp")]
+script = ExtResource("2_isrhj")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(0.997413, 0.993607)
+sprite_frames = SubResource("SpriteFrames_nl0xj")
+
+[node name="SpawnPoint" parent="." index="1"]
+position = Vector2(7, 3)
+
+[node name="ShootCooldown" parent="." index="2"]
+wait_time = 3.0

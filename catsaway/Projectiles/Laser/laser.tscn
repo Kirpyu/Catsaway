@@ -1,0 +1,162 @@
+[gd_scene load_steps=20 format=3 uid="uid://cun6sqxjbj22n"]
+
+[ext_resource type="PackedScene" uid="uid://d1fq03r5qo24p" path="res://Projectiles/projectile_base.tscn" id="1_610tb"]
+[ext_resource type="Script" path="res://Projectiles/Laser/laser.gd" id="2_grgut"]
+[ext_resource type="Texture2D" uid="uid://dnhnekb0q8057" path="res://Assets/ContraptionAssets/LaserToy/laserBeam-Sheet.png" id="2_lktqs"]
+[ext_resource type="Script" path="res://Projectiles/projectile_resource.gd" id="3_enl6q"]
+
+[sub_resource type="Resource" id="Resource_kigf6"]
+script = ExtResource("3_enl6q")
+damage = 5
+level = 0
+speed = 0
+collat = 0
+size = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s8vt6"]
+radius = 1.98061
+height = 62.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75mk5"]
+atlas = ExtResource("2_lktqs")
+region = Rect2(0, 0, 24, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws420"]
+atlas = ExtResource("2_lktqs")
+region = Rect2(24, 0, 24, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpf42"]
+atlas = ExtResource("2_lktqs")
+region = Rect2(48, 0, 24, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxdeh"]
+atlas = ExtResource("2_lktqs")
+region = Rect2(72, 0, 24, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22p33"]
+atlas = ExtResource("2_lktqs")
+region = Rect2(96, 0, 24, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_or642"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75mk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws420")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpf42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxdeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22p33")
+}],
+"loop": false,
+"name": &"startup",
+"speed": 20.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5usp"]
+atlas = ExtResource("2_lktqs")
+region = Rect2(144, 0, 24, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dnxe"]
+atlas = ExtResource("2_lktqs")
+region = Rect2(120, 0, 24, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80yc3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5usp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dnxe")
+}],
+"loop": true,
+"name": &"shooting",
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2qcx"]
+atlas = ExtResource("2_lktqs")
+region = Rect2(168, 0, 24, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqaq0"]
+atlas = ExtResource("2_lktqs")
+region = Rect2(192, 0, 24, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_walim"]
+atlas = ExtResource("2_lktqs")
+region = Rect2(216, 0, 24, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fj8rc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2qcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqaq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_walim")
+}],
+"loop": false,
+"name": &"end",
+"speed": 20.0
+}]
+
+[node name="Laser" node_paths=PackedStringArray("attacking_sprite", "end_sprite", "laser_time", "laser_tick", "hitbox") instance=ExtResource("1_610tb")]
+script = ExtResource("2_grgut")
+attacking_sprite = NodePath("AttackingSprite")
+end_sprite = NodePath("EndSprite")
+laser_time = NodePath("LaserTime")
+laser_tick = NodePath("LaserTick")
+hitbox = NodePath("CollisionShape2D")
+projectile_resource = SubResource("Resource_kigf6")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(31, 7.04858e-12)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_s8vt6")
+disabled = true
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(31, 0)
+rotation = 0.0
+scale = Vector2(2.5, 1)
+sprite_frames = SubResource("SpriteFrames_or642")
+animation = &"startup"
+frame_progress = 0.0
+
+[node name="LaserTime" type="Timer" parent="." index="2"]
+wait_time = 1.5
+one_shot = true
+
+[node name="AttackingSprite" type="AnimatedSprite2D" parent="." index="3"]
+position = Vector2(31, 0)
+scale = Vector2(2.5, 1)
+sprite_frames = SubResource("SpriteFrames_80yc3")
+animation = &"shooting"
+frame_progress = 0.417069
+
+[node name="LaserTick" type="Timer" parent="." index="4"]
+wait_time = 0.1
+
+[node name="DespawnTimer" parent="." index="5"]
+wait_time = 100.0
+
+[node name="EndSprite" type="AnimatedSprite2D" parent="." index="6"]
+position = Vector2(31, 0)
+sprite_frames = SubResource("SpriteFrames_fj8rc")
+animation = &"end"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="LaserTime" to="." method="_on_laser_time_timeout"]
+[connection signal="timeout" from="LaserTick" to="." method="_on_laser_tick_timeout"]
+[connection signal="animation_finished" from="EndSprite" to="." method="_on_end_sprite_animation_finished"]

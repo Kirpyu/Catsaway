@@ -32,3 +32,5 @@ func _on_area_entered(area: Area2D) -> void:
 		if collat == 0:
 			queue_free()
 	
+func _on_despawn_timer_timeout() -> void:
+	queue_free()
