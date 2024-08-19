@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Contraptions/contraptions.gd" id="6_cq402"]
 [ext_resource type="AudioStream" uid="uid://dl4x7w3gpux76" path="res://Assets/ContraptionAssets/FishingCast.wav" id="7_s1jj7"]
 [ext_resource type="AudioStream" uid="uid://nrvrkbqugi" path="res://Assets/SFX/OST.mp3" id="9_ejpwg"]
-[ext_resource type="PackedScene" uid="uid://biwq6dmqarhqi" path="res://Characters/EnemyCharacters/normal_fish.tscn" id="9_gvoe7"]
+[ext_resource type="PackedScene" uid="uid://bhcj1yt8gjhye" path="res://Characters/EnemyCharacters/DummyFish/dummy_fish.tscn" id="10_wq7iq"]
 [ext_resource type="PackedScene" uid="uid://capdqlkjkft3u" path="res://Contraptions/DropButtons/contraption_drop.tscn" id="11_p0ty6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmbbl"]
@@ -603,9 +603,6 @@ volume_db = -17.802
 autoplay = true
 parameters/looping = true
 
-[node name="NormalFish" parent="." instance=ExtResource("9_gvoe7")]
-position = Vector2(209, 218)
-
 [node name="ContraptionDrop" parent="." instance=ExtResource("11_p0ty6")]
 offset_left = 334.0
 offset_top = 142.0
@@ -623,3 +620,6 @@ offset_left = 335.0
 offset_top = 202.0
 offset_right = 359.0
 offset_bottom = 226.0
+
+[node name="DummyFish" parent="." instance=ExtResource("10_wq7iq")]
+position = Vector2(229, 206)

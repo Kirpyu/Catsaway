@@ -22,7 +22,7 @@ func _input(_event: InputEvent) -> void:
 		var hovered_tile = ground_layer.local_to_map(get_global_mouse_position())
 		var select_layer =  get_tree().get_first_node_in_group("SelectLayer")
 		if select_layer.highlight_type == "Expansion":
-			if TileManager.available_expansion_tiles.has(hovered_tile) and TileManager.highlighted == true:
+			if TileManager.available_expansion_tiles.has(hovered_tile):
 				ground_layer.set_cells_terrain_connect([hovered_tile], 0, 0)
 				TileManager.Land[str(hovered_tile)] = {
 					"Contraption" : "None",
@@ -49,6 +49,7 @@ func _input(_event: InputEvent) -> void:
 							
 							select_layer.erase_highlight()
 							#$AudioStreamPlayer.play()
+							contraption_node.held_contraption = ""
 							contraption_node.held_drop.queue_free()
 						return
 	
