@@ -3,6 +3,7 @@ extends CharacterBody2D
 var direction :Vector2 = Vector2.ZERO
 @export var movespeed := 50
 @export var animated_sprite : AnimatedSprite2D
+@export var gold : int = 0
 
 func _physics_process(_delta):
 	direction = Input.get_vector("left","right","up","down").normalized()
@@ -24,6 +25,3 @@ func _input(_event: InputEvent) -> void:
 		
 
 #make the player lose when they touch the water
-
-func place_contraption():
-	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dnajxuepugrj7"]
+[gd_scene load_steps=18 format=4 uid="uid://dnajxuepugrj7"]
 
 [ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Water.png" id="1_ycfnc"]
 [ext_resource type="Texture2D" uid="uid://cw7yc1xnbokwk" path="res://Assets/Grass.png" id="3_ym75m"]
@@ -7,8 +7,9 @@
 [ext_resource type="Script" path="res://GameScene/select_layer.gd" id="5_346s7"]
 [ext_resource type="PackedScene" uid="uid://e8gbfx4vjpbd" path="res://Characters/Player/player.tscn" id="6_3b7j0"]
 [ext_resource type="Script" path="res://Contraptions/contraptions.gd" id="6_cq402"]
+[ext_resource type="AudioStream" uid="uid://dl4x7w3gpux76" path="res://Assets/ContraptionAssets/FishingCast.wav" id="7_s1jj7"]
 [ext_resource type="AudioStream" uid="uid://nrvrkbqugi" path="res://Assets/SFX/OST.mp3" id="9_ejpwg"]
-[ext_resource type="PackedScene" uid="uid://bhcj1yt8gjhye" path="res://Characters/EnemyCharacters/DummyFish/dummy_fish.tscn" id="10_wq7iq"]
+[ext_resource type="PackedScene" uid="uid://biwq6dmqarhqi" path="res://Characters/EnemyCharacters/normal_fish.tscn" id="9_gvoe7"]
 [ext_resource type="PackedScene" uid="uid://capdqlkjkft3u" path="res://Contraptions/DropButtons/contraption_drop.tscn" id="11_p0ty6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmbbl"]
@@ -587,6 +588,11 @@ script = ExtResource("5_346s7")
 [node name="Contraptions" type="Node2D" parent="." groups=["ContraptionNode"]]
 script = ExtResource("6_cq402")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Contraptions"]
+stream = ExtResource("7_s1jj7")
+volume_db = -6.559
+pitch_scale = 2.98
+
 [node name="Player" parent="." instance=ExtResource("6_3b7j0")]
 
 [node name="Tiles" type="Node2D" parent="."]
@@ -597,11 +603,23 @@ volume_db = -17.802
 autoplay = true
 parameters/looping = true
 
-[node name="ContraptionDrop" parent="." instance=ExtResource("11_p0ty6")]
-offset_left = 319.0
-offset_top = 201.0
-offset_right = 343.0
-offset_bottom = 225.0
+[node name="NormalFish" parent="." instance=ExtResource("9_gvoe7")]
+position = Vector2(209, 218)
 
-[node name="DummyFish" parent="." instance=ExtResource("10_wq7iq")]
-position = Vector2(244, 212)
+[node name="ContraptionDrop" parent="." instance=ExtResource("11_p0ty6")]
+offset_left = 334.0
+offset_top = 142.0
+offset_right = 358.0
+offset_bottom = 166.0
+
+[node name="ContraptionDrop2" parent="." instance=ExtResource("11_p0ty6")]
+offset_left = 340.0
+offset_top = 171.0
+offset_right = 364.0
+offset_bottom = 195.0
+
+[node name="ContraptionDrop3" parent="." instance=ExtResource("11_p0ty6")]
+offset_left = 335.0
+offset_top = 202.0
+offset_right = 359.0
+offset_bottom = 226.0

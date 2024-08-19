@@ -1,18 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://capdqlkjkft3u"]
 
-[ext_resource type="Texture2D" uid="uid://cqtkrnwekipvg" path="res://Assets/tile_0127.png" id="1_ps73e"]
+[ext_resource type="Texture2D" uid="uid://cpan0gmsjnqm6" path="res://Assets/ContraptionAssets/FeatherToy/StandFeatherToy.png" id="1_mpi33"]
 [ext_resource type="Script" path="res://Contraptions/DropButtons/contraption_drop.gd" id="2_aemsp"]
 
 [node name="ContraptionDrop" type="Button"]
 offset_right = 24.0
 offset_bottom = 24.0
 scale = Vector2(0.75, 0.75)
-icon = ExtResource("1_ps73e")
+action_mode = 0
+icon = ExtResource("1_mpi33")
 flat = true
 script = ExtResource("2_aemsp")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 1000.0
 one_shot = true
 autostart = true
 

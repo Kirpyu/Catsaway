@@ -24,6 +24,7 @@ func _input(_event: InputEvent) -> void:
 						
 #						deleting everything that j happened
 					select_layer.erase_highlight()
+					$AudioStreamPlayer.play()
 					held_drop.queue_free()
 					return
 

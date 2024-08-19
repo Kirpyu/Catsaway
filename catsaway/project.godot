@@ -23,6 +23,7 @@ EnemyManager="*res://Characters/EnemyCharacters/enemy_manager.gd"
 [display]
 
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Mouse sprites/Catpaw Mouse icon.png"
 
 [editor_plugins]
 
