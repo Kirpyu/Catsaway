@@ -7,7 +7,7 @@
 [node name="ContraptionDrop" type="Button"]
 offset_right = 24.0
 offset_bottom = 24.0
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 theme = ExtResource("1_8ec75")
 action_mode = 0
 icon = ExtResource("1_mpi33")

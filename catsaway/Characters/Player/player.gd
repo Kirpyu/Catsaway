@@ -3,8 +3,13 @@ extends CharacterBody2D
 var direction :Vector2 = Vector2.ZERO
 @export var movespeed := 50
 @export var animated_sprite : AnimatedSprite2D
-@export var gold : int = 0
+@onready var gold : int = 0
+@onready var tiles_created: float = 0
 
+@onready var tile_base_cost: float = 50
+@onready var tile_cost: int :
+	get:
+		return tile_base_cost * (2 ** tiles_created)
 func _physics_process(_delta):
 	direction = Input.get_vector("left","right","up","down").normalized()
 	set_velocity(direction * movespeed)
@@ -23,19 +28,24 @@ func _input(_event: InputEvent) -> void:
 		var select_layer =  get_tree().get_first_node_in_group("SelectLayer")
 		if select_layer.highlight_type == "Expansion":
 			if TileManager.available_expansion_tiles.has(hovered_tile):
-				ground_layer.set_cells_terrain_connect([hovered_tile], 0, 0)
-				TileManager.Land[str(hovered_tile)] = {
-					"Contraption" : "None",
-				}
-				
-				var new_tile: Tile = load("res://Tile/tile.tscn").instantiate()
-				
-	#			setting it up
-				ground_layer.tiles.add_child(new_tile)
-				new_tile.tile_name = str(hovered_tile)
-				new_tile.position = ground_layer.map_to_local(hovered_tile)
-				
-				select_layer.erase_highlight()
+				if gold >= tile_cost:
+#					check if gold is enough, then subtract it if enough and add to tiles creates
+					gold -= tile_cost
+					tiles_created += 1
+
+					ground_layer.set_cells_terrain_connect([hovered_tile], 0, 0)
+					TileManager.Land[str(hovered_tile)] = {
+						"Contraption" : "None",
+					}
+					
+					var new_tile: Tile = load("res://Tile/tile.tscn").instantiate()
+					
+		#			setting it up
+					ground_layer.tiles.add_child(new_tile)
+					new_tile.tile_name = str(hovered_tile)
+					new_tile.position = ground_layer.map_to_local(hovered_tile)
+					
+					select_layer.erase_highlight()
 				
 		if select_layer.highlight_type == "Contraption":
 			if TileManager.Land.has(str(hovered_tile)):

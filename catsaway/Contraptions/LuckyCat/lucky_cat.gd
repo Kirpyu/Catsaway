@@ -1,5 +1,8 @@
 extends Contraption
 
+@export var resource : ProjectileResource
+var floating_text = load("res://Characters/floating_text.tscn")
+
 func _ready() -> void:
 	animated_sprite.play("default")
 	
@@ -10,8 +13,6 @@ func get_closest_target():
 	pass
 
 func shoot():
-	get_closest_target()
-	var b = projectile.instantiate()
-	get_tree().root.add_child(b)
-	b.transform = spawn_point.global_transform
+	var player = get_tree().get_first_node_in_group("Player")
+	player.gold += 10 * (resource.level + 1)
 #	print money

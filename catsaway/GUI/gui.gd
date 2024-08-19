@@ -1,18 +1,8 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_expansion_pressed() -> void:
-	pass # Replace with function body.
+	var select_layer = get_tree().get_first_node_in_group("SelectLayer")
+	select_layer.highlight_tiles(TileManager.get_available_expansion_tiles(), "Expansion")
 
 
 func _on_repair_pressed() -> void:

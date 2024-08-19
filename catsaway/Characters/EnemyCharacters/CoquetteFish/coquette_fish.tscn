@@ -171,6 +171,7 @@ animations = [{
 script = ExtResource("2_7r2o1")
 speed = 15
 max_hp = 100
+gold_given = 50
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_q6aag")
@@ -178,10 +179,6 @@ animation = &"moving"
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2(13.1759, 0)
-scale = Vector2(1, 1)
-
-[node name="HPBar" parent="." index="4"]
-scale = Vector2(0.621444, 0.580616)
 
 [node name="DeathSprite2D" parent="." index="6"]
 sprite_frames = SubResource("SpriteFrames_mf44j")

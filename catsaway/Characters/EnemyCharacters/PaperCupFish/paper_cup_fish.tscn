@@ -172,6 +172,7 @@ scale = Vector2(0.75, 0.75)
 script = ExtResource("2_fu676")
 max_hp = 50
 attack = 20
+gold_given = 10
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ek7ri")

@@ -47,6 +47,7 @@ script = ExtResource("2_v6iia")
 speed = 50
 max_hp = 10
 attack = 50
+gold_given = 40
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 scale = Vector2(0.75, 0.812)
@@ -67,7 +68,6 @@ scale = Vector2(1.18958, 1.15925)
 [node name="HPBar" parent="." index="4"]
 offset_left = -28.0
 offset_right = -8.0
-scale = Vector2(0.621444, 0.580616)
 
 [node name="GPUParticles2D" type="CPUParticles2D" parent="." index="6"]
 modulate = Color(0.751006, 0.334377, 0.197695, 1)

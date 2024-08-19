@@ -1,8 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://cp81map0sf7e7"]
+[gd_scene load_steps=13 format=3 uid="uid://cp81map0sf7e7"]
 
 [ext_resource type="PackedScene" uid="uid://dig3kafsq7df1" path="res://Contraptions/contraption_base.tscn" id="1_l34e2"]
 [ext_resource type="Script" path="res://Contraptions/LuckyCat/lucky_cat.gd" id="2_20ai4"]
+[ext_resource type="Script" path="res://Projectiles/projectile_resource.gd" id="3_0qahr"]
 [ext_resource type="Texture2D" uid="uid://cmdem4u1nydj3" path="res://Assets/ContraptionAssets/LuckyCat/moneyMaker-Sheet.png" id="3_b66fx"]
+
+[sub_resource type="Resource" id="Resource_dfxcv"]
+script = ExtResource("3_0qahr")
+damage = 0
+level = 0
+speed = 0
+collat = 0
+size = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v1a6h"]
 atlas = ExtResource("3_b66fx")
@@ -56,6 +65,7 @@ animations = [{
 
 [node name="LuckyCat" instance=ExtResource("1_l34e2")]
 script = ExtResource("2_20ai4")
+resource = SubResource("Resource_dfxcv")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_dwq3a")

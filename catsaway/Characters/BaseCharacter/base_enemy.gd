@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var animated_sprite : AnimatedSprite2D
 @export var stop_timer : Timer
 @export var death_sprite : AnimatedSprite2D
+@export var gold_given : int
 
 #flicker hitbox to make it attack every . something seconds
 @export var hitbox_collision : CollisionShape2D
@@ -62,11 +63,21 @@ func _on_stop_timer_timeout() -> void:
 #	drop a button which queues free after 10 secs. on button click, gain a building in inventory
 
 func create_drop():
-	var drop = load("res://Contraptions/DropButtons/contraption_drop.tscn").instantiate()
-	drop.drop_name = "YarnThrower"
-	get_tree().root.add_child(drop)
-	drop.position = self.global_position
+	var rng = RandomNumberGenerator.new()
+#	make that multiplactive with the wave number in the future
+	var rand_num = rng.randi_range(1,10) 
+	print(rand_num)
+	if rand_num == 20:
+		var drop = load("res://Contraptions/DropButtons/contraption_drop.tscn").instantiate()
+		drop.drop_name = "YarnThrower"
+		get_tree().root.add_child(drop)
+		drop.position = self.global_position
+
+func drop_gold():
+	var player = get_tree().get_first_node_in_group("Player")
+	player.gold += gold_given
 
 func _on_death_sprite_2d_animation_finished() -> void:
 	create_drop()
+	drop_gold()
 	queue_free()

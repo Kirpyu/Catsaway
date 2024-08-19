@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3627sk1yptr0"]
+
+[ext_resource type="Script" path="res://Characters/floating_text.gd" id="1_55a78"]
+[ext_resource type="FontFile" uid="uid://bmf66lwlqkfc3" path="res://Assets/Fonts/PixelifySans-Bold.ttf" id="1_mp2j3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2oqpl"]
+line_spacing = 5.0
+font = ExtResource("1_mp2j3")
+
+[node name="FloatingText" type="Label"]
+offset_left = 454.0
+offset_top = 161.0
+offset_right = 463.0
+offset_bottom = 184.0
+label_settings = SubResource("LabelSettings_2oqpl")
+script = ExtResource("1_55a78")

@@ -1,18 +1,19 @@
-[gd_scene load_steps=20 format=4 uid="uid://dnajxuepugrj7"]
+[gd_scene load_steps=22 format=4 uid="uid://dnajxuepugrj7"]
 
 [ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Icons/Water.png" id="1_ycfnc"]
 [ext_resource type="Texture2D" uid="uid://cw7yc1xnbokwk" path="res://Assets/Icons/Grass.png" id="3_ym75m"]
 [ext_resource type="Script" path="res://GameScene/ground_layer.gd" id="4_08v17"]
 [ext_resource type="Texture2D" uid="uid://cj4wyh8udn8fj" path="res://icon.svg" id="4_alf01"]
 [ext_resource type="Script" path="res://GameScene/select_layer.gd" id="5_346s7"]
+[ext_resource type="Texture2D" uid="uid://yf4hb8ugi8hn" path="res://Assets/Icons/select.png" id="5_tw5kq"]
 [ext_resource type="PackedScene" uid="uid://e8gbfx4vjpbd" path="res://Characters/Player/player.tscn" id="6_3b7j0"]
 [ext_resource type="Script" path="res://Contraptions/contraptions.gd" id="6_cq402"]
 [ext_resource type="AudioStream" uid="uid://dl4x7w3gpux76" path="res://Assets/ContraptionAssets/FishingCast.wav" id="7_s1jj7"]
 [ext_resource type="AudioStream" uid="uid://nrvrkbqugi" path="res://Assets/SFX/OST.mp3" id="9_ejpwg"]
-[ext_resource type="PackedScene" uid="uid://bhcj1yt8gjhye" path="res://Characters/EnemyCharacters/DummyFish/dummy_fish.tscn" id="10_wq7iq"]
 [ext_resource type="PackedScene" uid="uid://capdqlkjkft3u" path="res://Contraptions/DropButtons/contraption_drop.tscn" id="11_p0ty6"]
 [ext_resource type="PackedScene" uid="uid://dp0urywp01v5y" path="res://GUI/gui.tscn" id="12_s5ijn"]
-[ext_resource type="PackedScene" uid="uid://bi8nhp80372da" path="res://GUI/stats_ui.tscn" id="13_fvl0w"]
+[ext_resource type="PackedScene" uid="uid://cvc0gtyqqk1rm" path="res://GUI/stats_ui.tscn" id="13_fvl0w"]
+[ext_resource type="PackedScene" uid="uid://biwq6dmqarhqi" path="res://Characters/EnemyCharacters/normal_fish.tscn" id="14_mpa2u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmbbl"]
 texture = ExtResource("1_ycfnc")
@@ -566,8 +567,13 @@ texture = ExtResource("4_alf01")
 6:7/0 = 0
 7:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1t7vm"]
+texture = ExtResource("5_tw5kq")
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_2pe3e"]
 sources/0 = SubResource("TileSetAtlasSource_3etjk")
+sources/3 = SubResource("TileSetAtlasSource_1t7vm")
 
 [node name="TestScene" type="Node2D"]
 
@@ -623,9 +629,7 @@ offset_left = 335.0
 offset_top = 202.0
 offset_right = 359.0
 offset_bottom = 226.0
-
-[node name="DummyFish" parent="." instance=ExtResource("10_wq7iq")]
-position = Vector2(229, 206)
+drop_name = "LuckyCat"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -643,3 +647,6 @@ theme_override_constants/margin_bottom = 11
 
 [node name="GUI" parent="CanvasLayer/MarginContainer" instance=ExtResource("12_s5ijn")]
 layout_mode = 2
+
+[node name="NormalFish" parent="." instance=ExtResource("14_mpa2u")]
+position = Vector2(179, 194)

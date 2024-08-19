@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dx3obqeiafc1l" path="res://GUI/GUI_Theme.tres" id="1_6wcit"]
 [ext_resource type="Script" path="res://GUI/gui.gd" id="1_r8enw"]
-[ext_resource type="Texture2D" uid="uid://cxbkcrkl488wu" path="res://Assets/ContraptionAssets/CheeseCannon/cannon-icon.png" id="2_i2xoc"]
+[ext_resource type="Texture2D" uid="uid://dd74j0qvurxui" path="res://Assets/Icons/Hammer.png" id="3_awf45"]
 [ext_resource type="Texture2D" uid="uid://cmby8iggue7g0" path="res://Assets/Icons/wrench.png" id="3_brmmy"]
 
 [node name="GUI" type="Control" groups=["GUI"]]
@@ -63,7 +63,7 @@ theme = ExtResource("1_6wcit")
 [node name="Expansion" type="Button" parent="Panel/VBoxContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-icon = ExtResource("2_i2xoc")
+icon = ExtResource("3_awf45")
 expand_icon = true
 
 [node name="Repair" type="Button" parent="Panel/VBoxContainer/MarginContainer/HBoxContainer"]
