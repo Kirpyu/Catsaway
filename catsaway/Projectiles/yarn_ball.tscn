@@ -1,7 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://bl111kfke840x"]
+[gd_scene load_steps=12 format=3 uid="uid://bl111kfke840x"]
 
 [ext_resource type="PackedScene" uid="uid://d1fq03r5qo24p" path="res://Projectiles/projectile_base.tscn" id="1_ibro4"]
+[ext_resource type="Script" path="res://Projectiles/projectile_resource.gd" id="2_kitic"]
 [ext_resource type="Texture2D" uid="uid://dp5vj4mo3mkjw" path="res://Assets/ContraptionAssets/YarnThrower/YarnBall-Sheet.png" id="2_ov7ko"]
+
+[sub_resource type="Resource" id="Resource_jd2k3"]
+script = ExtResource("2_kitic")
+damage = 20
+level = 0
+speed = 100
+collat = 3
+size = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jmub0"]
 atlas = ExtResource("2_ov7ko")
@@ -54,12 +63,11 @@ animations = [{
 }]
 
 [node name="YarnBall" instance=ExtResource("1_ibro4")]
-rotation = 4.71239
-
-[node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(3.57746e-08, 3)
+projectile_resource = SubResource("Resource_jd2k3")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(-3, 0)
+rotation = 0.0
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_pv8ea")
 frame_progress = 0.0

@@ -3,13 +3,13 @@ extends CharacterBody2D
 var direction :Vector2 = Vector2.ZERO
 @export var movespeed := 50
 @export var animated_sprite : AnimatedSprite2D
-@onready var gold : int = 50
+@onready var gold : int = 0
 @onready var tiles_created: float = 0
 
-@onready var tile_base_cost: float = 50
+@onready var tile_base_cost: float = 20
 @onready var tile_cost: int :
 	get:
-		return tile_base_cost * (2 ** tiles_created)
+		return tile_base_cost + floor(tile_base_cost * tiles_created/3 + 1.0)
 
 func _process(delta: float) -> void:
 	var starting_tile = get_tree().get_first_node_in_group("GroundLayer").local_to_map(self.global_position)

@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://fpbylu1wekdd"]
+
+[ext_resource type="Texture2D" uid="uid://jil6vs3tvaoh" path="res://Assets/Sprout Lands - UI Pack - Basic pack/money_sign.png" id="1_kdsly"]
+
+[resource]
+texture = ExtResource("1_kdsly")
+texture_margin_left = 2.0
+texture_margin_top = 8.0
+texture_margin_right = 2.0
+texture_margin_bottom = 3.0

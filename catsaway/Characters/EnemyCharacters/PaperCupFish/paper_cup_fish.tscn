@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://btq3ugis3wwqa"]
+[gd_scene load_steps=29 format=3 uid="uid://btq3ugis3wwqa"]
 
 [ext_resource type="PackedScene" uid="uid://dq1372dbm1qi8" path="res://Characters/BaseCharacter/base_enemy.tscn" id="1_a6qke"]
 [ext_resource type="Script" path="res://Characters/EnemyCharacters/PaperCupFish/paper_cup_fish.gd" id="2_fu676"]
 [ext_resource type="Texture2D" uid="uid://de3f1yoe7mfm8" path="res://Assets/CharacterAssets/Enemy/PaperCupFish/PaperCup_Headbutt-Sheet.png" id="3_laaoh"]
+[ext_resource type="Resource" uid="uid://cy1hnyyybmkeh" path="res://Characters/EnemyCharacters/PaperCupFish/paper_cup_fish.tres" id="3_vuyja"]
 [ext_resource type="Texture2D" uid="uid://cemj5h0bwyymf" path="res://Assets/CharacterAssets/Enemy/PaperCupFish/PaperCup_Move-Sheet(1).png" id="4_wnpfs"]
 [ext_resource type="Texture2D" uid="uid://xg2dq601s0vu" path="res://Assets/CharacterAssets/Enemy/PaperCupFish/PaperCup_Death-Sheet.png" id="5_axrri"]
 
@@ -170,9 +171,7 @@ animations = [{
 [node name="PaperCupFish" instance=ExtResource("1_a6qke")]
 scale = Vector2(0.75, 0.75)
 script = ExtResource("2_fu676")
-max_hp = 50
-attack = 20
-gold_given = 10
+enemy_resource = ExtResource("3_vuyja")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ek7ri")

@@ -1,28 +1,31 @@
 class_name BaseEnemy
 extends CharacterBody2D
 
-@export var speed := 40
-@export var max_hp := 30
+@export var enemy_resource: EnemyResource
 @export var hp : int
-@export var attack := 10
 @export var hp_bar : ProgressBar
 @export var animated_sprite : AnimatedSprite2D
 @export var stop_timer : Timer
 @export var death_sprite : AnimatedSprite2D
-@export var gold_given : int
+@export var fish_name: String
 
 #flicker hitbox to make it attack every . something seconds
 @export var hitbox_collision : CollisionShape2D
-
+@onready var speed = enemy_resource.speed
 var stopped := false
 var target : Tile
 
 
 func _ready() -> void:
 	get_closest_target()
-	hp_bar.max_value = max_hp
-	hp = max_hp
+	hp_bar.max_value = enemy_resource.max_hp
+	hp = enemy_resource.max_hp
 	update_hp()
+	
+	var ground_layer = get_tree().get_first_node_in_group("GroundLayer")
+	var current_pos = ground_layer.local_to_map(self.global_position)
+	if TileManager.Land.get(str(current_pos)) != null:
+		get_tree().get_first_node_in_group("EnemySpawner").spawn_enemy(fish_name)
 
 func hit(damage: int):
 	hp -= damage;
@@ -65,10 +68,10 @@ func _on_stop_timer_timeout() -> void:
 func create_drop():
 	var rng = RandomNumberGenerator.new()
 #	make that multiplactive with the wave number in the future
-	var rand_num = rng.randi_range(1,10) 
-	print(rand_num)
+	var spawn_wave_number = get_tree().get_first_node_in_group("EnemySpawner").current_wave
 	
-	if rand_num == 7:
+	var rand_num = rng.randi_range(1, 10 + spawn_wave_number)
+	if rand_num == 1:
 		var drop = load("res://Contraptions/DropButtons/contraption_drop.tscn").instantiate()
 		
 		drop.drop_name = ContraptionManager.contraption_dic.keys().pick_random()
@@ -77,7 +80,7 @@ func create_drop():
 
 func drop_gold():
 	var player = get_tree().get_first_node_in_group("Player")
-	player.gold += gold_given
+	player.gold += enemy_resource.gold_given
 
 func _on_death_sprite_2d_animation_finished() -> void:
 	create_drop()

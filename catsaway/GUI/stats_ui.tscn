@@ -1,20 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvc0gtyqqk1rm"]
+[gd_scene load_steps=14 format=3 uid="uid://cvc0gtyqqk1rm"]
 
 [ext_resource type="Theme" uid="uid://dx3obqeiafc1l" path="res://GUI/GUI_Theme.tres" id="1_2dkan"]
 [ext_resource type="Texture2D" uid="uid://jmp8ejly175u" path="res://Assets/Icons/face.png" id="2_0c3ql"]
-[ext_resource type="Texture2D" uid="uid://jil6vs3tvaoh" path="res://Assets/Sprout Lands - UI Pack - Basic pack/money_sign.png" id="3_re2qg"]
+[ext_resource type="StyleBox" uid="uid://fpbylu1wekdd" path="res://GUI/panel_thing.tres" id="3_q1muc"]
 [ext_resource type="Texture2D" uid="uid://c08wkm3que0b3" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/dupe.png" id="4_mibbi"]
 [ext_resource type="Script" path="res://GUI/gold_label.gd" id="5_m7dur"]
 [ext_resource type="FontFile" uid="uid://b4x7h14je8xrx" path="res://Assets/Fonts/gameFont.ttf" id="5_qtjcy"]
 [ext_resource type="Theme" uid="uid://g5v2nhacetj7" path="res://GUI/MenuTheme.tres" id="5_ym3jp"]
 [ext_resource type="Texture2D" uid="uid://cftkthc0m4ept" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/settings.png" id="6_hy0ox"]
+[ext_resource type="Texture2D" uid="uid://dd74j0qvurxui" path="res://Assets/Icons/Hammer.png" id="7_ypwch"]
+[ext_resource type="Script" path="res://GUI/upgrade_cost.gd" id="8_ys8c3"]
+[ext_resource type="Script" path="res://GUI/wave_indicator.gd" id="9_hecmh"]
+[ext_resource type="Script" path="res://GUI/stopwatch.gd" id="10_yfqr2"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hgyp"]
-texture = ExtResource("3_re2qg")
-texture_margin_left = 2.0
-texture_margin_top = 8.0
-texture_margin_right = 2.0
-texture_margin_bottom = 3.0
+[sub_resource type="LabelSettings" id="LabelSettings_wnsc4"]
+font = ExtResource("5_qtjcy")
+font_size = 52
 
 [node name="StatsUI" type="Control"]
 layout_mode = 3
@@ -35,17 +36,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/separation = 2
-
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_bottom = 0
-
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/MarginContainer2"]
-layout_mode = 2
-mouse_filter = 2
-theme = ExtResource("1_2dkan")
-show_percentage = false
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -100,7 +90,7 @@ expand_icon = true
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_0hgyp")
+theme_override_styles/panel = ExtResource("3_q1muc")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel"]
 layout_mode = 1
@@ -139,6 +129,47 @@ text = "0
 "
 script = ExtResource("5_m7dur")
 
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 11
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_q1muc")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("7_ypwch")
+
+[node name="UpgradeCost" type="Label" parent="VBoxContainer/MarginContainer2/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737656, 0.407593, 0.350051, 1)
+theme_override_fonts/font = ExtResource("5_qtjcy")
+theme_override_font_sizes/font_size = 20
+text = "20"
+script = ExtResource("8_ys8c3")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
@@ -149,7 +180,7 @@ offset_bottom = 40.0
 grow_horizontal = 0
 mouse_filter = 2
 theme = ExtResource("5_ym3jp")
-theme_override_constants/margin_top = 25
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 19
 
 [node name="Button" type="Button" parent="MarginContainer"]
@@ -157,3 +188,44 @@ custom_minimum_size = Vector2(50, 45)
 layout_mode = 2
 icon = ExtResource("6_hy0ox")
 expand_icon = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.0
+offset_right = 76.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme = ExtResource("1_2dkan")
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="WaveIndicator" type="Label" parent="MarginContainer2/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "WAVE 3"
+horizontal_alignment = 1
+script = ExtResource("9_hecmh")
+
+[node name="Timer" type="Timer" parent="MarginContainer2/CenterContainer/VBoxContainer/WaveIndicator"]
+wait_time = 30.0
+autostart = true
+
+[node name="Stopwatch" type="Label" parent="MarginContainer2/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "01:20"
+label_settings = SubResource("LabelSettings_wnsc4")
+script = ExtResource("10_yfqr2")
+
+[connection signal="timeout" from="MarginContainer2/CenterContainer/VBoxContainer/WaveIndicator/Timer" to="MarginContainer2/CenterContainer/VBoxContainer/WaveIndicator" method="_on_timer_timeout"]

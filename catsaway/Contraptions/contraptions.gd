@@ -34,7 +34,6 @@ func delete_drop(drop: Button):
 func handle_drop(drop: Button):
 	var select_layer =  get_tree().get_first_node_in_group("SelectLayer")
 	if held_contraption == "" and held_drop == null and select_layer.highlight_type != "Expansion":
-		print("no held item")
 		held_contraption = drop.drop_name
 		held_drop = drop
 		select_layer.highlight_tiles(TileManager.get_available_contraption_tiles(), "Contraption")

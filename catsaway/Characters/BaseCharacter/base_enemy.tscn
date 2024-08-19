@@ -1,8 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq1372dbm1qi8"]
+[gd_scene load_steps=10 format=3 uid="uid://dq1372dbm1qi8"]
 
 [ext_resource type="Script" path="res://Characters/BaseCharacter/base_enemy.gd" id="1_uaxxj"]
 [ext_resource type="Texture2D" uid="uid://cqtkrnwekipvg" path="res://Assets/Icons/tile_0127.png" id="2_0053t"]
+[ext_resource type="Script" path="res://Characters/BaseCharacter/enemy_resource.gd" id="2_atom3"]
 [ext_resource type="Script" path="res://Components/hitbox.gd" id="2_hn764"]
+
+[sub_resource type="Resource" id="Resource_vm3nd"]
+script = ExtResource("2_atom3")
+speed = 40
+max_hp = 30
+attack = 10
+gold_given = 5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g0bun"]
 animations = [{
@@ -30,8 +38,7 @@ position = Vector2(40, 168)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_uaxxj")
-speed = 10
-attack = 15
+enemy_resource = SubResource("Resource_vm3nd")
 hp_bar = NodePath("HPBar")
 animated_sprite = NodePath("AnimatedSprite2D")
 stop_timer = NodePath("StopTimer")

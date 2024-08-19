@@ -1,8 +1,10 @@
 extends BaseEnemy
 
 func _ready() -> void:
+	fish_name = "FlyingFish"
 	super._ready()
 	animated_sprite.play("moving")
+	
 
 func update_hp():
 	if hp <= 0:
@@ -18,7 +20,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.owner.has_method("hit") and area.owner.is_in_group("Tile"):
 		stopped = true
 		stop_timer.start()
-		area.owner.hit(attack)
+		area.owner.hit(enemy_resource.attack)
 		speed = 0
 		animated_sprite.visible = false
 		death_sprite.visible = true

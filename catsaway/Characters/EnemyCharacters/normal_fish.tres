@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3 uid="uid://cxwtlxa1nhegi"]
+
+[ext_resource type="Script" path="res://Characters/BaseCharacter/enemy_resource.gd" id="1_x5gtg"]
+
+[resource]
+script = ExtResource("1_x5gtg")
+speed = 20
+max_hp = 20
+attack = 10
+gold_given = 5

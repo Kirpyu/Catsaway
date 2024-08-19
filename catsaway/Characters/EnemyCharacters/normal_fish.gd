@@ -1,8 +1,11 @@
 extends BaseEnemy
 
 func _ready() -> void:
+	fish_name = "NormalFish"
 	super._ready()
 	animated_sprite.play("moving")
+	
+	
 
 func update_hp():
 	if hp <= 0:
@@ -19,7 +22,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		stop_timer.start()
 		animated_sprite.play("attacking")
 		velocity = Vector2(0,0)
-		area.owner.hit(attack)
+		area.owner.hit(enemy_resource.attack)
 			
 		hitbox_collision.set_deferred("disabled", true)
 		

@@ -68,12 +68,15 @@ script = ExtResource("2_hcsq8")
 projectile_resource = SubResource("Resource_fawpj")
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(4, 1.42109e-14)
+position = Vector2(1.14441e-05, 1.14441e-05)
 rotation = 1.5708
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CapsuleShape2D_txtkv")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(-2.99999, 1.14441e-05)
 rotation = 4.71239
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_40tv0")
 frame = 5
 frame_progress = 1.0

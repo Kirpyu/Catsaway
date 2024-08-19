@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://jdfr5ophq6ok"]
+[gd_scene load_steps=29 format=3 uid="uid://jdfr5ophq6ok"]
 
 [ext_resource type="PackedScene" uid="uid://dq1372dbm1qi8" path="res://Characters/BaseCharacter/base_enemy.tscn" id="1_4ihlv"]
 [ext_resource type="Texture2D" uid="uid://b2bwpikjtlpxl" path="res://Assets/CharacterAssets/Enemy/ProjectileFish/Projectile_Move-Sheet.png" id="2_6au3t"]
 [ext_resource type="Texture2D" uid="uid://cj65rxpuctn64" path="res://Assets/CharacterAssets/Enemy/ProjectileFish/Projectile_Headbutt-Sheet.png" id="2_6egde"]
 [ext_resource type="Script" path="res://Characters/EnemyCharacters/ProjectileFish/projectile_fish.gd" id="2_vaas5"]
+[ext_resource type="Resource" uid="uid://b37unyjf5t828" path="res://Characters/EnemyCharacters/ProjectileFish/projectile_fish.tres" id="3_uo6hi"]
 [ext_resource type="Texture2D" uid="uid://c45p5bh2uwkbq" path="res://Assets/CharacterAssets/Enemy/ProjectileFish/Projectile_Death-Sheet.png" id="4_c2w6r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqulg"]
@@ -170,8 +171,7 @@ animations = [{
 [node name="ProjectileFish" instance=ExtResource("1_4ihlv")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("2_vaas5")
-speed = 15
-gold_given = 25
+enemy_resource = ExtResource("3_uo6hi")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ypm6c")

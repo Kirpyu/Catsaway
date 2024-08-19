@@ -1,8 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://biwq6dmqarhqi"]
+[gd_scene load_steps=36 format=3 uid="uid://biwq6dmqarhqi"]
 
 [ext_resource type="PackedScene" uid="uid://dq1372dbm1qi8" path="res://Characters/BaseCharacter/base_enemy.tscn" id="1_exki4"]
 [ext_resource type="Script" path="res://Characters/EnemyCharacters/normal_fish.gd" id="2_lig43"]
 [ext_resource type="Texture2D" uid="uid://bj85ywhpfn2xx" path="res://Assets/CharacterAssets/Enemy/NormalFish/Normal_Headbutt-Sheet.png" id="3_264e6"]
+[ext_resource type="Resource" uid="uid://cxwtlxa1nhegi" path="res://Characters/EnemyCharacters/normal_fish.tres" id="3_egbm8"]
 [ext_resource type="Texture2D" uid="uid://cbds43htlfp2y" path="res://Assets/CharacterAssets/Enemy/NormalFish/Normal_Move-Sheet.png" id="3_w77fg"]
 [ext_resource type="Texture2D" uid="uid://cj1gd2hb0weib" path="res://Assets/CharacterAssets/Enemy/NormalFish/Normal_Death-Sheet.png" id="4_jatgs"]
 
@@ -224,8 +225,7 @@ animations = [{
 [node name="NormalFish" instance=ExtResource("1_exki4")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("2_lig43")
-speed = 20
-gold_given = 5
+enemy_resource = ExtResource("3_egbm8")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_08cct")

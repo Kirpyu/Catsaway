@@ -1,8 +1,10 @@
 extends BaseEnemy
 
 func _ready() -> void:
+	fish_name = "ProjectileFish"
 	super._ready()
 	animated_sprite.play("moving")
+	
 
 func update_hp():
 	if hp <= 0:
@@ -19,7 +21,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		stop_timer.start()
 		animated_sprite.play("attacking")
 		velocity = Vector2(0,0)
-		area.owner.hit(attack)
+		area.owner.hit(enemy_resource.attack)
 			
 		hitbox_collision.set_deferred("disabled", true)
 		
@@ -33,7 +35,7 @@ func _process(_delta: float) -> void:
 		get_closest_target()
 	elif !stopped:
 		var direction = target.global_position - self.global_position
-		velocity = direction.normalized() * speed 
+		velocity = direction.normalized() * enemy_resource.speed 
 		move_and_slide()
 		look_at(target.global_position)
 		if direction.length() < 50:
