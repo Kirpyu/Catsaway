@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw7yc1xnbokwk"
-path="res://.godot/imported/Grass.png-09595ac432dada4320fe75d2e4264f41.ctex"
+uid="uid://dq4uce70ox2t7"
+path="res://.godot/imported/money_sign.png-cad7495047eb2bb33b1cb6e59652d5af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Grass.png"
-dest_files=["res://.godot/imported/Grass.png-09595ac432dada4320fe75d2e4264f41.ctex"]
+source_file="res://Characters/EnemyCharacters/money_sign.png"
+dest_files=["res://.godot/imported/money_sign.png-cad7495047eb2bb33b1cb6e59652d5af.ctex"]
 
 [params]
 

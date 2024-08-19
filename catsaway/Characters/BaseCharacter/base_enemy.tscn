@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dq1372dbm1qi8"]
 
 [ext_resource type="Script" path="res://Characters/BaseCharacter/base_enemy.gd" id="1_uaxxj"]
-[ext_resource type="Texture2D" uid="uid://cqtkrnwekipvg" path="res://Assets/tile_0127.png" id="2_0053t"]
+[ext_resource type="Texture2D" uid="uid://cqtkrnwekipvg" path="res://Assets/Icons/tile_0127.png" id="2_0053t"]
 [ext_resource type="Script" path="res://Components/hitbox.gd" id="2_hn764"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g0bun"]

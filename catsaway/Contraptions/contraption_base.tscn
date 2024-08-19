@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dig3kafsq7df1"]
 
 [ext_resource type="Script" path="res://Contraptions/contraption_base.gd" id="1_kj04u"]
-[ext_resource type="Texture2D" uid="uid://cqtkrnwekipvg" path="res://Assets/tile_0127.png" id="2_mnu0i"]
+[ext_resource type="Texture2D" uid="uid://cqtkrnwekipvg" path="res://Assets/Icons/tile_0127.png" id="2_mnu0i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yyatc"]
 animations = [{

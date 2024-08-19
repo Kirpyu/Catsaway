@@ -4,17 +4,17 @@
 [ext_resource type="FontFile" uid="uid://bmf66lwlqkfc3" path="res://Assets/Fonts/PixelifySans-Bold.ttf" id="1_momm4"]
 [ext_resource type="Texture2D" uid="uid://ckpkhtym8dvuh" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="4_qrplp"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sysj4"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2i657"]
+texture = ExtResource("4_qrplp")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+region_rect = Rect2(59, 59, 26, 26)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wdsdn"]
 texture = ExtResource("4_qrplp")
@@ -112,7 +112,7 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 25
 Button/fonts/font = ExtResource("1_momm4")
-Button/styles/disabled = SubResource("StyleBoxFlat_sysj4")
+Button/styles/disabled = SubResource("StyleBoxTexture_2i657")
 Button/styles/focus = SubResource("StyleBoxTexture_wdsdn")
 Button/styles/hover = SubResource("StyleBoxTexture_n4vr8")
 Button/styles/normal = SubResource("StyleBoxTexture_kbtmb")

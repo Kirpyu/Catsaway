@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi8nhp80372da"]
+[gd_scene load_steps=8 format=3 uid="uid://bi8nhp80372da"]
 
 [ext_resource type="Theme" uid="uid://dx3obqeiafc1l" path="res://GUI/GUI_Theme.tres" id="1_2dkan"]
+[ext_resource type="Texture2D" uid="uid://jmp8ejly175u" path="res://Assets/Icons/face.png" id="2_0c3ql"]
+[ext_resource type="Texture2D" uid="uid://jil6vs3tvaoh" path="res://Assets/Sprout Lands - UI Pack - Basic pack/money_sign.png" id="3_re2qg"]
+[ext_resource type="Texture2D" uid="uid://c08wkm3que0b3" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/dupe.png" id="4_mibbi"]
+[ext_resource type="Theme" uid="uid://68pf26np1kay" path="res://GUI/MenuTheme.tres" id="5_ym3jp"]
+[ext_resource type="Texture2D" uid="uid://c5o67muvjaaje" path="res://GUI/settings.png" id="6_gg4m6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0hgyp"]
+texture = ExtResource("3_re2qg")
+texture_margin_left = 2.0
+texture_margin_top = 8.0
+texture_margin_right = 2.0
+texture_margin_bottom = 3.0
 
 [node name="StatsUI" type="Control"]
 layout_mode = 3
@@ -9,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -18,26 +31,124 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_bottom = 0
 
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/MarginContainer2"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("1_2dkan")
 show_percentage = false
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_top = 0
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 13
+theme_override_constants/margin_top = 12
 
 [node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(240, 75)
 layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("1_2dkan")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/Panel"]
-layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 123.0
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
 size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(55, 55)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("1_2dkan")
+disabled = true
+icon = ExtResource("2_0c3ql")
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0hgyp")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 27)
+layout_mode = 2
+localize_numeral_system = false
+mouse_filter = 2
+texture = ExtResource("4_mibbi")
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_2dkan")
+theme_override_colors/font_color = Color(0.737656, 0.407593, 0.350051, 1)
+theme_override_font_sizes/font_size = 29
+text = "0
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+mouse_filter = 2
+theme = ExtResource("5_ym3jp")
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 22
+
+[node name="Button" type="Button" parent="MarginContainer"]
+custom_minimum_size = Vector2(50, 45)
+layout_mode = 2
+icon = ExtResource("6_gg4m6")

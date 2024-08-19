@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp0urywp01v5y"]
+[gd_scene load_steps=5 format=3 uid="uid://dp0urywp01v5y"]
 
 [ext_resource type="Theme" uid="uid://dx3obqeiafc1l" path="res://GUI/GUI_Theme.tres" id="1_6wcit"]
-[ext_resource type="Texture2D" uid="uid://ceo1126x1t7a0" path="res://Assets/ContraptionAssets/YarnThrower/Yarn_Thrower-Icon.png" id="2_c14mx"]
+[ext_resource type="Script" path="res://GUI/gui.gd" id="1_r8enw"]
 [ext_resource type="Texture2D" uid="uid://cxbkcrkl488wu" path="res://Assets/ContraptionAssets/CheeseCannon/cannon-icon.png" id="2_i2xoc"]
+[ext_resource type="Texture2D" uid="uid://cmby8iggue7g0" path="res://Assets/Icons/wrench.png" id="3_brmmy"]
 
 [node name="GUI" type="Control" groups=["GUI"]]
 layout_mode = 3
@@ -14,6 +15,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
+script = ExtResource("1_r8enw")
 
 [node name="Panel" type="Panel" parent="."]
 layout_direction = 1
@@ -64,10 +66,13 @@ layout_mode = 2
 icon = ExtResource("2_i2xoc")
 expand_icon = true
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Repair" type="Button" parent="Panel/VBoxContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("1_6wcit")
-icon = ExtResource("2_c14mx")
+icon = ExtResource("3_brmmy")
 expand_icon = true
+
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/Expansion" to="." method="_on_expansion_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/Repair" to="." method="_on_repair_pressed"]

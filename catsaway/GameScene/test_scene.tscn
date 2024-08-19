@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=4 uid="uid://dnajxuepugrj7"]
 
-[ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Water.png" id="1_ycfnc"]
-[ext_resource type="Texture2D" uid="uid://cw7yc1xnbokwk" path="res://Assets/Grass.png" id="3_ym75m"]
+[ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Icons/Water.png" id="1_ycfnc"]
+[ext_resource type="Texture2D" uid="uid://cw7yc1xnbokwk" path="res://Assets/Icons/Grass.png" id="3_ym75m"]
 [ext_resource type="Script" path="res://GameScene/ground_layer.gd" id="4_08v17"]
 [ext_resource type="Texture2D" uid="uid://cj4wyh8udn8fj" path="res://icon.svg" id="4_alf01"]
 [ext_resource type="Script" path="res://GameScene/select_layer.gd" id="5_346s7"]
@@ -630,6 +630,8 @@ position = Vector2(229, 206)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
 
+[node name="StatsUI" parent="CanvasLayer" instance=ExtResource("13_fvl0w")]
+
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -641,5 +643,3 @@ theme_override_constants/margin_bottom = 11
 
 [node name="GUI" parent="CanvasLayer/MarginContainer" instance=ExtResource("12_s5ijn")]
 layout_mode = 2
-
-[node name="StatsUI" parent="CanvasLayer" instance=ExtResource("13_fvl0w")]
