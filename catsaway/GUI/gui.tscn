@@ -25,22 +25,32 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_6wcit")
-metadata/_edit_use_anchors_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+layout_direction = 1
 layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("1_6wcit")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel"]
+layout_mode = 2
+offset_left = 521.0
+offset_top = -50.0
+offset_right = 631.0
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 10
 mouse_filter = 2
 theme = ExtResource("1_6wcit")
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Button2" type="Button" parent="VBoxContainer/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 icon = ExtResource("2_i2xoc")
 expand_icon = true
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 8
@@ -50,4 +60,5 @@ expand_icon = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 10
 theme = ExtResource("1_6wcit")

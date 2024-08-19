@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://capdqlkjkft3u"]
+[gd_scene load_steps=4 format=3 uid="uid://capdqlkjkft3u"]
 
+[ext_resource type="Theme" uid="uid://dx3obqeiafc1l" path="res://GUI/GUI_Theme.tres" id="1_8ec75"]
 [ext_resource type="Texture2D" uid="uid://cpan0gmsjnqm6" path="res://Assets/ContraptionAssets/FeatherToy/StandFeatherToy.png" id="1_mpi33"]
 [ext_resource type="Script" path="res://Contraptions/DropButtons/contraption_drop.gd" id="2_aemsp"]
 
 [node name="ContraptionDrop" type="Button"]
 offset_right = 24.0
 offset_bottom = 24.0
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("1_8ec75")
 action_mode = 0
 icon = ExtResource("1_mpi33")
-flat = true
 script = ExtResource("2_aemsp")
 
 [node name="Timer" type="Timer" parent="."]

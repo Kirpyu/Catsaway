@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dx3obqeiafc1l"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dx3obqeiafc1l"]
 
 [ext_resource type="Texture2D" uid="uid://caxjvhvnk4dwj" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/buttons/Square Buttons 26x26.png" id="1_1vivo"]
 [ext_resource type="FontFile" uid="uid://bmf66lwlqkfc3" path="res://Assets/Fonts/PixelifySans-Bold.ttf" id="1_momm4"]
 [ext_resource type="StyleBox" uid="uid://bcvtl6it6636g" path="res://GUI/ButtonTexture.tres" id="2_b5of8"]
+[ext_resource type="Texture2D" uid="uid://ckpkhtym8dvuh" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="4_qrplp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sysj4"]
 content_margin_left = 4.0
@@ -26,6 +27,18 @@ texture_margin_right = 10.0
 texture_margin_bottom = 1.0
 expand_margin_bottom = 10.0
 region_rect = Rect2(59, 61, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_blvhm"]
+texture = ExtResource("4_qrplp")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 6.0
+region_rect = Rect2(153, 57, 30, 31)
 
 [resource]
 default_font = ExtResource("1_momm4")
@@ -58,3 +71,4 @@ MarginContainer/constants/margin_bottom = 15
 MarginContainer/constants/margin_left = 0
 MarginContainer/constants/margin_right = 0
 MarginContainer/constants/margin_top = 0
+Panel/styles/panel = SubResource("StyleBoxTexture_blvhm")
