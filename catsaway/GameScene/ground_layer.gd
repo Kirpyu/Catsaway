@@ -4,24 +4,6 @@ var tile : Vector2i
 @export var tiles : Node2D
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("LMB"):
-		if TileManager.available_expansion_tiles.has(tile) and TileManager.highlighted == true:
-			var select_layer = get_tree().get_first_node_in_group("SelectLayer")
-			if select_layer.highlight_type == "Expansion":
-				set_cells_terrain_connect([tile], 0, 0)
-				TileManager.Land[str(tile)] = {
-					"Contraption" : "None",
-				}
-				
-				var new_tile: Tile = load("res://Tile/tile.tscn").instantiate()
-				
-	#			setting it up
-				tiles.add_child(new_tile)
-				new_tile.tile_name = str(tile)
-				new_tile.position = map_to_local(tile)
-				
-				select_layer.erase_highlight()
-			
 	if Input.is_action_just_pressed("f"):
 		set_cells_terrain_connect([tile], 0, -1)
 		
