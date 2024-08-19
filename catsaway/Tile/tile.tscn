@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Tile/tile.gd" id="1_ygqld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3ewb"]
+size = Vector2(16, 16)
 
 [node name="Tile" type="Node2D" node_paths=PackedStringArray("hp_bar") groups=["Tile"]]
 script = ExtResource("1_ygqld")
@@ -10,7 +11,7 @@ hp_bar = NodePath("HPBar")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 16
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -24,3 +25,5 @@ offset_bottom = 12.0
 scale = Vector2(0.890066, 0.380962)
 value = 50.0
 show_percentage = false
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

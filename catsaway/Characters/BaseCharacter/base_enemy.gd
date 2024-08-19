@@ -67,9 +67,11 @@ func create_drop():
 #	make that multiplactive with the wave number in the future
 	var rand_num = rng.randi_range(1,10) 
 	print(rand_num)
-	if rand_num == 20:
+	
+	if rand_num == 7:
 		var drop = load("res://Contraptions/DropButtons/contraption_drop.tscn").instantiate()
-		drop.drop_name = "YarnThrower"
+		
+		drop.drop_name = ContraptionManager.contraption_dic.keys().pick_random()
 		get_tree().root.add_child(drop)
 		drop.position = self.global_position
 

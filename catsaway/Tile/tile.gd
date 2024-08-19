@@ -6,6 +6,7 @@ extends Node2D
 
 var hp : int
 var tile_name : String = ""
+var water_tile : bool = true
 var enemy_attacking := false
 
 func _ready() -> void:
@@ -31,3 +32,11 @@ func update_hp() -> void:
 	else:
 		hp_bar.value = hp
 		
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.owner.has_method("hit") and area.owner.is_in_group("Enemy") and water_tile == true:
+		pass
+#		reroll\
+	if area.owner.is_in_group("Player") and water_tile == true:
+		get_tree().quit()

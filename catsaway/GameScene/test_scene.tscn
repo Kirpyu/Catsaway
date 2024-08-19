@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dnajxuepugrj7"]
+[gd_scene load_steps=23 format=4 uid="uid://dnajxuepugrj7"]
 
 [ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Icons/Water.png" id="1_ycfnc"]
 [ext_resource type="Texture2D" uid="uid://cw7yc1xnbokwk" path="res://Assets/Icons/Grass.png" id="3_ym75m"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dp0urywp01v5y" path="res://GUI/gui.tscn" id="12_s5ijn"]
 [ext_resource type="PackedScene" uid="uid://cvc0gtyqqk1rm" path="res://GUI/stats_ui.tscn" id="13_fvl0w"]
 [ext_resource type="PackedScene" uid="uid://biwq6dmqarhqi" path="res://Characters/EnemyCharacters/normal_fish.tscn" id="14_mpa2u"]
+[ext_resource type="PackedScene" uid="uid://82l5mmyeo8vx" path="res://Characters/EnemyCharacters/enemy_spawner.tscn" id="15_beml5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmbbl"]
 texture = ExtResource("1_ycfnc")
@@ -602,6 +603,10 @@ volume_db = -6.559
 pitch_scale = 2.98
 
 [node name="Player" parent="." instance=ExtResource("6_3b7j0")]
+
+[node name="EnemySpawner" parent="Player" instance=ExtResource("15_beml5")]
+position = Vector2(-372.586, -245.023)
+scale = Vector2(1.32362, 1.32798)
 
 [node name="Tiles" type="Node2D" parent="."]
 

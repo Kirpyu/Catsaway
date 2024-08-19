@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://82l5mmyeo8vx"]
+
+[ext_resource type="Script" path="res://Characters/EnemyCharacters/enemy_spawner.gd" id="1_sqyck"]
+
+[sub_resource type="Curve2D" id="Curve2D_ccvfj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 77, 58, 0, 0, 0, 0, 80.022, 300.976, 0, 0, 0, 0, 482.956, 303.988, 0, 0, 0, 0, 489, 61, 0, 0, 0, 0, 77, 58)
+}
+point_count = 5
+
+[node name="EnemySpawner" type="Path2D" node_paths=PackedStringArray("spawn_randomizer", "spawn_pos")]
+position = Vector2(0.560677, 0.232929)
+scale = Vector2(0.992718, 0.995984)
+curve = SubResource("Curve2D_ccvfj")
+script = ExtResource("1_sqyck")
+spawn_randomizer = NodePath("PathFollow2D")
+spawn_pos = NodePath("PathFollow2D/Marker2D")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(260.438, 59.3357)
+rotation = -3.13431
+progress = 1117.57
+
+[node name="Marker2D" type="Marker2D" parent="PathFollow2D"]
+
+[node name="NormalFishSpawner" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="PaperCupFishSpawner" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="CoquetteFishSpawner" type="Timer" parent="."]
+
+[node name="FlyingFishSpawner" type="Timer" parent="."]
+
+[node name="ProjectileFishSpawner" type="Timer" parent="."]
+
+[node name="RandomFishSpawner" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="NormalFishSpawner" to="." method="_on_normal_fish_spawner_timeout"]
+[connection signal="timeout" from="PaperCupFishSpawner" to="." method="_on_paper_cup_fish_spawner_timeout"]
+[connection signal="timeout" from="CoquetteFishSpawner" to="." method="_on_coquette_fish_spawner_timeout"]
+[connection signal="timeout" from="FlyingFishSpawner" to="." method="_on_flying_fish_spawner_timeout"]
+[connection signal="timeout" from="ProjectileFishSpawner" to="." method="_on_projectile_fish_spawner_timeout"]
+[connection signal="timeout" from="RandomFishSpawner" to="." method="_on_random_fish_spawner_timeout"]

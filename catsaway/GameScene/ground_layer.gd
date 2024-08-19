@@ -14,6 +14,7 @@ func _ready() -> void:
 	tiles.add_child(new_tile)
 	new_tile.tile_name = str(starting_tile)
 	new_tile.position = map_to_local(starting_tile)
+	new_tile.water_tile = false
 	
 	
 	TileManager.Land[str(starting_tile)] = {

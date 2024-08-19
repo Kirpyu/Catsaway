@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cupeeowpl3je0"]
+
+[ext_resource type="PackedScene" uid="uid://b6uogh3qtq3vp" path="res://Tile/tile.tscn" id="1_nrqhs"]
+
+[node name="WaterTile" instance=ExtResource("1_nrqhs")]

@@ -3,13 +3,19 @@ extends CharacterBody2D
 var direction :Vector2 = Vector2.ZERO
 @export var movespeed := 50
 @export var animated_sprite : AnimatedSprite2D
-@onready var gold : int = 0
+@onready var gold : int = 50
 @onready var tiles_created: float = 0
 
 @onready var tile_base_cost: float = 50
 @onready var tile_cost: int :
 	get:
 		return tile_base_cost * (2 ** tiles_created)
+
+func _process(delta: float) -> void:
+	var starting_tile = get_tree().get_first_node_in_group("GroundLayer").local_to_map(self.global_position)
+	if TileManager.Land.get(str(starting_tile)) == null:
+		get_tree().quit()
+	
 func _physics_process(_delta):
 	direction = Input.get_vector("left","right","up","down").normalized()
 	set_velocity(direction * movespeed)
@@ -20,6 +26,7 @@ func _physics_process(_delta):
 		animated_sprite.play("idle")
 	else:
 		animated_sprite.play("walking")
+		
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LMB"):

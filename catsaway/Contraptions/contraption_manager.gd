@@ -21,7 +21,7 @@ var contraption_dic : Dictionary = {
 	
 	"Pawsplosion": {
 		"Script": "res://Contraptions/Pawsplosion/pawsplosion.tscn",
-		"Icon": "res://Assets/ContraptionAssets/Pawsplosion/catTree.png"
+		"Icon": "res://Assets/ContraptionAssets/Pawsplosion/catTree-icon.png"
 	},
 	
 	"LaserToy": {

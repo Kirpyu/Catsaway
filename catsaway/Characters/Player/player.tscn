@@ -123,7 +123,7 @@ animations = [{
 top_level = true
 position = Vector2(280, 184)
 scale = Vector2(0.75, 0.75)
-collision_layer = 0
+collision_layer = 16
 script = ExtResource("1_g51ra")
 animated_sprite = NodePath("AnimatedSprite2D")
 
