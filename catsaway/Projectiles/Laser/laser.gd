@@ -14,7 +14,7 @@ func _on_area_entered(area: Area2D) -> void:
 		return
 
 	if area.owner.has_method("hit") and area.owner.is_in_group("Enemy"):
-		area.owner.hit(projectile_resource.damage)
+		area.owner.hit(damage)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	print("second step started")

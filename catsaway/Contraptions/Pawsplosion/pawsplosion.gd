@@ -21,3 +21,22 @@ func shoot():
 		get_tree().root.add_child(b)
 		b.transform = closest_enemy.global_transform
 		b.rotation_degrees -= 180
+	
+		match TileManager.Land[contraption_tile]["Level"]:
+			2:
+				shoot_cd.wait_time = 1.625
+				b.damage += 35
+				b.scale = Vector2(1.2,1.2)
+			3:
+				shoot_cd.wait_time = 1.25
+				b.damage += 70
+				b.scale = Vector2(1.4,1.4)
+			4:
+				shoot_cd.wait_time = 0.875
+				b.damage += 105
+				b.scale = Vector2(1.6,1.6)
+			5:
+				shoot_cd.wait_time = 0.5
+				b.damage += 140
+				b.scale = Vector2(2,2)
+	

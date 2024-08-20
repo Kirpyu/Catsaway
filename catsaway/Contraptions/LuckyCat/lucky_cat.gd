@@ -15,4 +15,13 @@ func get_closest_target():
 func shoot():
 	var player = get_tree().get_first_node_in_group("Player")
 	player.gold += 10 * (resource.level + 1)
-#	print money
+	
+	match TileManager.Land[contraption_tile]["Level"]:
+		2:
+			player.gold += 10 * (3)
+		3:
+			player.gold += 10 * (5)
+		4:
+			player.gold += 10 * (7)
+		5:
+			player.gold += 10 * (9)

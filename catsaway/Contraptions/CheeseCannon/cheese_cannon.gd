@@ -24,13 +24,16 @@ func shoot():
 		2:
 			shoot_cd.wait_time = 1.75
 			b.damage += 20
-			b.scale = Vector2(2,2)
+			b.scale = Vector2(1.2,1.2)
 		3:
 			shoot_cd.wait_time = 1.5
 			b.damage += 40
+			b.scale = Vector2(1.4,1.4)
 		4:
 			shoot_cd.wait_time = 1.25
 			b.damage += 60
+			b.scale = Vector2(1.6,1.6)
 		5:
 			shoot_cd.wait_time = 1
 			b.damage += 80
+			b.scale = Vector2(1.8,1.8)

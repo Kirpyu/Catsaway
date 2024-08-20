@@ -12,3 +12,10 @@ func _on_repair_pressed() -> void:
 func _on_upgrade_pressed() -> void:
 	var select_layer = get_tree().get_first_node_in_group("SelectLayer")
 	select_layer.highlight_tiles(TileManager.get_upgradable_tiles(), "Upgrade")
+
+
+func _on_button_pressed() -> void:
+	if %TutorialPanel.visible == false:
+		%TutorialPanel.show()
+	else:
+		%TutorialPanel.hide()

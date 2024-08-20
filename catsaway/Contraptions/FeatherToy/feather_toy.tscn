@@ -35,6 +35,7 @@ radius = 9.05539
 [node name="FeatherToy" node_paths=PackedStringArray("middle") instance=ExtResource("1_mw44f")]
 position = Vector2(0, -1)
 script = ExtResource("2_4k243")
+damage = 0
 middle = NodePath("Middle")
 feather_toy_resource = SubResource("Resource_oy20n")
 
