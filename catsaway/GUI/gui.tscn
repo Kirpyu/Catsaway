@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp0urywp01v5y"]
+[gd_scene load_steps=6 format=3 uid="uid://dp0urywp01v5y"]
 
 [ext_resource type="Theme" uid="uid://dx3obqeiafc1l" path="res://GUI/GUI_Theme.tres" id="1_6wcit"]
 [ext_resource type="Script" path="res://GUI/gui.gd" id="1_r8enw"]
 [ext_resource type="Texture2D" uid="uid://dd74j0qvurxui" path="res://Assets/Icons/Hammer.png" id="3_awf45"]
 [ext_resource type="Texture2D" uid="uid://cmby8iggue7g0" path="res://Assets/Icons/wrench.png" id="3_brmmy"]
+[ext_resource type="Texture2D" uid="uid://di3nqj8fg5ymd" path="res://Assets/Icons/Upgrade.png" id="5_bd1l1"]
 
 [node name="GUI" type="Control" groups=["GUI"]]
 layout_mode = 3
@@ -21,10 +22,10 @@ script = ExtResource("1_r8enw")
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.443
-anchor_top = 0.89
-anchor_right = 0.556
-anchor_bottom = 1.0
+anchor_left = 0.399597
+anchor_top = 0.888457
+anchor_right = 0.599403
+anchor_bottom = 1.00154
 offset_left = -0.336029
 offset_top = 0.279968
 offset_right = 0.487915
@@ -32,6 +33,7 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 10
 theme = ExtResource("1_6wcit")
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -72,6 +74,12 @@ layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("1_6wcit")
 icon = ExtResource("3_brmmy")
+expand_icon = true
+
+[node name="Upgrade" type="Button" parent="Panel/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+icon = ExtResource("5_bd1l1")
 expand_icon = true
 
 [connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/Expansion" to="." method="_on_expansion_pressed"]

@@ -15,6 +15,8 @@ extends CharacterBody2D
 var stopped := false
 var target : Tile
 
+func reset() -> void:
+	pass
 
 func _ready() -> void:
 	get_closest_target()
@@ -77,7 +79,7 @@ func create_drop():
 		var drop = load("res://Contraptions/DropButtons/contraption_drop.tscn").instantiate()
 		
 		drop.drop_name = ContraptionManager.contraption_dic.keys().pick_random()
-		get_tree().root.add_child(drop)
+		get_parent().add_child(drop)
 		drop.position = self.global_position
 
 func drop_gold():

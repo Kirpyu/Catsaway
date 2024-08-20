@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3 uid="uid://cy1hnyyybmkeh"]
+[gd_resource type="Resource" script_class="PaperCupFishResource" load_steps=2 format=3 uid="uid://cy1hnyyybmkeh"]
 
-[ext_resource type="Script" path="res://Characters/BaseCharacter/enemy_resource.gd" id="1_fayvy"]
+[ext_resource type="Script" path="res://Characters/EnemyCharacters/PaperCupFish/paper_cup_fish_resource.gd" id="1_uumlh"]
 
 [resource]
-script = ExtResource("1_fayvy")
-speed = 10
-max_hp = 40
-attack = 25
-gold_given = 20
+script = ExtResource("1_uumlh")
+speed = 0
+max_hp = 0
+attack = 0
+gold_given = 0

@@ -5,8 +5,11 @@ var Land := {}
 var available_expansion_tiles : Array[Vector2i]= []
 var available_contraption_tiles : Array[Vector2i] = []
 
+func reset() -> void:
+	Land.clear()
 
 func _ready() -> void:
+	reset()
 	get_available_expansion_tiles()
 
 func get_tiles() -> Array[Vector2i]:

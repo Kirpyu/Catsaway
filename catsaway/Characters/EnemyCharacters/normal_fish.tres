@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3 uid="uid://cxwtlxa1nhegi"]
+[gd_resource type="Resource" script_class="NormalFishResource" load_steps=2 format=3 uid="uid://cxwtlxa1nhegi"]
 
-[ext_resource type="Script" path="res://Characters/BaseCharacter/enemy_resource.gd" id="1_x5gtg"]
+[ext_resource type="Script" path="res://Characters/EnemyCharacters/normal_fish_resource.gd" id="1_epv06"]
 
 [resource]
-script = ExtResource("1_x5gtg")
-speed = 20
-max_hp = 20
-attack = 10
-gold_given = 5
+script = ExtResource("1_epv06")
+speed = 0
+max_hp = 0
+attack = 0
+gold_given = 0

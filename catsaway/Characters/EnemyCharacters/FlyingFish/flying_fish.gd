@@ -5,6 +5,13 @@ func _ready() -> void:
 	super._ready()
 	animated_sprite.play("moving")
 	
+func reset() -> void:
+	var new_resource = FlyingFishResource.new()
+	new_resource.reset()
+	enemy_resource.max_hp = new_resource.max_hp
+	enemy_resource.speed = new_resource.speed
+	enemy_resource.attack = new_resource.attack
+	enemy_resource.gold_given = new_resource.gold_given
 
 func update_hp():
 	if hp <= 0:

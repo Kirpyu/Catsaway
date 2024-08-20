@@ -7,8 +7,6 @@ extends Node2D
 @export var self_heal_cd: Timer
 
 var hp : int
-		
-			
 var tile_name : String = ""
 var water_tile : bool = true
 var enemy_attacking := false

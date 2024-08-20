@@ -66,3 +66,7 @@ text = "MAIN MENU"
 [node name="QuitButton" type="Button" parent="Panel/VBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "QUIT"
+
+[connection signal="pressed" from="Panel/VBoxContainer/CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

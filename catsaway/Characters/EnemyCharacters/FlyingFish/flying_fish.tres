@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3 uid="uid://bewqfb7strxso"]
+[gd_resource type="Resource" script_class="FlyingFishResource" load_steps=2 format=3 uid="uid://bewqfb7strxso"]
 
-[ext_resource type="Script" path="res://Characters/BaseCharacter/enemy_resource.gd" id="1_b2fau"]
+[ext_resource type="Script" path="res://Characters/EnemyCharacters/FlyingFish/flying_fish_resource.gd" id="1_pquq0"]
 
 [resource]
-script = ExtResource("1_b2fau")
-speed = 50
-max_hp = 10
-attack = 50
-gold_given = 50
+script = ExtResource("1_pquq0")
+speed = 0
+max_hp = 0
+attack = 0
+gold_given = 0

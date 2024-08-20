@@ -16,7 +16,6 @@ const coquette_fish_res = "res://Characters/EnemyCharacters/CoquetteFish/coquett
 const flying_fish_res = "res://Characters/EnemyCharacters/FlyingFish/flying_fish.tres"
 const projectile_fish_res = "res://Characters/EnemyCharacters/ProjectileFish/projectile_fish.tres"
 
-
 @export var normal_fish_spawner : Timer
 @export var paper_cup_fish_spawner : Timer
 @export var coquette_fish_spawner : Timer
@@ -24,13 +23,19 @@ const projectile_fish_res = "res://Characters/EnemyCharacters/ProjectileFish/pro
 @export var projectile_fish_spawner : Timer
 @export var random_fish_spawner : Timer
 
+@export var spawn_area: Node2D
+var fish_resources : Array = [normal_fish_res, paper_cup_fish_res, coquette_fish_res, flying_fish_res, projectile_fish_res]
+@onready var fishes : Array = [normal_fish.instantiate(), paper_cup_fish.instantiate(), coquette_fish.instantiate(), 
+flying_fish.instantiate(), projectile_fish.instantiate()]
 var random_fish : Array
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 func _process(delta: float) -> void:
 	random_fish.append(normal_fish)
-#	match wave:
-# 5 spawn papercone fish
+
+func _ready() -> void:
+	reset()
+	
 func _on_normal_fish_spawner_timeout() -> void:
 	spawn_enemy(normal_fish)
 
@@ -57,7 +62,7 @@ func _on_random_fish_spawner_timeout() -> void:
 func spawn_enemy(enemy):
 	spawn_randomizer.progress_ratio = rng.randf_range(0,1)
 	var new_enemy = enemy.instantiate()
-	get_tree().root.add_child(new_enemy)
+	spawn_area.add_child(new_enemy)
 	new_enemy.global_position = spawn_pos.global_position
 
 func _on_wave_timer_timeout() -> void:
@@ -65,10 +70,15 @@ func _on_wave_timer_timeout() -> void:
 		current_wave += 1
 	wave_change()
 
+func reset():
+	for fish in fishes:
+		fish.reset()
+	
 func wave_change() -> void:
 	match current_wave:
 		2:
 			paper_cup_fish_spawner.start()
+			load("res://Characters/EnemyCharacters/normal_fish.tres").max_hp += 5
 			normal_fish_spawner.wait_time = 2.5
 			
 		3:

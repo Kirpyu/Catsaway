@@ -6,3 +6,7 @@ func _on_expansion_pressed() -> void:
 
 func _on_repair_pressed() -> void:
 	pass # Replace with function body.wwwww
+
+
+func _on_upgrade_pressed() -> void:
+	pass # Replace with function body.

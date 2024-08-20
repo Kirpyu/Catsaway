@@ -16,7 +16,7 @@ var direction :Vector2 = Vector2.ZERO
 func _process(delta: float) -> void:
 	var starting_tile = get_tree().get_first_node_in_group("GroundLayer").local_to_map(self.global_position)
 	if TileManager.Land.get(str(starting_tile)) == null:
-		get_tree().quit()
+		die()
 	
 func _physics_process(_delta):
 	direction = Input.get_vector("left","right","up","down").normalized()
@@ -82,5 +82,8 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left"):
 		animated_sprite.flip_h = false
 		
-
+func die():
+	var end_screen = %EndScreen
+	end_screen.show()
+	end_screen.set_paused(true)
 #make the player lose when they touch the water
