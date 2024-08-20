@@ -30,7 +30,7 @@ progress = 1117.57
 [node name="Marker2D" type="Marker2D" parent="PathFollow2D"]
 
 [node name="NormalFishSpawner" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [node name="PaperCupFishSpawner" type="Timer" parent="."]

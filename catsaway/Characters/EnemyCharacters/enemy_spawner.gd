@@ -77,16 +77,19 @@ func reset():
 func wave_change() -> void:
 	match current_wave:
 		2:
-			paper_cup_fish_spawner.start()
+			#paper_cup_fish_spawner.start()
 			load("res://Characters/EnemyCharacters/normal_fish.tres").max_hp += 5
-			normal_fish_spawner.wait_time = 2.5
+			normal_fish_spawner.wait_time -= 2
 			
 		3:
-			random_fish.append(paper_cup_fish)
+			#random_fish.append(paper_cup_fish)
 			load(normal_fish_res).max_hp += 5
+			normal_fish_spawner.wait_time -= 0.5
 		4:
-			random_fish_spawner.wait_time = 4.5
-		
+			paper_cup_fish_spawner.start()
+			random_fish.append(paper_cup_fish)
+			random_fish_spawner.wait_time = 6
+			#normal_fish_spawner.wait_time -= 1
 		5:
 			load(normal_fish_res).speed += 10
 		
@@ -112,7 +115,7 @@ func wave_change() -> void:
 		
 		14:
 			projectile_fish_spawner.start()
-			random_fish_spawner.append(coquette_fish)
+			random_fish.append(coquette_fish)
 		
 		15:
 			load("res://Characters/EnemyCharacters/normal_fish.tres").max_hp += 10
@@ -129,7 +132,7 @@ func wave_change() -> void:
 		
 		18:
 			load(normal_fish_res).max_hp += 10
-			random_fish_spawner.append(projectile_fish)
+			random_fish.append(projectile_fish)
 		
 		20:
 			coquette_fish_spawner.start()
