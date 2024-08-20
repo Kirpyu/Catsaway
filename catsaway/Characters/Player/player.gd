@@ -87,3 +87,7 @@ func die():
 	end_screen.show()
 	end_screen.set_paused(true)
 #make the player lose when they touch the water
+
+
+func _on_gold_regen_timeout() -> void:
+	gold += 10
