@@ -84,3 +84,4 @@ expand_icon = true
 
 [connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/Expansion" to="." method="_on_expansion_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/Repair" to="." method="_on_repair_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/Upgrade" to="." method="_on_upgrade_pressed"]

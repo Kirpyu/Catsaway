@@ -28,6 +28,17 @@ func erase_contraption(coordinates: String) -> void:
 			contraption.queue_free()
 			return
 
+func upgrade_contraption(upgrade_contraption: Contraption, coordinates: String) -> void:
+	var temp_array = []
+#	place all the tiles within the upgrade pattern here, then go thjrough all contraptions and check if tiles exists
+#   better way to do it is to get the key within the dictionary instead of looping throuhg all tiles then checking if contraption = contraption name
+#  if turned into a secondary upgrade, keep track of main tile
+# when destroyed, if self is secondary upgrade, get main upgrade tile then subtract a level
+	var upgrade_pattern = [] 
+	for contraption : Contraption in get_tree().get_nodes_in_group("Contraption"):
+		if contraption.contraption_tile == coordinates:
+			temp_array.appedn(TileManager.string_to_vector2(temp_array))
+	
 func delete_drop(drop: Button):
 	drop.queue_free()
 

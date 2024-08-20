@@ -4,6 +4,7 @@ var Land := {}
 @export var highlighted := false
 var available_expansion_tiles : Array[Vector2i]= []
 var available_contraption_tiles : Array[Vector2i] = []
+var tiles_with_contraption: Array[Vector2i] = []
 
 func reset() -> void:
 	Land.clear()
@@ -26,6 +27,14 @@ func get_available_contraption_tiles() -> Array[Vector2i]:
 			available_contraption_tiles.append(string_to_vector2(tile))
 			
 	return available_contraption_tiles
+
+func get_tiles_with_contraption() -> Array[Vector2i]:
+	tiles_with_contraption.clear()
+	for tile in Land:
+		if Land.get(tile)["Contraption"] != "None":
+			tiles_with_contraption.append(string_to_vector2(tile))
+			
+	return tiles_with_contraption
 	
 func get_available_expansion_tiles() -> Array[Vector2i]:
 	available_expansion_tiles.clear()

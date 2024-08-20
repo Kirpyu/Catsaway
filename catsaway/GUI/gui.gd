@@ -5,8 +5,10 @@ func _on_expansion_pressed() -> void:
 	select_layer.highlight_tiles(TileManager.get_available_expansion_tiles(), "Expansion")
 
 func _on_repair_pressed() -> void:
-	pass # Replace with function body.wwwww
+	var select_layer = get_tree().get_first_node_in_group("SelectLayer")
+	select_layer.highlight_tiles(TileManager.get_tiles_with_contraption(), "Demolish")
 
 
 func _on_upgrade_pressed() -> void:
-	pass # Replace with function body.
+	var select_layer = get_tree().get_first_node_in_group("SelectLayer")
+	select_layer.highlight_tiles(TileManager.get_tiles_with_contraption(), "Upgrade")

@@ -157,4 +157,5 @@ func wave_change() -> void:
 			load(coquette_fish_res).speed += 5
 			coquette_fish_spawner.wait_time = 3
 			
-			
+		27:
+			coquette_fish_spawner.wait_time = 0.1

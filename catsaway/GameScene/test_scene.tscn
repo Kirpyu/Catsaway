@@ -11,12 +11,12 @@
 [ext_resource type="Script" path="res://Contraptions/contraptions.gd" id="6_cq402"]
 [ext_resource type="AudioStream" uid="uid://dl4x7w3gpux76" path="res://Assets/ContraptionAssets/FishingCast.wav" id="7_s1jj7"]
 [ext_resource type="AudioStream" uid="uid://nrvrkbqugi" path="res://Assets/SFX/OST.mp3" id="9_ejpwg"]
-[ext_resource type="PackedScene" uid="uid://82l5mmyeo8vx" path="res://Characters/EnemyCharacters/enemy_spawner.tscn" id="11_fs3ti"]
 [ext_resource type="Script" path="res://GameScene/debug_room.gd" id="11_k8de6"]
 [ext_resource type="PackedScene" uid="uid://b440mdkb3keqa" path="res://GUI/settings_menu.tscn" id="12_chcje"]
 [ext_resource type="PackedScene" uid="uid://dp0urywp01v5y" path="res://GUI/gui.tscn" id="12_s5ijn"]
 [ext_resource type="PackedScene" uid="uid://c8vat1owd6x3g" path="res://GUI/end_screen.tscn" id="13_b1bxo"]
 [ext_resource type="PackedScene" uid="uid://cvc0gtyqqk1rm" path="res://GUI/stats_ui.tscn" id="13_fvl0w"]
+[ext_resource type="PackedScene" uid="uid://capdqlkjkft3u" path="res://Contraptions/DropButtons/contraption_drop.tscn" id="18_4wa4d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmbbl"]
 texture = ExtResource("1_ycfnc")
@@ -713,16 +713,73 @@ pitch_scale = 2.98
 [node name="Player" parent="." node_paths=PackedStringArray("settings_scene") instance=ExtResource("6_3b7j0")]
 settings_scene = NodePath("../CanvasLayer/SettingsMenu")
 
-[node name="EnemySpawner" parent="Player" node_paths=PackedStringArray("spawn_area") instance=ExtResource("11_fs3ti")]
-position = Vector2(-370.667, -229.333)
-scale = Vector2(1.3, 1.304)
-spawn_area = NodePath("../../Enemies")
-
 [node name="DebugRoom" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("11_k8de6")
 player = NodePath("../Player")
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="ContraptionDrop3" parent="Enemies" instance=ExtResource("18_4wa4d")]
+offset_left = 253.0
+offset_top = 224.0
+offset_right = 277.0
+offset_bottom = 248.0
+
+[node name="ContraptionDrop" parent="Enemies" instance=ExtResource("18_4wa4d")]
+offset_left = 271.0
+offset_top = 224.0
+offset_right = 295.0
+offset_bottom = 248.0
+drop_name = "LuckyCat"
+
+[node name="ContraptionDrop2" parent="Enemies" instance=ExtResource("18_4wa4d")]
+offset_left = 287.0
+offset_top = 224.0
+offset_right = 311.0
+offset_bottom = 248.0
+drop_name = "Pawsplosion"
+
+[node name="ContraptionDrop4" parent="Enemies" instance=ExtResource("18_4wa4d")]
+offset_left = 307.0
+offset_top = 224.0
+offset_right = 331.0
+offset_bottom = 248.0
+drop_name = "CheeseCannon"
+
+[node name="ContraptionDrop5" parent="Enemies" instance=ExtResource("18_4wa4d")]
+offset_left = 325.0
+offset_top = 224.0
+offset_right = 349.0
+offset_bottom = 248.0
+drop_name = "LaserToy"
+
+[node name="ContraptionDrop6" parent="Enemies" instance=ExtResource("18_4wa4d")]
+offset_left = 341.0
+offset_top = 224.0
+offset_right = 365.0
+offset_bottom = 248.0
+drop_name = "YarnThrower"
+
+[node name="ContraptionDrop7" parent="Enemies" instance=ExtResource("18_4wa4d")]
+offset_left = 202.0
+offset_top = 224.0
+offset_right = 226.0
+offset_bottom = 248.0
+drop_name = "YarnThrower"
+
+[node name="ContraptionDrop8" parent="Enemies" instance=ExtResource("18_4wa4d")]
+offset_left = 220.0
+offset_top = 224.0
+offset_right = 244.0
+offset_bottom = 248.0
+drop_name = "YarnThrower"
+
+[node name="ContraptionDrop9" parent="Enemies" instance=ExtResource("18_4wa4d")]
+offset_left = 236.0
+offset_top = 224.0
+offset_right = 260.0
+offset_bottom = 248.0
+drop_name = "YarnThrower"
 
 [node name="Tiles" type="Node2D" parent="."]
 
