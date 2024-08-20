@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhv418lyrualv"]
+
+[ext_resource type="PackedScene" uid="uid://dig3kafsq7df1" path="res://Contraptions/contraption_base.tscn" id="1_7bjl1"]
+[ext_resource type="Script" path="res://Contraptions/LuckyCat/sacrificial_lucky_cat.gd" id="2_smxxg"]
+[ext_resource type="Texture2D" uid="uid://csngsxghopaqr" path="res://Contraptions/SacrificialContraptions/Sacrificial Money Cat.png" id="3_aqsxr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3qr8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_aqsxr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SacrificialLuckyCat" instance=ExtResource("1_7bjl1")]
+script = ExtResource("2_smxxg")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_x3qr8")
+animation = &"default"

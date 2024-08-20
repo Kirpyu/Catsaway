@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://fqa4hr4sbf7"]
+
+[ext_resource type="PackedScene" uid="uid://dig3kafsq7df1" path="res://Contraptions/contraption_base.tscn" id="1_jmrgx"]
+[ext_resource type="Script" path="res://Contraptions/LaserToy/sacrificial_laser_toy.gd" id="2_uxmp2"]
+[ext_resource type="Texture2D" uid="uid://c2ssru2oaia14" path="res://Contraptions/SacrificialContraptions/Sacrificial Laser Pointer.png" id="3_w8vhs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ycc0w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_w8vhs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SacrificialLaserToy" instance=ExtResource("1_jmrgx")]
+script = ExtResource("2_uxmp2")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ycc0w")
+animation = &"default"

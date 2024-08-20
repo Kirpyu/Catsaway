@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://urbfqg2lpgj5"]
+
+[ext_resource type="PackedScene" uid="uid://dig3kafsq7df1" path="res://Contraptions/contraption_base.tscn" id="1_jsi4r"]
+[ext_resource type="Script" path="res://Contraptions/YarnThrower/sacrificial_yarn_thrower.gd" id="2_3ujxk"]
+[ext_resource type="Texture2D" uid="uid://164nlg7kkt1y" path="res://Contraptions/SacrificialContraptions/Sacrificial Yarn Thrower.png" id="3_mv4qd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5ika"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mv4qd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SacrificialYarnThrower" instance=ExtResource("1_jsi4r")]
+script = ExtResource("2_3ujxk")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_t5ika")
+animation = &"default"

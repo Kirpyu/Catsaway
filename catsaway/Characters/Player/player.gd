@@ -89,13 +89,20 @@ func _input(event: InputEvent) -> void:
 		if select_layer.highlight_type == "UpgradeMain":
 			var contraption_node = get_tree().get_first_node_in_group("ContraptionNode")
 			var sacrificial_tiles = contraption_node.sacrificial_tiles
+			
 			if contraption_node.sacrificial_tiles.has(hovered_tile):
+				var hovered_tile_name = TileManager.Land[str(hovered_tile)]["Contraption"]
 				TileManager.Land[str(contraption_node.main_tile)]["Level"] += 1
+				contraption_node.erase_contraption(str(hovered_tile))
+				contraption_node.add_contraption(ContraptionManager.create_sacrifice(hovered_tile_name), hovered_tile)
 				TileManager.Land[str(hovered_tile)]["Type"] = "Secondary" 
 				select_layer.erase_highlight()
+#				erase that tile, replace w new tile
 				sacrificial_tiles = []
 				contraption_node.main_tile = Vector2i.ZERO
 #			turn it into a secondary thing, add a level, clear sacrificial tiles, remove highlights
+		if TileManager.Land.has(str(hovered_tile)):
+			print(TileManager.Land[str(hovered_tile)])
 	
 	if Input.is_action_just_pressed("right"):
 		animated_sprite.flip_h = true

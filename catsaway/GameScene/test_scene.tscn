@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dnajxuepugrj7"]
+[gd_scene load_steps=29 format=4 uid="uid://dnajxuepugrj7"]
 
 [ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Icons/Water.png" id="1_ycfnc"]
 [ext_resource type="Texture2D" uid="uid://v77upud1kh24" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Basic_Grass_Biom_things.png" id="2_7v3yc"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://GameScene/debug_room.gd" id="11_k8de6"]
 [ext_resource type="PackedScene" uid="uid://b440mdkb3keqa" path="res://GUI/settings_menu.tscn" id="12_chcje"]
 [ext_resource type="PackedScene" uid="uid://dp0urywp01v5y" path="res://GUI/gui.tscn" id="12_s5ijn"]
+[ext_resource type="PackedScene" uid="uid://bhcj1yt8gjhye" path="res://Characters/EnemyCharacters/DummyFish/dummy_fish.tscn" id="13_6yvel"]
 [ext_resource type="PackedScene" uid="uid://c8vat1owd6x3g" path="res://GUI/end_screen.tscn" id="13_b1bxo"]
 [ext_resource type="PackedScene" uid="uid://cvc0gtyqqk1rm" path="res://GUI/stats_ui.tscn" id="13_fvl0w"]
 [ext_resource type="PackedScene" uid="uid://capdqlkjkft3u" path="res://Contraptions/DropButtons/contraption_drop.tscn" id="18_4wa4d"]
@@ -724,62 +725,63 @@ offset_left = 253.0
 offset_top = 224.0
 offset_right = 277.0
 offset_bottom = 248.0
+drop_name = "YarnThrower"
 
 [node name="ContraptionDrop" parent="Enemies" instance=ExtResource("18_4wa4d")]
 offset_left = 271.0
 offset_top = 224.0
 offset_right = 295.0
 offset_bottom = 248.0
-drop_name = "LuckyCat"
+drop_name = "YarnThrower"
 
 [node name="ContraptionDrop2" parent="Enemies" instance=ExtResource("18_4wa4d")]
 offset_left = 287.0
 offset_top = 224.0
 offset_right = 311.0
 offset_bottom = 248.0
-drop_name = "Pawsplosion"
+drop_name = "YarnThrower"
 
 [node name="ContraptionDrop4" parent="Enemies" instance=ExtResource("18_4wa4d")]
 offset_left = 307.0
 offset_top = 224.0
 offset_right = 331.0
 offset_bottom = 248.0
-drop_name = "CheeseCannon"
+drop_name = "YarnThrower"
 
 [node name="ContraptionDrop5" parent="Enemies" instance=ExtResource("18_4wa4d")]
 offset_left = 325.0
 offset_top = 224.0
 offset_right = 349.0
 offset_bottom = 248.0
-drop_name = "LaserToy"
+drop_name = "LuckyCat"
 
 [node name="ContraptionDrop6" parent="Enemies" instance=ExtResource("18_4wa4d")]
 offset_left = 341.0
 offset_top = 224.0
 offset_right = 365.0
 offset_bottom = 248.0
-drop_name = "YarnThrower"
+drop_name = "Pawsplosion"
 
 [node name="ContraptionDrop7" parent="Enemies" instance=ExtResource("18_4wa4d")]
 offset_left = 202.0
 offset_top = 224.0
 offset_right = 226.0
 offset_bottom = 248.0
-drop_name = "YarnThrower"
+drop_name = "Pawsplosion"
 
 [node name="ContraptionDrop8" parent="Enemies" instance=ExtResource("18_4wa4d")]
 offset_left = 220.0
 offset_top = 224.0
 offset_right = 244.0
 offset_bottom = 248.0
-drop_name = "YarnThrower"
+drop_name = "Pawsplosion"
 
 [node name="ContraptionDrop9" parent="Enemies" instance=ExtResource("18_4wa4d")]
 offset_left = 236.0
 offset_top = 224.0
 offset_right = 260.0
 offset_bottom = 248.0
-drop_name = "YarnThrower"
+drop_name = "Pawsplosion"
 
 [node name="Tiles" type="Node2D" parent="."]
 
@@ -820,3 +822,6 @@ color = Color(0.37177, 0.268395, 0.558087, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.678795, 0.687514, 0.985914, 1)
+
+[node name="DummyFish" parent="." instance=ExtResource("13_6yvel")]
+position = Vector2(238, 190)

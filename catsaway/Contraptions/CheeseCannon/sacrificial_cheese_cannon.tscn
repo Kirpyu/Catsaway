@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcrecl4ksxuv5"]
+
+[ext_resource type="PackedScene" uid="uid://dig3kafsq7df1" path="res://Contraptions/contraption_base.tscn" id="1_anei7"]
+[ext_resource type="Script" path="res://Contraptions/CheeseCannon/sacrificial_cheese_cannon.gd" id="2_5x81x"]
+[ext_resource type="Texture2D" uid="uid://bpymt4jnku7wl" path="res://Contraptions/SacrificialContraptions/Dead_Cheese.png" id="3_2fxrc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ly2a1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2fxrc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SacrificialCheeseCannon" instance=ExtResource("1_anei7")]
+script = ExtResource("2_5x81x")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ly2a1")
+animation = &"default"

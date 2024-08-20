@@ -3,11 +3,13 @@ class_name Projectile extends Area2D
 @export var projectile_resource : ProjectileResource
 @export var sprite : AnimatedSprite2D
 
+var damage : int
 var collat : int
 @onready var speed : int = 1
 
 func _ready() -> void:
 	collat = projectile_resource.collat
+	damage = projectile_resource.damage
 	sprite.play("default")
 
 func _physics_process(delta):
@@ -21,14 +23,14 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.owner.has_method("hit") and area.owner.is_in_group("Enemy"):
 		
 		collat -= 1
-		area.owner.hit(projectile_resource.damage) 
+		area.owner.hit(damage) 
 		if collat == 0:
 			queue_free()
 	
 	if area.owner.has_method("hit") and area.owner.is_in_group("Tile"):
 		
 		collat -= 1
-		area.owner.hit(projectile_resource.damage) 
+		area.owner.hit(damage) 
 		if collat == 0:
 			queue_free()
 	

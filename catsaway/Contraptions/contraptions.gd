@@ -25,6 +25,8 @@ func erase_contraption(coordinates: String) -> void:
 	for contraption : Contraption in get_tree().get_nodes_in_group("Contraption"):
 		if contraption.contraption_tile == coordinates:
 			contraption.queue_free()
+			TileManager.Land[coordinates]["Contraption"] = "None"
+			TileManager.Land[coordinates]["Type"] = ""
 			return
 
 func upgrade_contraption(coordinates: Vector2i) -> void:
