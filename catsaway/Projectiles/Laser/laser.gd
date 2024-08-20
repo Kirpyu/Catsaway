@@ -18,6 +18,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	print("second step started")
+	%LaserSFX.play()
 	attacking_sprite.visible = true
 	sprite.visible = false
 	laser_time.start()

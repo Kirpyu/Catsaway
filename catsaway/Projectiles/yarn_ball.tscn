@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://bl111kfke840x"]
+[gd_scene load_steps=14 format=3 uid="uid://bl111kfke840x"]
 
 [ext_resource type="PackedScene" uid="uid://d1fq03r5qo24p" path="res://Projectiles/projectile_base.tscn" id="1_ibro4"]
+[ext_resource type="Script" path="res://Projectiles/yarn_ball.gd" id="2_1ukdi"]
 [ext_resource type="Script" path="res://Projectiles/projectile_resource.gd" id="2_kitic"]
 [ext_resource type="Texture2D" uid="uid://dp5vj4mo3mkjw" path="res://Assets/ContraptionAssets/YarnThrower/YarnBall-Sheet.png" id="2_ov7ko"]
+[ext_resource type="AudioStream" uid="uid://qpof04xr48h8" path="res://Assets/SFX/Contraptions/YarnThrow.mp3" id="4_8y7xq"]
 
-[sub_resource type="Resource" id="Resource_jd2k3"]
+[sub_resource type="Resource" id="Resource_y7ejs"]
 script = ExtResource("2_kitic")
 damage = 20
 level = 0
-speed = 100
+speed = 50
 collat = 3
 size = 0.0
 
@@ -63,7 +65,8 @@ animations = [{
 }]
 
 [node name="YarnBall" instance=ExtResource("1_ibro4")]
-projectile_resource = SubResource("Resource_jd2k3")
+script = ExtResource("2_1ukdi")
+projectile_resource = SubResource("Resource_y7ejs")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(-3, 0)
@@ -71,3 +74,8 @@ rotation = 0.0
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_pv8ea")
 frame_progress = 0.0
+
+[node name="YarnSFX" type="AudioStreamPlayer" parent="." index="3"]
+unique_name_in_owner = true
+stream = ExtResource("4_8y7xq")
+volume_db = -35.0

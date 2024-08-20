@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://capdqlkjkft3u"]
+[gd_scene load_steps=6 format=3 uid="uid://capdqlkjkft3u"]
 
 [ext_resource type="Theme" uid="uid://dx3obqeiafc1l" path="res://GUI/GUI_Theme.tres" id="1_8ec75"]
 [ext_resource type="Texture2D" uid="uid://cpan0gmsjnqm6" path="res://Assets/ContraptionAssets/FeatherToy/StandFeatherToy.png" id="1_mpi33"]
 [ext_resource type="Script" path="res://Contraptions/DropButtons/contraption_drop.gd" id="2_aemsp"]
+[ext_resource type="AudioStream" uid="uid://itnxh4iued5t" path="res://Assets/SFX/Building SFX/ItemDrop.mp3" id="4_i3h6l"]
+[ext_resource type="AudioStream" uid="uid://dl4x7w3gpux76" path="res://Assets/ContraptionAssets/FishingCast.wav" id="5_td1m2"]
 
 [node name="ContraptionDrop" type="Button"]
 offset_right = 24.0
@@ -17,6 +19,16 @@ script = ExtResource("2_aemsp")
 wait_time = 1000.0
 one_shot = true
 autostart = true
+
+[node name="DropSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_i3h6l")
+volume_db = -30.0
+
+[node name="ReelSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_td1m2")
+volume_db = -40.0
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

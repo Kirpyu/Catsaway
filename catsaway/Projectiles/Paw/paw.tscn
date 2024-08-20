@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://vrr21p0dpef8"]
+[gd_scene load_steps=14 format=3 uid="uid://vrr21p0dpef8"]
 
 [ext_resource type="PackedScene" uid="uid://d1fq03r5qo24p" path="res://Projectiles/projectile_base.tscn" id="1_fww5q"]
 [ext_resource type="Script" path="res://Projectiles/Paw/paw.gd" id="2_hcsq8"]
 [ext_resource type="Script" path="res://Projectiles/projectile_resource.gd" id="3_2ne18"]
 [ext_resource type="Texture2D" uid="uid://c7s305mxuhsm6" path="res://Assets/ContraptionAssets/Pawsplosion/catPaw.png" id="4_du2fn"]
+[ext_resource type="AudioStream" uid="uid://dr4hbdcy7spi0" path="res://Assets/SFX/Contraptions/StepperNya.mp3" id="5_2i1xd"]
 
 [sub_resource type="Resource" id="Resource_fawpj"]
 script = ExtResource("3_2ne18")
@@ -80,5 +81,10 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_40tv0")
 frame = 5
 frame_progress = 1.0
+
+[node name="PawSFX" type="AudioStreamPlayer" parent="." index="3"]
+unique_name_in_owner = true
+stream = ExtResource("5_2i1xd")
+volume_db = -45.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

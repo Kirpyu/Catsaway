@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cslivu4v6uyfa"]
+[gd_scene load_steps=10 format=3 uid="uid://cslivu4v6uyfa"]
 
 [ext_resource type="Theme" uid="uid://g5v2nhacetj7" path="res://GUI/MenuTheme.tres" id="1_scmu7"]
 [ext_resource type="Script" path="res://GUI/tutorial_menu.gd" id="2_f7pvl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://balxr30ksn4bc" path="res://Assets/game_tut_3 rev.png" id="6_d7t7i"]
 [ext_resource type="Texture2D" uid="uid://ccemnw2lrmowx" path="res://GUI/page 4 tut.png" id="6_galkd"]
 [ext_resource type="Texture2D" uid="uid://cpbopeubrvjr1" path="res://Assets/new tut.jpg" id="7_esjxi"]
+[ext_resource type="AudioStream" uid="uid://dnktymkvt6ap3" path="res://Assets/SFX/UI/ButtonClick.mp3" id="9_xo2hd"]
 
 [node name="TutorialMenu" type="Control"]
 layout_mode = 3
@@ -121,6 +122,11 @@ offset_top = 577.0
 offset_right = 1138.0
 offset_bottom = 626.0
 text = "Main Menu"
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_xo2hd")
+volume_db = -20.0
 
 [connection signal="pressed" from="Panel/HBoxContainer/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Right" to="." method="_on_right_pressed"]

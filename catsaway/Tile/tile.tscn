@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6uogh3qtq3vp"]
+[gd_scene load_steps=6 format=3 uid="uid://b6uogh3qtq3vp"]
 
 [ext_resource type="Script" path="res://Tile/tile.gd" id="1_ygqld"]
 [ext_resource type="Theme" uid="uid://dx3obqeiafc1l" path="res://GUI/GUI_Theme.tres" id="2_h2qf5"]
+[ext_resource type="AudioStream" uid="uid://dgtklko0u3n6f" path="res://Assets/SFX/Building SFX/TileAttacked.mp3" id="3_4gc8o"]
+[ext_resource type="AudioStream" uid="uid://b7fl3jefmv32p" path="res://Assets/SFX/Building SFX/TileSink.mp3" id="4_u6bvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3ewb"]
 size = Vector2(16, 16)
@@ -13,6 +15,7 @@ self_heal_timer = NodePath("SelfHeal")
 self_heal_cd = NodePath("SelfHealCooldown")
 
 [node name="Area2D" type="Area2D" parent="."]
+unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 16
 monitoring = false
@@ -36,6 +39,17 @@ show_percentage = false
 [node name="SelfHealCooldown" type="Timer" parent="."]
 wait_time = 10.0
 
+[node name="TileAttackedSFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_4gc8o")
+volume_db = -20.0
+
+[node name="TileSinkSFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_u6bvi")
+volume_db = -25.0
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="SelfHeal" to="." method="_on_self_heal_timeout"]
 [connection signal="timeout" from="SelfHealCooldown" to="." method="_on_self_heal_cooldown_timeout"]
+[connection signal="finished" from="TileSinkSFX" to="." method="_on_tile_sink_sfx_finished"]

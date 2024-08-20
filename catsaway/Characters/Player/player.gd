@@ -60,6 +60,7 @@ func _input(event: InputEvent) -> void:
 					new_tile.tile_name = str(hovered_tile)
 					new_tile.position = ground_layer.map_to_local(hovered_tile)
 					
+					%Expansion.play()
 					select_layer.erase_highlight()
 				
 		if select_layer.highlight_type == "Contraption":
@@ -77,6 +78,7 @@ func _input(event: InputEvent) -> void:
 							#$AudioStreamPlayer.play()
 							contraption_node.held_contraption = ""
 							contraption_node.held_drop.queue_free()
+							%Build.play()
 						return
 						
 		if select_layer.highlight_type == "Upgrade":
@@ -104,6 +106,7 @@ func _input(event: InputEvent) -> void:
 				TileManager.Land[str(hovered_tile)]["Type"] = "Secondary" 
 				select_layer.erase_highlight()
 #				erase that tile, replace w new tile
+				%Expansion.play()
 				sacrificial_tiles = []
 				contraption_node.main_tile = Vector2i.ZERO
 #			turn it into a secondary thing, add a level, clear sacrificial tiles, remove highlights
@@ -117,6 +120,7 @@ func _input(event: InputEvent) -> void:
 				TileManager.Land[str(hovered_tile)]["Level"] = 1
 				var contraption_node = get_tree().get_first_node_in_group("ContraptionNode")
 				contraption_node.erase_contraption(str(hovered_tile))
+				%Demolish.play()
 			select_layer.erase_highlight()
 			
 	if Input.is_action_just_pressed("right"):

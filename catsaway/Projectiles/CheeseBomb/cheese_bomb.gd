@@ -8,6 +8,7 @@ func _on_explosion_sprite_animation_finished() -> void:
 	
 func _ready() -> void:
 	collat = projectile_resource.collat
+	%CheeseThrow.play()
 	
 func _process(delta: float) -> void:
 	sprite.rotation_degrees += delta * 1000
@@ -20,6 +21,7 @@ func _on_area_entered(area: Area2D) -> void:
 		
 		collat -= 1
 		area.owner.hit(projectile_resource.damage) 
+		%CheeseExplosion.play()
 		if collat <= 0:
 			hitbox_col.set_deferred("disabled", false)
 			explosion_sprite.visible = true
