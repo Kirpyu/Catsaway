@@ -94,7 +94,11 @@ func _input(event: InputEvent) -> void:
 				var hovered_tile_name = TileManager.Land[str(hovered_tile)]["Contraption"]
 				if TileManager.Land[str(contraption_node.main_tile)]["Level"] < 5:
 					TileManager.Land[str(contraption_node.main_tile)]["Level"] += 1
+					
+				TileManager.Land[str(hovered_tile)]["Contraption"] = "None"
+				TileManager.Land[str(hovered_tile)]["Type"] = ""
 				contraption_node.erase_contraption(str(hovered_tile))
+				
 				contraption_node.add_contraption(ContraptionManager.create_sacrifice(hovered_tile_name), hovered_tile)
 				TileManager.Land[str(hovered_tile)]["Contraption"] = hovered_tile_name
 				TileManager.Land[str(hovered_tile)]["Type"] = "Secondary" 
@@ -107,7 +111,13 @@ func _input(event: InputEvent) -> void:
 			print(TileManager.Land[str(hovered_tile)])
 	
 		if select_layer.highlight_type == "Demolish":
-			pass
+			if TileManager.Land.has(str(hovered_tile)):
+				TileManager.Land[str(hovered_tile)]["Contraption"] = "None"
+				TileManager.Land[str(hovered_tile)]["Type"] = "" 
+				TileManager.Land[str(hovered_tile)]["Level"] = 1
+				var contraption_node = get_tree().get_first_node_in_group("ContraptionNode")
+				contraption_node.erase_contraption(str(hovered_tile))
+			select_layer.erase_highlight()
 			
 	if Input.is_action_just_pressed("right"):
 		animated_sprite.flip_h = true

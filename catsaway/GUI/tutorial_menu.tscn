@@ -1,0 +1,127 @@
+[gd_scene load_steps=9 format=3 uid="uid://cslivu4v6uyfa"]
+
+[ext_resource type="Theme" uid="uid://g5v2nhacetj7" path="res://GUI/MenuTheme.tres" id="1_scmu7"]
+[ext_resource type="Script" path="res://GUI/tutorial_menu.gd" id="2_f7pvl"]
+[ext_resource type="Theme" uid="uid://dx3obqeiafc1l" path="res://GUI/GUI_Theme.tres" id="2_qivpv"]
+[ext_resource type="Texture2D" uid="uid://dkw6ofqedq50d" path="res://GUI/tut 1 rev.png" id="3_ppkc0"]
+[ext_resource type="Texture2D" uid="uid://bm23vxy2s3y4k" path="res://GUI/page 2 tut.png" id="4_2txqn"]
+[ext_resource type="Texture2D" uid="uid://balxr30ksn4bc" path="res://Assets/game_tut_3 rev.png" id="6_d7t7i"]
+[ext_resource type="Texture2D" uid="uid://ccemnw2lrmowx" path="res://GUI/page 4 tut.png" id="6_galkd"]
+[ext_resource type="Texture2D" uid="uid://cpbopeubrvjr1" path="res://Assets/new tut.jpg" id="7_esjxi"]
+
+[node name="TutorialMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_scmu7")
+script = ExtResource("2_f7pvl")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qivpv")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0972222
+anchor_top = 0.0679012
+anchor_right = 0.902778
+anchor_bottom = 0.932099
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_scmu7")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 28.0
+offset_right = -13.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Left" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qivpv")
+text = "<"
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="Page1" type="TextureRect" parent="Panel/HBoxContainer/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 550)
+layout_mode = 2
+texture = ExtResource("3_ppkc0")
+expand_mode = 1
+
+[node name="Page2" type="TextureRect" parent="Panel/HBoxContainer/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(800, 550)
+layout_mode = 2
+texture = ExtResource("4_2txqn")
+expand_mode = 1
+
+[node name="Page3" type="TextureRect" parent="Panel/HBoxContainer/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(800, 550)
+layout_mode = 2
+texture = ExtResource("6_d7t7i")
+expand_mode = 1
+
+[node name="Page4" type="TextureRect" parent="Panel/HBoxContainer/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(800, 550)
+layout_mode = 2
+texture = ExtResource("7_esjxi")
+expand_mode = 1
+
+[node name="Page5" type="TextureRect" parent="Panel/HBoxContainer/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(800, 550)
+layout_mode = 2
+texture = ExtResource("6_galkd")
+expand_mode = 1
+
+[node name="Right" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qivpv")
+text = ">"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 577.0
+offset_right = 1138.0
+offset_bottom = 626.0
+text = "Main Menu"
+
+[connection signal="pressed" from="Panel/HBoxContainer/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

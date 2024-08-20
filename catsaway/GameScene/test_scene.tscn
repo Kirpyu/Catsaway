@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://dnajxuepugrj7"]
+[gd_scene load_steps=31 format=4 uid="uid://dnajxuepugrj7"]
 
 [ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Icons/Water.png" id="1_ycfnc"]
 [ext_resource type="Texture2D" uid="uid://v77upud1kh24" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Basic_Grass_Biom_things.png" id="2_7v3yc"]
@@ -17,7 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://bhcj1yt8gjhye" path="res://Characters/EnemyCharacters/DummyFish/dummy_fish.tscn" id="13_6yvel"]
 [ext_resource type="PackedScene" uid="uid://c8vat1owd6x3g" path="res://GUI/end_screen.tscn" id="13_b1bxo"]
 [ext_resource type="PackedScene" uid="uid://cvc0gtyqqk1rm" path="res://GUI/stats_ui.tscn" id="13_fvl0w"]
+[ext_resource type="Script" path="res://GameScene/BGMPlayer.gd" id="14_8i3a5"]
 [ext_resource type="PackedScene" uid="uid://capdqlkjkft3u" path="res://Contraptions/DropButtons/contraption_drop.tscn" id="18_4wa4d"]
+[ext_resource type="PackedScene" uid="uid://cd2u66mcv2kgv" path="res://Characters/EnemyCharacters/CoquetteFish/coquette_fish.tscn" id="19_ym3x2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmbbl"]
 texture = ExtResource("1_ycfnc")
@@ -792,6 +794,7 @@ stream = ExtResource("9_ejpwg")
 volume_db = -17.802
 autoplay = true
 parameters/looping = true
+script = ExtResource("14_8i3a5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -827,3 +830,6 @@ color = Color(0.678795, 0.687514, 0.985914, 1)
 
 [node name="DummyFish" parent="." instance=ExtResource("13_6yvel")]
 position = Vector2(238, 190)
+
+[node name="CoquetteFish" parent="." instance=ExtResource("19_ym3x2")]
+position = Vector2(254, 197)

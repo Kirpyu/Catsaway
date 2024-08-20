@@ -81,6 +81,7 @@ func create_drop():
 		drop.drop_name = ContraptionManager.contraption_dic.keys().pick_random()
 		get_parent().add_child(drop)
 		drop.position = self.global_position
+		
 
 func drop_gold():
 	var player = get_tree().get_first_node_in_group("Player")
