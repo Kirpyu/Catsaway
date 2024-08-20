@@ -90,4 +90,4 @@ func die():
 
 
 func _on_gold_regen_timeout() -> void:
-	gold += 10
+	gold += 1
