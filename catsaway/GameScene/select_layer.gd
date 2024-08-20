@@ -1,7 +1,7 @@
 extends TileMapLayer
 
 var highlight_type : String = ""
-var hihglight_types : Array[String] = ["Expansion", "Contraption"]
+const highlight_types : Array[String] = ["Expansion", "Contraption", "Upgrade"]
 		
 func highlight_tiles(tiles: Array[Vector2i], type: String):
 	if TileManager.highlighted:

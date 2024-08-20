@@ -49,6 +49,8 @@ func _input(event: InputEvent) -> void:
 					ground_layer.set_cells_terrain_connect([hovered_tile], 0, 0)
 					TileManager.Land[str(hovered_tile)] = {
 						"Contraption" : "None",
+						"Type" : "",
+						"Level" : 1
 					}
 					
 					var new_tile: Tile = load("res://Tile/tile.tscn").instantiate()
@@ -69,12 +71,31 @@ func _input(event: InputEvent) -> void:
 						if contraption == "None":
 							contraption_node.add_contraption(ContraptionManager.create_contraption(contraption_node.held_contraption), hovered_tile)
 							TileManager.Land[tile.tile_name]["Contraption"] = contraption_node.held_contraption
+							TileManager.Land[tile.tile_name]["Type"] = "Main"
 							
 							select_layer.erase_highlight()
 							#$AudioStreamPlayer.play()
 							contraption_node.held_contraption = ""
 							contraption_node.held_drop.queue_free()
 						return
+						
+		if select_layer.highlight_type == "Upgrade":
+			if TileManager.Land.has(str(hovered_tile)):
+				var contraption = TileManager.Land[str(hovered_tile)]["Contraption"]
+				var contraption_node = get_tree().get_first_node_in_group("ContraptionNode")
+				if contraption != "None" and TileManager.Land[str(hovered_tile)]["Type"] == "Main":
+					contraption_node.upgrade_contraption(hovered_tile)
+		
+		if select_layer.highlight_type == "UpgradeMain":
+			var contraption_node = get_tree().get_first_node_in_group("ContraptionNode")
+			var sacrificial_tiles = contraption_node.sacrificial_tiles
+			if contraption_node.sacrificial_tiles.has(hovered_tile):
+				TileManager.Land[str(contraption_node.main_tile)]["Level"] += 1
+				TileManager.Land[str(hovered_tile)]["Type"] = "Secondary" 
+				select_layer.erase_highlight()
+				sacrificial_tiles = []
+				contraption_node.main_tile = Vector2i.ZERO
+#			turn it into a secondary thing, add a level, clear sacrificial tiles, remove highlights
 	
 	if Input.is_action_just_pressed("right"):
 		animated_sprite.flip_h = true

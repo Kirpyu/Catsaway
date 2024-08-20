@@ -19,6 +19,8 @@ func _ready() -> void:
 	
 	TileManager.Land[str(starting_tile)] = {
 			"Contraption" : "YarnThrower",
+			"Type" : "Main",
+			"Level" : 1
 		}
 
 func _process(_delta: float) -> void:

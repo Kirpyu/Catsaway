@@ -11,4 +11,4 @@ func _on_repair_pressed() -> void:
 
 func _on_upgrade_pressed() -> void:
 	var select_layer = get_tree().get_first_node_in_group("SelectLayer")
-	select_layer.highlight_tiles(TileManager.get_tiles_with_contraption(), "Upgrade")
+	select_layer.highlight_tiles(TileManager.get_upgradable_tiles(), "Upgrade")

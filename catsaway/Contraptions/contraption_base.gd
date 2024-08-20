@@ -6,11 +6,15 @@ extends Node2D
 @export var shoot_cd : Timer
 @export var animated_sprite : AnimatedSprite2D
 var contraption_tile : String
+var contraption_type: String
 
 #this should not be in base script, should be defined in every extended script
 var projectile = preload("res://Projectiles/projectile_base.tscn")
 
 var closest_enemy: BaseEnemy
+
+func _ready() -> void:
+	contraption_type = "Main"
 	
 func _process(_delta: float) -> void:
 	if closest_enemy != null:

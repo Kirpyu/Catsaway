@@ -35,7 +35,14 @@ func get_tiles_with_contraption() -> Array[Vector2i]:
 			tiles_with_contraption.append(string_to_vector2(tile))
 			
 	return tiles_with_contraption
+
+func get_upgradable_tiles() -> Array[Vector2i]:
+	var temp_array : Array[Vector2i]= []
+	for tile in Land:
+		if Land.get(tile)["Contraption"] != "None" and Land.get(tile)["Type"] == "Main":
+			temp_array.append(string_to_vector2(tile))
 	
+	return temp_array
 func get_available_expansion_tiles() -> Array[Vector2i]:
 	available_expansion_tiles.clear()
 	

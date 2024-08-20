@@ -11,12 +11,14 @@ var contraption_dic : Dictionary = {
 	#
 	"YarnThrower" : {
 		"Script": "res://Contraptions/YarnThrower/yarn_thrower.tscn",
-		"Icon": "res://Assets/ContraptionAssets/YarnThrower/Yarn_Thrower-Icon.png"
+		"Icon": "res://Assets/ContraptionAssets/YarnThrower/Yarn_Thrower-Icon.png",
+		"Pattern": [Vector2i(0, -1), Vector2(-1, 0), Vector2i(1,0), Vector2i(0,1)],
 	},
 	
 	"CheeseCannon": {
 		"Script": "res://Contraptions/CheeseCannon/cheese_cannon.tscn",
-		"Icon": "res://Assets/ContraptionAssets/CheeseCannon/cannon-icon.png"
+		"Icon": "res://Assets/ContraptionAssets/CheeseCannon/cannon-icon.png",
+		"Pattern": [Vector2i(0, -1), Vector2(2, -1), Vector2i(1,0), Vector2i(1,-2)],
 	},
 	
 	"Pawsplosion": {
