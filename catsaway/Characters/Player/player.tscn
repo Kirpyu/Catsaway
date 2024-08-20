@@ -137,3 +137,8 @@ animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="GoldRegen" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="GoldRegen" to="." method="_on_gold_regen_timeout"]
