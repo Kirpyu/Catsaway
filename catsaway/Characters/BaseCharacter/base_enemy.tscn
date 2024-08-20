@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dq1372dbm1qi8"]
+[gd_scene load_steps=11 format=3 uid="uid://dq1372dbm1qi8"]
 
 [ext_resource type="Script" path="res://Characters/BaseCharacter/base_enemy.gd" id="1_uaxxj"]
 [ext_resource type="Texture2D" uid="uid://cqtkrnwekipvg" path="res://Assets/Icons/tile_0127.png" id="2_0053t"]
 [ext_resource type="Script" path="res://Characters/BaseCharacter/enemy_resource.gd" id="2_atom3"]
 [ext_resource type="Script" path="res://Components/hitbox.gd" id="2_hn764"]
+[ext_resource type="Theme" uid="uid://dx3obqeiafc1l" path="res://GUI/GUI_Theme.tres" id="5_h8m8f"]
 
 [sub_resource type="Resource" id="Resource_vm3nd"]
 script = ExtResource("2_atom3")
@@ -82,6 +83,7 @@ offset_right = 5.0
 offset_bottom = 10.0
 rotation = -1.5708
 scale = Vector2(0.621444, 0.580616)
+theme = ExtResource("5_h8m8f")
 value = 50.0
 show_percentage = false
 

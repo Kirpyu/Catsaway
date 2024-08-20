@@ -1,23 +1,22 @@
-[gd_scene load_steps=26 format=4 uid="uid://dnajxuepugrj7"]
+[gd_scene load_steps=25 format=4 uid="uid://dce3y8ucyusjd"]
 
-[ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Icons/Water.png" id="1_ycfnc"]
-[ext_resource type="Texture2D" uid="uid://v77upud1kh24" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Basic_Grass_Biom_things.png" id="2_7v3yc"]
-[ext_resource type="Texture2D" uid="uid://cw7yc1xnbokwk" path="res://Assets/Icons/Grass.png" id="3_ym75m"]
-[ext_resource type="Script" path="res://GameScene/ground_layer.gd" id="4_08v17"]
-[ext_resource type="Texture2D" uid="uid://cj4wyh8udn8fj" path="res://icon.svg" id="4_alf01"]
-[ext_resource type="Script" path="res://GameScene/select_layer.gd" id="5_346s7"]
-[ext_resource type="Texture2D" uid="uid://yf4hb8ugi8hn" path="res://Assets/Icons/select.png" id="5_tw5kq"]
-[ext_resource type="PackedScene" uid="uid://e8gbfx4vjpbd" path="res://Characters/Player/player.tscn" id="6_3b7j0"]
-[ext_resource type="Script" path="res://Contraptions/contraptions.gd" id="6_cq402"]
-[ext_resource type="AudioStream" uid="uid://dl4x7w3gpux76" path="res://Assets/ContraptionAssets/FishingCast.wav" id="7_s1jj7"]
-[ext_resource type="AudioStream" uid="uid://nrvrkbqugi" path="res://Assets/SFX/OST.mp3" id="9_ejpwg"]
-[ext_resource type="PackedScene" uid="uid://b440mdkb3keqa" path="res://GUI/settings_menu.tscn" id="12_chcje"]
-[ext_resource type="PackedScene" uid="uid://dp0urywp01v5y" path="res://GUI/gui.tscn" id="12_s5ijn"]
-[ext_resource type="PackedScene" uid="uid://cvc0gtyqqk1rm" path="res://GUI/stats_ui.tscn" id="13_fvl0w"]
-[ext_resource type="PackedScene" uid="uid://biwq6dmqarhqi" path="res://Characters/EnemyCharacters/normal_fish.tscn" id="14_ausjk"]
+[ext_resource type="Texture2D" uid="uid://drcgphr8k3vil" path="res://Assets/Icons/Water.png" id="1_qlj8s"]
+[ext_resource type="Texture2D" uid="uid://v77upud1kh24" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Basic_Grass_Biom_things.png" id="2_j2u2u"]
+[ext_resource type="Texture2D" uid="uid://cw7yc1xnbokwk" path="res://Assets/Icons/Grass.png" id="3_y848d"]
+[ext_resource type="Script" path="res://GameScene/ground_layer.gd" id="4_54qhr"]
+[ext_resource type="Texture2D" uid="uid://cj4wyh8udn8fj" path="res://icon.svg" id="5_o53mn"]
+[ext_resource type="Texture2D" uid="uid://yf4hb8ugi8hn" path="res://Assets/Icons/select.png" id="6_io78d"]
+[ext_resource type="Script" path="res://GameScene/select_layer.gd" id="7_f0wm3"]
+[ext_resource type="Script" path="res://Contraptions/contraptions.gd" id="8_e3if8"]
+[ext_resource type="AudioStream" uid="uid://dl4x7w3gpux76" path="res://Assets/ContraptionAssets/FishingCast.wav" id="9_xugkx"]
+[ext_resource type="PackedScene" uid="uid://e8gbfx4vjpbd" path="res://Characters/Player/player.tscn" id="10_aa1py"]
+[ext_resource type="PackedScene" uid="uid://82l5mmyeo8vx" path="res://Characters/EnemyCharacters/enemy_spawner.tscn" id="11_syytd"]
+[ext_resource type="AudioStream" uid="uid://nrvrkbqugi" path="res://Assets/SFX/OST.mp3" id="12_aw322"]
+[ext_resource type="PackedScene" uid="uid://cvc0gtyqqk1rm" path="res://GUI/stats_ui.tscn" id="13_yntkx"]
+[ext_resource type="PackedScene" uid="uid://dp0urywp01v5y" path="res://GUI/gui.tscn" id="14_2lecs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dmbbl"]
-texture = ExtResource("1_ycfnc")
+texture = ExtResource("1_qlj8s")
 0:0/animation_columns = 4
 0:0/animation_frame_0/duration = 0.5
 0:0/animation_frame_1/duration = 0.5
@@ -26,7 +25,7 @@ texture = ExtResource("1_ycfnc")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olptm"]
-texture = ExtResource("2_7v3yc")
+texture = ExtResource("2_j2u2u")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -80,7 +79,7 @@ sources/0 = SubResource("TileSetAtlasSource_dmbbl")
 sources/2 = SubResource("TileSetAtlasSource_olptm")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xpba"]
-texture = ExtResource("2_7v3yc")
+texture = ExtResource("2_j2u2u")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -131,7 +130,7 @@ texture = ExtResource("2_7v3yc")
 sources/0 = SubResource("TileSetAtlasSource_1xpba")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kx51"]
-texture = ExtResource("3_ym75m")
+texture = ExtResource("3_y848d")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -603,7 +602,7 @@ terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/2 = SubResource("TileSetAtlasSource_1kx51")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3etjk"]
-texture = ExtResource("4_alf01")
+texture = ExtResource("5_o53mn")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -671,7 +670,7 @@ texture = ExtResource("4_alf01")
 7:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1t7vm"]
-texture = ExtResource("5_tw5kq")
+texture = ExtResource("6_io78d")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2pe3e"]
@@ -679,7 +678,6 @@ sources/0 = SubResource("TileSetAtlasSource_3etjk")
 sources/3 = SubResource("TileSetAtlasSource_1t7vm")
 
 [node name="TestScene" type="Node2D"]
-process_mode = 1
 
 [node name="SceneLayers" type="Node2D" parent="."]
 
@@ -694,28 +692,31 @@ tile_set = SubResource("TileSet_ffjgl")
 [node name="GroundLayer" type="TileMapLayer" parent="SceneLayers" node_paths=PackedStringArray("tiles") groups=["GroundLayer"]]
 tile_map_data = PackedByteArray("AAARAAsAAgADAAMAAAA=")
 tile_set = SubResource("TileSet_tpmnj")
-script = ExtResource("4_08v17")
+script = ExtResource("4_54qhr")
 tiles = NodePath("../../Tiles")
 
 [node name="SelectLayer" type="TileMapLayer" parent="SceneLayers" groups=["SelectLayer"]]
 tile_set = SubResource("TileSet_2pe3e")
-script = ExtResource("5_346s7")
+script = ExtResource("7_f0wm3")
 
 [node name="Contraptions" type="Node2D" parent="." groups=["ContraptionNode"]]
-script = ExtResource("6_cq402")
+script = ExtResource("8_e3if8")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Contraptions"]
-stream = ExtResource("7_s1jj7")
+stream = ExtResource("9_xugkx")
 volume_db = -6.559
 pitch_scale = 2.98
 
-[node name="Player" parent="." node_paths=PackedStringArray("settings_scene") instance=ExtResource("6_3b7j0")]
-settings_scene = NodePath("../CanvasLayer/SettingsMenu")
+[node name="Player" parent="." instance=ExtResource("10_aa1py")]
+
+[node name="EnemySpawner" parent="Player" instance=ExtResource("11_syytd")]
+position = Vector2(-372.586, -245.023)
+scale = Vector2(1.32362, 1.32798)
 
 [node name="Tiles" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_ejpwg")
+stream = ExtResource("12_aw322")
 volume_db = -17.802
 autoplay = true
 parameters/looping = true
@@ -723,10 +724,7 @@ parameters/looping = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("12_chcje")]
-visible = false
-
-[node name="StatsUI" parent="CanvasLayer" instance=ExtResource("13_fvl0w")]
+[node name="StatsUI" parent="CanvasLayer" instance=ExtResource("13_yntkx")]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
@@ -737,7 +735,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_bottom = 11
 
-[node name="GUI" parent="CanvasLayer/MarginContainer" instance=ExtResource("12_s5ijn")]
+[node name="GUI" parent="CanvasLayer/MarginContainer" instance=ExtResource("14_2lecs")]
 layout_mode = 2
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
@@ -745,6 +743,3 @@ color = Color(0.37177, 0.268395, 0.558087, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.678795, 0.687514, 0.985914, 1)
-
-[node name="NormalFish" parent="." instance=ExtResource("14_ausjk")]
-position = Vector2(289, 207)

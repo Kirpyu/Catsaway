@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=12 format=3 uid="uid://dx3obqeiafc1l"]
 
 [ext_resource type="Texture2D" uid="uid://caxjvhvnk4dwj" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/buttons/Square Buttons 26x26.png" id="1_1vivo"]
-[ext_resource type="FontFile" uid="uid://bmf66lwlqkfc3" path="res://Assets/Fonts/PixelifySans-Bold.ttf" id="1_momm4"]
+[ext_resource type="FontFile" uid="uid://b4x7h14je8xrx" path="res://Assets/Fonts/gameFont.ttf" id="1_83a2v"]
 [ext_resource type="Texture2D" uid="uid://ckpkhtym8dvuh" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="4_qrplp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2i657"]
@@ -77,22 +77,14 @@ expand_margin_right = 4.0
 expand_margin_bottom = 6.0
 region_rect = Rect2(153, 57, 30, 31)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w8hgf"]
-texture = ExtResource("4_qrplp")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 3.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
-region_rect = Rect2(480, 5, 16, 7)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eiqsg"]
+bg_color = Color(0.332022, 0.348164, 0.347504, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_87b3p"]
-texture = ExtResource("4_qrplp")
-region_rect = Rect2(466, 7, 12, 2)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fxvu"]
+bg_color = Color(0.510769, 0.696028, 0.42297, 1)
 
 [resource]
-default_font = ExtResource("1_momm4")
+default_font = ExtResource("1_83a2v")
 Button/colors/font_color = Color(0.706814, 0.31769, 0.274566, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
@@ -111,7 +103,7 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 25
-Button/fonts/font = ExtResource("1_momm4")
+Button/fonts/font = ExtResource("1_83a2v")
 Button/styles/disabled = SubResource("StyleBoxTexture_2i657")
 Button/styles/focus = SubResource("StyleBoxTexture_wdsdn")
 Button/styles/hover = SubResource("StyleBoxTexture_n4vr8")
@@ -123,5 +115,5 @@ MarginContainer/constants/margin_left = 0
 MarginContainer/constants/margin_right = 0
 MarginContainer/constants/margin_top = 0
 Panel/styles/panel = SubResource("StyleBoxTexture_blvhm")
-ProgressBar/styles/background = SubResource("StyleBoxTexture_w8hgf")
-ProgressBar/styles/fill = SubResource("StyleBoxTexture_87b3p")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_eiqsg")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_7fxvu")

@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6uogh3qtq3vp"]
+[gd_scene load_steps=4 format=3 uid="uid://b6uogh3qtq3vp"]
 
 [ext_resource type="Script" path="res://Tile/tile.gd" id="1_ygqld"]
+[ext_resource type="Theme" uid="uid://dx3obqeiafc1l" path="res://GUI/GUI_Theme.tres" id="2_h2qf5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3ewb"]
 size = Vector2(16, 16)
 
-[node name="Tile" type="Node2D" node_paths=PackedStringArray("hp_bar") groups=["Tile"]]
+[node name="Tile" type="Node2D" node_paths=PackedStringArray("hp_bar", "self_heal_timer", "self_heal_cd") groups=["Tile"]]
 script = ExtResource("1_ygqld")
 hp_bar = NodePath("HPBar")
+self_heal_timer = NodePath("SelfHeal")
+self_heal_cd = NodePath("SelfHealCooldown")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -18,12 +21,21 @@ monitoring = false
 shape = SubResource("RectangleShape2D_c3ewb")
 
 [node name="HPBar" type="ProgressBar" parent="."]
-offset_left = -9.0
+visible = false
+offset_left = -8.0
 offset_top = 8.0
-offset_right = 11.0
+offset_right = 8.0
 offset_bottom = 12.0
-scale = Vector2(0.890066, 0.380962)
+scale = Vector2(1, 0.28047)
+theme = ExtResource("2_h2qf5")
 value = 50.0
 show_percentage = false
 
+[node name="SelfHeal" type="Timer" parent="."]
+
+[node name="SelfHealCooldown" type="Timer" parent="."]
+wait_time = 10.0
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="SelfHeal" to="." method="_on_self_heal_timeout"]
+[connection signal="timeout" from="SelfHealCooldown" to="." method="_on_self_heal_cooldown_timeout"]

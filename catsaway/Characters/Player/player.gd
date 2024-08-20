@@ -6,6 +6,8 @@ var direction :Vector2 = Vector2.ZERO
 @onready var gold : int = 0
 @onready var tiles_created: float = 0
 
+@export var settings_scene : Control
+
 @onready var tile_base_cost: float = 20
 @onready var tile_cost: int :
 	get:
@@ -28,7 +30,11 @@ func _physics_process(_delta):
 		animated_sprite.play("walking")
 		
 
-func _input(_event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("esc"):
+		settings_scene.set_paused(true)
+		
+func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LMB"):
 		var ground_layer = get_tree().get_first_node_in_group("GroundLayer")
 		var hovered_tile = ground_layer.local_to_map(get_global_mouse_position())

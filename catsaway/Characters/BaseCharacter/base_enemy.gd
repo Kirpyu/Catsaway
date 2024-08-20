@@ -68,7 +68,9 @@ func _on_stop_timer_timeout() -> void:
 func create_drop():
 	var rng = RandomNumberGenerator.new()
 #	make that multiplactive with the wave number in the future
-	var spawn_wave_number = get_tree().get_first_node_in_group("EnemySpawner").current_wave
+	var spawn_wave_number = 0
+	if get_tree().get_first_node_in_group("EnemySpawner") != null:
+		spawn_wave_number = get_tree().get_first_node_in_group("EnemySpawner").current_wave
 	
 	var rand_num = rng.randi_range(1, 10 + spawn_wave_number)
 	if rand_num == 1:

@@ -3,8 +3,12 @@ extends Node2D
 
 @export var max_hp := 100
 @export var hp_bar : ProgressBar
+@export var self_heal_timer: Timer
+@export var self_heal_cd: Timer
 
 var hp : int
+		
+			
 var tile_name : String = ""
 var water_tile : bool = true
 var enemy_attacking := false
@@ -20,6 +24,8 @@ func _ready() -> void:
 # removes recipient if u leave or die
 func hit(damage: int) -> void:
 	hp -= damage
+	hp_bar.show()
+	self_heal_cd.start()
 	update_hp()
 	
 func update_hp() -> void:
@@ -31,6 +37,9 @@ func update_hp() -> void:
 		queue_free()
 	else:
 		hp_bar.value = hp
+		if hp >= 100:
+			hp_bar.hide()
+	
 		
 
 
@@ -40,3 +49,18 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 #		reroll\
 	if area.owner.is_in_group("Player") and water_tile == true:
 		get_tree().quit()
+
+
+func _on_self_heal_timeout() -> void:
+	if hp + 10 > max_hp:
+		hp = max_hp
+		self_heal_timer.stop()
+		hp_bar.hide()
+	else:
+		hp += 10
+		update_hp()
+
+
+
+func _on_self_heal_cooldown_timeout() -> void:
+	self_heal_timer.start()

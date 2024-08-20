@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8vat1owd6x3g"]
+
+[ext_resource type="Script" path="res://GUI/end_screen.gd" id="1_m3c86"]
+[ext_resource type="Theme" uid="uid://g5v2nhacetj7" path="res://GUI/MenuTheme.tres" id="2_fnn5e"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m3c86")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.295139
+anchor_top = 0.262346
+anchor_right = 0.704861
+anchor_bottom = 0.737654
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fnn5e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -5
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737656, 0.407593, 0.350051, 1)
+theme_override_font_sizes/font_size = 75
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="RestartButton" type="Button" parent="Panel/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "RESTART"
+
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "MAIN MENU"
+
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "QUIT"

@@ -70,9 +70,6 @@ animations = [{
 
 [node name="DummyFish" instance=ExtResource("1_hp6mq")]
 script = ExtResource("2_t17gv")
-speed = 0
-max_hp = 30000
-attack = 0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_nro75")

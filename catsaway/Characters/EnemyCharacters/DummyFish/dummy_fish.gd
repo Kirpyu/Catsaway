@@ -2,8 +2,8 @@ extends BaseEnemy
 
 func _ready() -> void:
 	get_closest_target()
-	hp_bar.max_value = max_hp
-	hp = max_hp
+	hp_bar.max_value = enemy_resource.max_hp
+	hp = enemy_resource.max_hp
 	update_hp()
 	animated_sprite.play("moving")
 	
