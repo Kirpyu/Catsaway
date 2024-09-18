@@ -191,14 +191,16 @@ layout_mode = 2
 icon = ExtResource("6_hy0ox")
 expand_icon = true
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="WaveGUI" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -76.0
-offset_right = 76.0
-offset_bottom = 56.0
+anchors_preset = -1
+anchor_left = 0.437
+anchor_right = 0.566
+anchor_bottom = 0.108
+offset_left = -3.42401
+offset_right = -0.0320435
+offset_bottom = -13.984
 grow_horizontal = 2
 theme = ExtResource("1_2dkan")
 theme_override_constants/margin_left = 0
@@ -206,29 +208,29 @@ theme_override_constants/margin_top = 9
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer2"]
+[node name="CenterContainer" type="CenterContainer" parent="WaveGUI"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="WaveGUI/CenterContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="WaveIndicator" type="Label" parent="MarginContainer2/CenterContainer/VBoxContainer"]
+[node name="WaveIndicator" type="Label" parent="WaveGUI/CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "WAVE 3"
 horizontal_alignment = 1
 script = ExtResource("9_hecmh")
 
-[node name="Timer" type="Timer" parent="MarginContainer2/CenterContainer/VBoxContainer/WaveIndicator"]
+[node name="Timer" type="Timer" parent="WaveGUI/CenterContainer/VBoxContainer/WaveIndicator"]
 wait_time = 30.0
 autostart = true
 
-[node name="Stopwatch" type="Label" parent="MarginContainer2/CenterContainer/VBoxContainer"]
+[node name="Stopwatch" type="Label" parent="WaveGUI/CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "01:20"
 label_settings = SubResource("LabelSettings_wnsc4")
 script = ExtResource("10_yfqr2")
 
 [connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="timeout" from="MarginContainer2/CenterContainer/VBoxContainer/WaveIndicator/Timer" to="MarginContainer2/CenterContainer/VBoxContainer/WaveIndicator" method="_on_timer_timeout"]
+[connection signal="timeout" from="WaveGUI/CenterContainer/VBoxContainer/WaveIndicator/Timer" to="WaveGUI/CenterContainer/VBoxContainer/WaveIndicator" method="_on_timer_timeout"]

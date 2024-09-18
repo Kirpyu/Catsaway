@@ -1,0 +1,15 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://btn1i0bmo4gsa"]
+
+[ext_resource type="Texture2D" uid="uid://ckpkhtym8dvuh" path="res://Assets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_kywf1"]
+
+[resource]
+texture = ExtResource("1_kywf1")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 6.0
+region_rect = Rect2(153, 57, 30, 31)

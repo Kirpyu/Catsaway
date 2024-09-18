@@ -13,7 +13,7 @@ var direction :Vector2 = Vector2.ZERO
 	get:
 		return tile_base_cost + floor(tile_base_cost * tiles_created/3 + 1.0)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var starting_tile = get_tree().get_first_node_in_group("GroundLayer").local_to_map(self.global_position)
 	if TileManager.Land.get(str(starting_tile)) == null:
 		die()
@@ -34,7 +34,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("esc"):
 		settings_scene.set_paused(true)
 		
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LMB"):
 		var ground_layer = get_tree().get_first_node_in_group("GroundLayer")
 		var hovered_tile = ground_layer.local_to_map(get_global_mouse_position())
@@ -60,8 +60,10 @@ func _input(event: InputEvent) -> void:
 					new_tile.tile_name = str(hovered_tile)
 					new_tile.position = ground_layer.map_to_local(hovered_tile)
 					
-					%Expansion.play()
 					select_layer.erase_highlight()
+					select_layer.highlight_tiles(TileManager.get_available_expansion_tiles(), "Expansion")
+					
+					%Expansion.play()
 				
 		if select_layer.highlight_type == "Contraption":
 			if TileManager.Land.has(str(hovered_tile)):
